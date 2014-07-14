@@ -1,0 +1,7 @@
+[run]
+branch = True
+source = serialization
+omit = serialization/tests/*,serialization/openstack/*
+
+[report]
+ignore-errors = True

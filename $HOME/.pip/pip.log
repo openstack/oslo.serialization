@@ -1,0 +1,1805 @@
+Downloading/unpacking cookiecutter
+
+  Getting page https://pypi.python.org/simple/cookiecutter/
+  URLs to search for versions for cookiecutter:
+  * https://pypi.python.org/simple/cookiecutter/
+  Analyzing links from page https://pypi.python.org/simple/cookiecutter/
+    Found link https://pypi.python.org/packages/source/c/cookiecutter/cookiecutter-0.1.tar.gz#md5=1d873c734425ba9c067b8d66df7050a8 (from https://pypi.python.org/simple/cookiecutter/), version: 0.1
+    Found link https://pypi.python.org/packages/source/c/cookiecutter/cookiecutter-0.2.1.tar.gz#md5=3b270cbd8fac2e8f0f2933380414b73b (from https://pypi.python.org/simple/cookiecutter/), version: 0.2.1
+    Found link https://pypi.python.org/packages/source/c/cookiecutter/cookiecutter-0.2.tar.gz#md5=39591223fd515654c0c33e51f7c10d13 (from https://pypi.python.org/simple/cookiecutter/), version: 0.2
+    Found link https://pypi.python.org/packages/source/c/cookiecutter/cookiecutter-0.3.tar.gz#md5=8297b3bfd255ab499323c00191a398d8 (from https://pypi.python.org/simple/cookiecutter/), version: 0.3
+    Found link https://pypi.python.org/packages/source/c/cookiecutter/cookiecutter-0.4.tar.gz#md5=eaf85444da2d20e8f2bd8527a541879b (from https://pypi.python.org/simple/cookiecutter/), version: 0.4
+    Found link https://pypi.python.org/packages/source/c/cookiecutter/cookiecutter-0.5.tar.gz#md5=fc9a858c5dab5f98502f07732686d30e (from https://pypi.python.org/simple/cookiecutter/), version: 0.5
+    Found link https://pypi.python.org/packages/source/c/cookiecutter/cookiecutter-0.6.0.tar.gz#md5=ee87bf3c21b8be1d0b5bb3ea2cae40f2 (from https://pypi.python.org/simple/cookiecutter/), version: 0.6.0
+    Found link https://pypi.python.org/packages/source/c/cookiecutter/cookiecutter-0.6.1.tar.gz#md5=7fe8fe92a828c9cef5da6f1ca4ac2f6e (from https://pypi.python.org/simple/cookiecutter/), version: 0.6.1
+    Found link https://pypi.python.org/packages/source/c/cookiecutter/cookiecutter-0.6.2.tar.gz#md5=11543cd3a4194a3feeaa0b5c93e2168d (from https://pypi.python.org/simple/cookiecutter/), version: 0.6.2
+    Found link https://pypi.python.org/packages/source/c/cookiecutter/cookiecutter-0.6.3.tar.gz#md5=f91bfb1d7e517dedd78aaea20b4433f5 (from https://pypi.python.org/simple/cookiecutter/), version: 0.6.3
+    Found link https://pypi.python.org/packages/source/c/cookiecutter/cookiecutter-0.6.4.tar.gz#md5=c62ea87a3fc698b9f0a6a135c82ad9b0 (from https://pypi.python.org/simple/cookiecutter/), version: 0.6.4
+    Found link https://pypi.python.org/packages/source/c/cookiecutter/cookiecutter-0.7.0.tar.gz#md5=5f1d2df78589210ef1765b69908b6319 (from https://pypi.python.org/simple/cookiecutter/), version: 0.7.0
+    Found link https://pypi.python.org/packages/source/c/cookiecutter/cookiecutter-0.7.1.tar.gz#md5=4c8092638f8cc87cc9fd535c40898ed7 (from https://pypi.python.org/simple/cookiecutter/), version: 0.7.1
+  Using version 0.7.1 (newest of versions: 0.7.1, 0.7.0, 0.6.4, 0.6.3, 0.6.2, 0.6.1, 0.6.0, 0.5, 0.4, 0.3, 0.2.1, 0.2, 0.1)
+  Downloading from URL https://pypi.python.org/packages/source/c/cookiecutter/cookiecutter-0.7.1.tar.gz#md5=4c8092638f8cc87cc9fd535c40898ed7 (from https://pypi.python.org/simple/cookiecutter/)
+  Storing download in cache at /home/fedora/.cache/pip/https%3A%2F%2Fpypi.python.org%2Fpackages%2Fsource%2Fc%2Fcookiecutter%2Fcookiecutter-0.7.1.tar.gz
+
+  Running setup.py egg_info for package cookiecutter
+
+    running egg_info
+    creating pip-egg-info/cookiecutter.egg-info
+    writing requirements to pip-egg-info/cookiecutter.egg-info/requires.txt
+    writing pip-egg-info/cookiecutter.egg-info/PKG-INFO
+    writing top-level names to pip-egg-info/cookiecutter.egg-info/top_level.txt
+    writing dependency_links to pip-egg-info/cookiecutter.egg-info/dependency_links.txt
+    writing entry points to pip-egg-info/cookiecutter.egg-info/entry_points.txt
+    writing manifest file 'pip-egg-info/cookiecutter.egg-info/SOURCES.txt'
+    warning: manifest_maker: standard file '-c' not found
+    
+
+    reading manifest file 'pip-egg-info/cookiecutter.egg-info/SOURCES.txt'
+    reading manifest template 'MANIFEST.in'
+    warning: no previously-included files matching '__pycache__' found under directory '*'
+
+    warning: no previously-included files matching '*.py[co]' found under directory '*'
+
+    writing manifest file 'pip-egg-info/cookiecutter.egg-info/SOURCES.txt'
+  Source in /tmp/oslo-graduate.98CC/venv/build/cookiecutter has version 0.7.1, which satisfies requirement cookiecutter
+Downloading/unpacking binaryornot>=0.2.0 (from cookiecutter)
+
+  Getting page https://pypi.python.org/simple/binaryornot/
+  URLs to search for versions for binaryornot>=0.2.0 (from cookiecutter):
+  * https://pypi.python.org/simple/binaryornot/
+  Analyzing links from page https://pypi.python.org/simple/binaryornot/
+    Found link https://pypi.python.org/packages/source/b/binaryornot/binaryornot-0.1.0.tar.gz#md5=be155515056208684631d67c5b43b068 (from https://pypi.python.org/simple/binaryornot/), version: 0.1.0
+    Found link https://pypi.python.org/packages/source/b/binaryornot/binaryornot-0.1.1.tar.gz#md5=1b13516f261af573c76f98503cdeb8a2 (from https://pypi.python.org/simple/binaryornot/), version: 0.1.1
+    Found link https://pypi.python.org/packages/source/b/binaryornot/binaryornot-0.2.0.tar.gz#md5=ecbb411e281f3d922112c5d91f575e06 (from https://pypi.python.org/simple/binaryornot/), version: 0.2.0
+    Found link https://pypi.python.org/packages/source/b/binaryornot/binaryornot-0.3.0.tar.gz#md5=8f5bdbeb5ca31075582b42fdf4ce28f5 (from https://pypi.python.org/simple/binaryornot/), version: 0.3.0
+  Ignoring link https://pypi.python.org/packages/source/b/binaryornot/binaryornot-0.1.0.tar.gz#md5=be155515056208684631d67c5b43b068 (from https://pypi.python.org/simple/binaryornot/), version 0.1.0 doesn't match >=0.2.0
+  Ignoring link https://pypi.python.org/packages/source/b/binaryornot/binaryornot-0.1.1.tar.gz#md5=1b13516f261af573c76f98503cdeb8a2 (from https://pypi.python.org/simple/binaryornot/), version 0.1.1 doesn't match >=0.2.0
+  Using version 0.3.0 (newest of versions: 0.3.0, 0.2.0)
+  Downloading from URL https://pypi.python.org/packages/source/b/binaryornot/binaryornot-0.3.0.tar.gz#md5=8f5bdbeb5ca31075582b42fdf4ce28f5 (from https://pypi.python.org/simple/binaryornot/)
+  Storing download in cache at /home/fedora/.cache/pip/https%3A%2F%2Fpypi.python.org%2Fpackages%2Fsource%2Fb%2Fbinaryornot%2Fbinaryornot-0.3.0.tar.gz
+
+  Running setup.py egg_info for package binaryornot
+
+    running egg_info
+    creating pip-egg-info/binaryornot.egg-info
+    writing pip-egg-info/binaryornot.egg-info/PKG-INFO
+    writing top-level names to pip-egg-info/binaryornot.egg-info/top_level.txt
+    writing dependency_links to pip-egg-info/binaryornot.egg-info/dependency_links.txt
+    writing manifest file 'pip-egg-info/binaryornot.egg-info/SOURCES.txt'
+    warning: manifest_maker: standard file '-c' not found
+    
+
+    reading manifest file 'pip-egg-info/binaryornot.egg-info/SOURCES.txt'
+    reading manifest template 'MANIFEST.in'
+    warning: no previously-included files matching '__pycache__' found under directory '*'
+
+    warning: no previously-included files matching '*.py[co]' found under directory '*'
+
+    writing manifest file 'pip-egg-info/binaryornot.egg-info/SOURCES.txt'
+  Source in /tmp/oslo-graduate.98CC/venv/build/binaryornot has version 0.3.0, which satisfies requirement binaryornot>=0.2.0 (from cookiecutter)
+Downloading/unpacking jinja2>=2.4 (from cookiecutter)
+
+  Getting page https://pypi.python.org/simple/jinja2/
+  URLs to search for versions for jinja2>=2.4 (from cookiecutter):
+  * https://pypi.python.org/simple/jinja2/
+  Analyzing links from page https://pypi.python.org/simple/Jinja2/
+    Skipping link https://pypi.python.org/packages/2.4/J/Jinja2/Jinja2-2.0rc1-py2.4-linux-i686.egg#md5=e4286023eed2f6d8cc5f5075106db1f4 (from https://pypi.python.org/simple/Jinja2/); unknown archive format: .egg
+    Skipping link https://pypi.python.org/packages/2.4/J/Jinja2/Jinja2-2.0rc1-py2.4-linux-x86_64.egg#md5=3f0499f5f0caa7943d4ba3cb20740f5e (from https://pypi.python.org/simple/Jinja2/); unknown archive format: .egg
+    Skipping link https://pypi.python.org/packages/2.4/J/Jinja2/Jinja2-2.0rc1-py2.4-macosx-10.3-i386.egg#md5=3b5901001e84aa62c8bc4c6f0a638b18 (from https://pypi.python.org/simple/Jinja2/); unknown archive format: .egg
+    Skipping link https://pypi.python.org/packages/2.4/J/Jinja2/Jinja2-2.0rc1-py2.4-win32.egg#md5=6f17c620d4bc9272f3061b70ab7af11b (from https://pypi.python.org/simple/Jinja2/); unknown archive format: .egg
+    Skipping link https://pypi.python.org/packages/2.4/J/Jinja2/Jinja2-2.1-py2.4-win32.egg#md5=d8eb08f4ef61b05a00039a48f620deeb (from https://pypi.python.org/simple/Jinja2/); unknown archive format: .egg
+    Skipping link https://pypi.python.org/packages/2.4/J/Jinja2/Jinja2-2.1.1-py2.4-win32.egg#md5=ce0a82883624cd31c8b513b7bc961148 (from https://pypi.python.org/simple/Jinja2/); unknown archive format: .egg
+    Skipping link https://pypi.python.org/packages/2.5/J/Jinja2/Jinja2-2.0rc1-py2.5-linux-i686.egg#md5=3a2be0c13c6036d59e81f9b3db82bdfa (from https://pypi.python.org/simple/Jinja2/); unknown archive format: .egg
+    Skipping link https://pypi.python.org/packages/2.5/J/Jinja2/Jinja2-2.0rc1-py2.5-linux-x86_64.egg#md5=3ccf95d2d6245b5407cdda0577b24f64 (from https://pypi.python.org/simple/Jinja2/); unknown archive format: .egg
+    Skipping link https://pypi.python.org/packages/2.5/J/Jinja2/Jinja2-2.0rc1-py2.5-macosx-10.3-i386.egg#md5=bc82f2a2e9b55ca1472bc7b89fedca06 (from https://pypi.python.org/simple/Jinja2/); unknown archive format: .egg
+    Skipping link https://pypi.python.org/packages/2.5/J/Jinja2/Jinja2-2.0rc1-py2.5-win32.egg#md5=40af7fdc93abd3892b6ea2f208a6033b (from https://pypi.python.org/simple/Jinja2/); unknown archive format: .egg
+    Skipping link https://pypi.python.org/packages/2.5/J/Jinja2/Jinja2-2.1-py2.5-win32.egg#md5=135dad62ce5de34a54d568a2b3cd05f0 (from https://pypi.python.org/simple/Jinja2/); unknown archive format: .egg
+    Skipping link https://pypi.python.org/packages/2.5/J/Jinja2/Jinja2-2.1.1-py2.5-win32.egg#md5=a6cd9757966640a7bb7e887c24dd9ff3 (from https://pypi.python.org/simple/Jinja2/); unknown archive format: .egg
+    Skipping link https://pypi.python.org/packages/2.6/J/Jinja2/Jinja2-2.1-py2.6-win32.egg#md5=8319235be842d5a61c552be8d206f65a (from https://pypi.python.org/simple/Jinja2/); unknown archive format: .egg
+    Skipping link https://pypi.python.org/packages/2.6/J/Jinja2/Jinja2-2.1.1-py2.6-win32.egg#md5=8540a2bf5bfd263842d3a7c6df13977b (from https://pypi.python.org/simple/Jinja2/); unknown archive format: .egg
+    Found link https://pypi.python.org/packages/source/J/Jinja2/Jinja2-2.0.tar.gz#md5=19fe3ee10ee94a6003c53374112f2403 (from https://pypi.python.org/simple/Jinja2/), version: 2.0
+    Found link https://pypi.python.org/packages/source/J/Jinja2/Jinja2-2.0rc1.tar.gz#md5=7751e097f23fec244634e601d86e1d60 (from https://pypi.python.org/simple/Jinja2/), version: 2.0rc1
+    Found link https://pypi.python.org/packages/source/J/Jinja2/Jinja2-2.1.1.tar.gz#md5=b37fc262e4f613eec57c3defe6aea97c (from https://pypi.python.org/simple/Jinja2/), version: 2.1.1
+    Found link https://pypi.python.org/packages/source/J/Jinja2/Jinja2-2.1.tar.gz#md5=c7a31931c95a7ae5e1baf21074fdd576 (from https://pypi.python.org/simple/Jinja2/), version: 2.1
+    Found link https://pypi.python.org/packages/source/J/Jinja2/Jinja2-2.2.1.tar.gz#md5=fea849d68891218eb0b21c170f1c32d5 (from https://pypi.python.org/simple/Jinja2/), version: 2.2.1
+    Found link https://pypi.python.org/packages/source/J/Jinja2/Jinja2-2.2.tar.gz#md5=7ea7821801eee5def026c216d80e5103 (from https://pypi.python.org/simple/Jinja2/), version: 2.2
+    Found link https://pypi.python.org/packages/source/J/Jinja2/Jinja2-2.3.1.tar.gz#md5=391c7dd06c62dfe7e30ebaad7af0a401 (from https://pypi.python.org/simple/Jinja2/), version: 2.3.1
+    Found link https://pypi.python.org/packages/source/J/Jinja2/Jinja2-2.3.tar.gz#md5=7fc34b115f157474d988db8caab6895c (from https://pypi.python.org/simple/Jinja2/), version: 2.3
+    Found link https://pypi.python.org/packages/source/J/Jinja2/Jinja2-2.4.1.tar.gz#md5=e0cf5af057fac63ac9689b86c8b31ce6 (from https://pypi.python.org/simple/Jinja2/), version: 2.4.1
+    Found link https://pypi.python.org/packages/source/J/Jinja2/Jinja2-2.4.tar.gz#md5=635746009a6560e20db97e94db28867d (from https://pypi.python.org/simple/Jinja2/), version: 2.4
+    Found link https://pypi.python.org/packages/source/J/Jinja2/Jinja2-2.5.1.tar.gz#md5=12be091a5d2edae961b65adfc99da826 (from https://pypi.python.org/simple/Jinja2/), version: 2.5.1
+    Found link https://pypi.python.org/packages/source/J/Jinja2/Jinja2-2.5.2.tar.gz#md5=3829be2926a067ee024e6d3e5327dbf7 (from https://pypi.python.org/simple/Jinja2/), version: 2.5.2
+    Found link https://pypi.python.org/packages/source/J/Jinja2/Jinja2-2.5.3.tar.gz#md5=cae31ce405ec5e4f167913b25ee4f65a (from https://pypi.python.org/simple/Jinja2/), version: 2.5.3
+    Found link https://pypi.python.org/packages/source/J/Jinja2/Jinja2-2.5.4.tar.gz#md5=4553d5aef15d550bfebbc1903014067e (from https://pypi.python.org/simple/Jinja2/), version: 2.5.4
+    Found link https://pypi.python.org/packages/source/J/Jinja2/Jinja2-2.5.5.tar.gz#md5=83b20c1eeb31f49d8e6392efae91b7d5 (from https://pypi.python.org/simple/Jinja2/), version: 2.5.5
+    Found link https://pypi.python.org/packages/source/J/Jinja2/Jinja2-2.5.tar.gz#md5=d02f82e33afe918cef8a9abcd23ccd78 (from https://pypi.python.org/simple/Jinja2/), version: 2.5
+    Found link https://pypi.python.org/packages/source/J/Jinja2/Jinja2-2.6.tar.gz#md5=1c49a8825c993bfdcf55bb36897d28a2 (from https://pypi.python.org/simple/Jinja2/), version: 2.6
+    Found link https://pypi.python.org/packages/source/J/Jinja2/Jinja2-2.7.1.tar.gz#md5=282aed153e69f970d6e76f78ed9d027a (from https://pypi.python.org/simple/Jinja2/), version: 2.7.1
+    Found link https://pypi.python.org/packages/source/J/Jinja2/Jinja2-2.7.2.tar.gz#md5=df1581455564e97010e38bc792012aa5 (from https://pypi.python.org/simple/Jinja2/), version: 2.7.2
+    Found link https://pypi.python.org/packages/source/J/Jinja2/Jinja2-2.7.3.tar.gz#md5=b9dffd2f3b43d673802fe857c8445b1a (from https://pypi.python.org/simple/Jinja2/), version: 2.7.3
+    Found link https://pypi.python.org/packages/source/J/Jinja2/Jinja2-2.7.tar.gz#md5=c2fb12cbbb523c57d3d15bfe4dc0e8fe (from https://pypi.python.org/simple/Jinja2/), version: 2.7
+  Ignoring link https://pypi.python.org/packages/source/J/Jinja2/Jinja2-2.0.tar.gz#md5=19fe3ee10ee94a6003c53374112f2403 (from https://pypi.python.org/simple/Jinja2/), version 2.0 doesn't match >=2.4
+  Ignoring link https://pypi.python.org/packages/source/J/Jinja2/Jinja2-2.0rc1.tar.gz#md5=7751e097f23fec244634e601d86e1d60 (from https://pypi.python.org/simple/Jinja2/), version 2.0rc1 doesn't match >=2.4
+  Ignoring link https://pypi.python.org/packages/source/J/Jinja2/Jinja2-2.1.1.tar.gz#md5=b37fc262e4f613eec57c3defe6aea97c (from https://pypi.python.org/simple/Jinja2/), version 2.1.1 doesn't match >=2.4
+  Ignoring link https://pypi.python.org/packages/source/J/Jinja2/Jinja2-2.1.tar.gz#md5=c7a31931c95a7ae5e1baf21074fdd576 (from https://pypi.python.org/simple/Jinja2/), version 2.1 doesn't match >=2.4
+  Ignoring link https://pypi.python.org/packages/source/J/Jinja2/Jinja2-2.2.1.tar.gz#md5=fea849d68891218eb0b21c170f1c32d5 (from https://pypi.python.org/simple/Jinja2/), version 2.2.1 doesn't match >=2.4
+  Ignoring link https://pypi.python.org/packages/source/J/Jinja2/Jinja2-2.2.tar.gz#md5=7ea7821801eee5def026c216d80e5103 (from https://pypi.python.org/simple/Jinja2/), version 2.2 doesn't match >=2.4
+  Ignoring link https://pypi.python.org/packages/source/J/Jinja2/Jinja2-2.3.1.tar.gz#md5=391c7dd06c62dfe7e30ebaad7af0a401 (from https://pypi.python.org/simple/Jinja2/), version 2.3.1 doesn't match >=2.4
+  Ignoring link https://pypi.python.org/packages/source/J/Jinja2/Jinja2-2.3.tar.gz#md5=7fc34b115f157474d988db8caab6895c (from https://pypi.python.org/simple/Jinja2/), version 2.3 doesn't match >=2.4
+  Using version 2.7.3 (newest of versions: 2.7.3, 2.7.2, 2.7.1, 2.7, 2.6, 2.5.5, 2.5.4, 2.5.3, 2.5.2, 2.5.1, 2.5, 2.4.1, 2.4)
+  Using download cache from /home/fedora/.cache/pip/https%3A%2F%2Fpypi.python.org%2Fpackages%2Fsource%2FJ%2FJinja2%2FJinja2-2.7.3.tar.gz
+
+  Running setup.py egg_info for package jinja2
+
+    running egg_info
+    creating pip-egg-info/Jinja2.egg-info
+    writing requirements to pip-egg-info/Jinja2.egg-info/requires.txt
+    writing pip-egg-info/Jinja2.egg-info/PKG-INFO
+    writing top-level names to pip-egg-info/Jinja2.egg-info/top_level.txt
+    writing dependency_links to pip-egg-info/Jinja2.egg-info/dependency_links.txt
+    writing entry points to pip-egg-info/Jinja2.egg-info/entry_points.txt
+    writing manifest file 'pip-egg-info/Jinja2.egg-info/SOURCES.txt'
+    warning: manifest_maker: standard file '-c' not found
+    
+
+    reading manifest file 'pip-egg-info/Jinja2.egg-info/SOURCES.txt'
+    reading manifest template 'MANIFEST.in'
+    warning: no files found matching '*' under directory 'custom_fixers'
+
+    warning: no previously-included files matching '*' found under directory 'docs/_build'
+
+    warning: no previously-included files matching '*.pyc' found under directory 'jinja2'
+
+    warning: no previously-included files matching '*.pyc' found under directory 'docs'
+
+    warning: no previously-included files matching '*.pyo' found under directory 'jinja2'
+
+    warning: no previously-included files matching '*.pyo' found under directory 'docs'
+
+    writing manifest file 'pip-egg-info/Jinja2.egg-info/SOURCES.txt'
+  Source in /tmp/oslo-graduate.98CC/venv/build/jinja2 has version 2.7.3, which satisfies requirement jinja2>=2.4 (from cookiecutter)
+  skipping extra i18n
+Downloading/unpacking PyYAML>=3.10 (from cookiecutter)
+
+  Getting page https://pypi.python.org/simple/PyYAML/
+  URLs to search for versions for PyYAML>=3.10 (from cookiecutter):
+  * https://pypi.python.org/simple/PyYAML/
+  Analyzing links from page https://pypi.python.org/simple/PyYAML/
+    Skipping link https://pypi.python.org/packages/2.5/P/PyYAML/PyYAML-3.10.win32-py2.5.exe#md5=dfb573ab41cdfee1b2794b7a155e72e6 (from https://pypi.python.org/simple/PyYAML/); unknown archive format: .exe
+    Skipping link https://pypi.python.org/packages/2.6/P/PyYAML/PyYAML-3.10.win32-py2.6.exe#md5=4c1a374cb89fa0ff43f3b94b5692edd9 (from https://pypi.python.org/simple/PyYAML/); unknown archive format: .exe
+    Skipping link https://pypi.python.org/packages/2.6/P/PyYAML/PyYAML-3.11.win-amd64-py2.6.exe#md5=af7eade45dcb408473928953f430e7db (from https://pypi.python.org/simple/PyYAML/); unknown archive format: .exe
+    Skipping link https://pypi.python.org/packages/2.6/P/PyYAML/PyYAML-3.11.win32-py2.6.exe#md5=83b0f47825feac2da99b75bfbd65a3ab (from https://pypi.python.org/simple/PyYAML/); unknown archive format: .exe
+    Skipping link https://pypi.python.org/packages/2.7/P/PyYAML/PyYAML-3.10.win32-py2.7.exe#md5=73309e5fe73d7d84e0af3213b2c957ff (from https://pypi.python.org/simple/PyYAML/); unknown archive format: .exe
+    Skipping link https://pypi.python.org/packages/2.7/P/PyYAML/PyYAML-3.11.win-amd64-py2.7.exe#md5=538cd92d63068161d229cb8a65db7f23 (from https://pypi.python.org/simple/PyYAML/); unknown archive format: .exe
+    Skipping link https://pypi.python.org/packages/2.7/P/PyYAML/PyYAML-3.11.win32-py2.7.exe#md5=d75320c7a904731d6e27418e346a92e1 (from https://pypi.python.org/simple/PyYAML/); unknown archive format: .exe
+    Skipping link https://pypi.python.org/packages/3.0/P/PyYAML/PyYAML-3.10.win32-py3.0.exe#md5=0360710722fdc58e519d6a76324aa1d7 (from https://pypi.python.org/simple/PyYAML/); unknown archive format: .exe
+    Skipping link https://pypi.python.org/packages/3.1/P/PyYAML/PyYAML-3.10.win32-py3.1.exe#md5=6c830441d9df703458e2f34c2e6a413a (from https://pypi.python.org/simple/PyYAML/); unknown archive format: .exe
+    Skipping link https://pypi.python.org/packages/3.1/P/PyYAML/PyYAML-3.11.win-amd64-py3.1.exe#md5=d52af84d2cd6ce9b7cfddb2c525bd957 (from https://pypi.python.org/simple/PyYAML/); unknown archive format: .exe
+    Skipping link https://pypi.python.org/packages/3.1/P/PyYAML/PyYAML-3.11.win32-py3.1.exe#md5=1b3b956bbe638c50eb80273b639be692 (from https://pypi.python.org/simple/PyYAML/); unknown archive format: .exe
+    Skipping link https://pypi.python.org/packages/3.2/P/PyYAML/PyYAML-3.10.win32-py3.2.exe#md5=fc582f2f46f6494a97c9cae938a19f59 (from https://pypi.python.org/simple/PyYAML/); unknown archive format: .exe
+    Skipping link https://pypi.python.org/packages/3.2/P/PyYAML/PyYAML-3.11.win-amd64-py3.2.exe#md5=328bfd749ee42279b9d8a75397e9444d (from https://pypi.python.org/simple/PyYAML/); unknown archive format: .exe
+    Skipping link https://pypi.python.org/packages/3.2/P/PyYAML/PyYAML-3.11.win32-py3.2.exe#md5=b40a15302b494d0bcc79568ff38ab43c (from https://pypi.python.org/simple/PyYAML/); unknown archive format: .exe
+    Skipping link https://pypi.python.org/packages/3.3/P/PyYAML/PyYAML-3.11.win-amd64-py3.3.exe#md5=672275294ababb18794b328a24c836b4 (from https://pypi.python.org/simple/PyYAML/); unknown archive format: .exe
+    Skipping link https://pypi.python.org/packages/3.3/P/PyYAML/PyYAML-3.11.win32-py3.3.exe#md5=c3990781cc999744cd21df473068f388 (from https://pypi.python.org/simple/PyYAML/); unknown archive format: .exe
+    Skipping link https://pypi.python.org/packages/3.4/P/PyYAML/PyYAML-3.11.win-amd64-py3.4.exe#md5=0dfcdae003642dfdfb49d5f16ff63717 (from https://pypi.python.org/simple/PyYAML/); unknown archive format: .exe
+    Skipping link https://pypi.python.org/packages/3.4/P/PyYAML/PyYAML-3.11.win32-py3.4.exe#md5=5c14b49d828766c23bb9c83d6a60aaf5 (from https://pypi.python.org/simple/PyYAML/); unknown archive format: .exe
+    Found link https://pypi.python.org/packages/source/P/PyYAML/PyYAML-3.10.tar.gz#md5=74c94a383886519e9e7b3dd1ee540247 (from https://pypi.python.org/simple/PyYAML/), version: 3.10
+    Found link https://pypi.python.org/packages/source/P/PyYAML/PyYAML-3.10.zip#md5=b1a2b30cdf481da4249c917c3307f129 (from https://pypi.python.org/simple/PyYAML/), version: 3.10
+    Found link https://pypi.python.org/packages/source/P/PyYAML/PyYAML-3.11.tar.gz#md5=f50e08ef0fe55178479d3a618efe21db (from https://pypi.python.org/simple/PyYAML/), version: 3.11
+    Found link https://pypi.python.org/packages/source/P/PyYAML/PyYAML-3.11.zip#md5=89cbc92cda979042533b640b76e6e055 (from https://pypi.python.org/simple/PyYAML/), version: 3.11
+  Using version 3.11 (newest of versions: 3.11, 3.11, 3.10, 3.10)
+  Using download cache from /home/fedora/.cache/pip/https%3A%2F%2Fpypi.python.org%2Fpackages%2Fsource%2FP%2FPyYAML%2FPyYAML-3.11.tar.gz
+
+  Running setup.py egg_info for package PyYAML
+
+    running egg_info
+    creating pip-egg-info/PyYAML.egg-info
+    writing pip-egg-info/PyYAML.egg-info/PKG-INFO
+    writing top-level names to pip-egg-info/PyYAML.egg-info/top_level.txt
+    writing dependency_links to pip-egg-info/PyYAML.egg-info/dependency_links.txt
+    writing manifest file 'pip-egg-info/PyYAML.egg-info/SOURCES.txt'
+    warning: manifest_maker: standard file '-c' not found
+    
+
+    reading manifest file 'pip-egg-info/PyYAML.egg-info/SOURCES.txt'
+    writing manifest file 'pip-egg-info/PyYAML.egg-info/SOURCES.txt'
+  Source in /tmp/oslo-graduate.98CC/venv/build/PyYAML has version 3.11, which satisfies requirement PyYAML>=3.10 (from cookiecutter)
+Downloading/unpacking markupsafe (from jinja2>=2.4->cookiecutter)
+
+  Getting page https://pypi.python.org/simple/markupsafe/
+  URLs to search for versions for markupsafe (from jinja2>=2.4->cookiecutter):
+  * https://pypi.python.org/simple/markupsafe/
+  Analyzing links from page https://pypi.python.org/simple/MarkupSafe/
+    Found link https://pypi.python.org/packages/source/M/MarkupSafe/MarkupSafe-0.11.tar.gz#md5=48d445941c16d6aa55caf8e148fc0911 (from https://pypi.python.org/simple/MarkupSafe/), version: 0.11
+    Found link https://pypi.python.org/packages/source/M/MarkupSafe/MarkupSafe-0.12.tar.gz#md5=edd4b6950f6d4ddc6e23fa322f8f0f53 (from https://pypi.python.org/simple/MarkupSafe/), version: 0.12
+    Found link https://pypi.python.org/packages/source/M/MarkupSafe/MarkupSafe-0.13.tar.gz#md5=f44b8f4bba98b3e66884158f97585829 (from https://pypi.python.org/simple/MarkupSafe/), version: 0.13
+    Found link https://pypi.python.org/packages/source/M/MarkupSafe/MarkupSafe-0.14.tar.gz#md5=68c6ea6df002649218d24cf490a8ca82 (from https://pypi.python.org/simple/MarkupSafe/), version: 0.14
+    Found link https://pypi.python.org/packages/source/M/MarkupSafe/MarkupSafe-0.15.tar.gz#md5=4e7c4d965fe5e033fa2d7bb7746bb186 (from https://pypi.python.org/simple/MarkupSafe/), version: 0.15
+    Found link https://pypi.python.org/packages/source/M/MarkupSafe/MarkupSafe-0.16.tar.gz#md5=fe88012f7fe75252efd26cd25a100851 (from https://pypi.python.org/simple/MarkupSafe/), version: 0.16
+    Found link https://pypi.python.org/packages/source/M/MarkupSafe/MarkupSafe-0.17.tar.gz#md5=61d5edc130e3242cfaff9fd9fdefde8f (from https://pypi.python.org/simple/MarkupSafe/), version: 0.17
+    Found link https://pypi.python.org/packages/source/M/MarkupSafe/MarkupSafe-0.18.tar.gz#md5=f8d252fd05371e51dec2fe9a36890687 (from https://pypi.python.org/simple/MarkupSafe/), version: 0.18
+    Found link https://pypi.python.org/packages/source/M/MarkupSafe/MarkupSafe-0.19.tar.gz#md5=ccb3f746c807c5500850987006854a6d (from https://pypi.python.org/simple/MarkupSafe/), version: 0.19
+    Found link https://pypi.python.org/packages/source/M/MarkupSafe/MarkupSafe-0.20.tar.gz#md5=7da066d9cb191a70aa85d0a3d43565d1 (from https://pypi.python.org/simple/MarkupSafe/), version: 0.20
+    Found link https://pypi.python.org/packages/source/M/MarkupSafe/MarkupSafe-0.21.tar.gz#md5=fde838d9337fa51744283f46a1db2e74 (from https://pypi.python.org/simple/MarkupSafe/), version: 0.21
+    Found link https://pypi.python.org/packages/source/M/MarkupSafe/MarkupSafe-0.22.tar.gz#md5=cb3ec29fd5361add24cfd0c6e2953b3e (from https://pypi.python.org/simple/MarkupSafe/), version: 0.22
+    Found link https://pypi.python.org/packages/source/M/MarkupSafe/MarkupSafe-0.23.tar.gz#md5=f5ab3deee4c37cd6a922fb81e730da6e (from https://pypi.python.org/simple/MarkupSafe/), version: 0.23
+    Found link https://pypi.python.org/packages/source/M/MarkupSafe/MarkupSafe-0.9.1.tar.gz#md5=7f469f664b565b440f099997255e6d3c (from https://pypi.python.org/simple/MarkupSafe/), version: 0.9.1
+    Found link https://pypi.python.org/packages/source/M/MarkupSafe/MarkupSafe-0.9.2.tar.gz#md5=69b72d1afdd9e808f9c1ef65f819c7a6 (from https://pypi.python.org/simple/MarkupSafe/), version: 0.9.2
+    Found link https://pypi.python.org/packages/source/M/MarkupSafe/MarkupSafe-0.9.3.tar.gz#md5=99dccbeb83302f6b593d382098b3b43a (from https://pypi.python.org/simple/MarkupSafe/), version: 0.9.3
+    Found link https://pypi.python.org/packages/source/M/MarkupSafe/MarkupSafe-0.9.tar.gz#md5=10a7c6bf81f91f280ba9e76e32e01c94 (from https://pypi.python.org/simple/MarkupSafe/), version: 0.9
+  Using version 0.23 (newest of versions: 0.23, 0.22, 0.21, 0.20, 0.19, 0.18, 0.17, 0.16, 0.15, 0.14, 0.13, 0.12, 0.11, 0.9.3, 0.9.2, 0.9.1, 0.9)
+  Using download cache from /home/fedora/.cache/pip/https%3A%2F%2Fpypi.python.org%2Fpackages%2Fsource%2FM%2FMarkupSafe%2FMarkupSafe-0.23.tar.gz
+
+  Running setup.py egg_info for package markupsafe
+
+    running egg_info
+    creating pip-egg-info/MarkupSafe.egg-info
+    writing pip-egg-info/MarkupSafe.egg-info/PKG-INFO
+    writing top-level names to pip-egg-info/MarkupSafe.egg-info/top_level.txt
+    writing dependency_links to pip-egg-info/MarkupSafe.egg-info/dependency_links.txt
+    writing manifest file 'pip-egg-info/MarkupSafe.egg-info/SOURCES.txt'
+    warning: manifest_maker: standard file '-c' not found
+    
+
+    reading manifest file 'pip-egg-info/MarkupSafe.egg-info/SOURCES.txt'
+    reading manifest template 'MANIFEST.in'
+    writing manifest file 'pip-egg-info/MarkupSafe.egg-info/SOURCES.txt'
+  Source in /tmp/oslo-graduate.98CC/venv/build/markupsafe has version 0.23, which satisfies requirement markupsafe (from jinja2>=2.4->cookiecutter)
+Installing collected packages: cookiecutter, binaryornot, jinja2, PyYAML, markupsafe
+
+  Running setup.py install for cookiecutter
+
+    Running command /tmp/oslo-graduate.98CC/venv/bin/python -c "import setuptools;__file__='/tmp/oslo-graduate.98CC/venv/build/cookiecutter/setup.py';exec(compile(open(__file__).read().replace('\r\n', '\n'), __file__, 'exec'))" install --record /tmp/pip-qagH55-record/install-record.txt --single-version-externally-managed --install-headers /tmp/oslo-graduate.98CC/venv/include/site/python2.7
+    running install
+    running build
+    running build_py
+    creating build
+    creating build/lib
+    creating build/lib/cookiecutter
+    copying cookiecutter/config.py -> build/lib/cookiecutter
+    copying cookiecutter/__init__.py -> build/lib/cookiecutter
+    copying cookiecutter/main.py -> build/lib/cookiecutter
+    copying cookiecutter/utils.py -> build/lib/cookiecutter
+    copying cookiecutter/generate.py -> build/lib/cookiecutter
+    copying cookiecutter/prompt.py -> build/lib/cookiecutter
+    copying cookiecutter/exceptions.py -> build/lib/cookiecutter
+    copying cookiecutter/vcs.py -> build/lib/cookiecutter
+    copying cookiecutter/hooks.py -> build/lib/cookiecutter
+    copying cookiecutter/find.py -> build/lib/cookiecutter
+    running egg_info
+    writing requirements to cookiecutter.egg-info/requires.txt
+    writing cookiecutter.egg-info/PKG-INFO
+    writing top-level names to cookiecutter.egg-info/top_level.txt
+    writing dependency_links to cookiecutter.egg-info/dependency_links.txt
+    writing entry points to cookiecutter.egg-info/entry_points.txt
+    warning: manifest_maker: standard file '-c' not found
+    
+
+    reading manifest file 'cookiecutter.egg-info/SOURCES.txt'
+    reading manifest template 'MANIFEST.in'
+    warning: no previously-included files matching '__pycache__' found under directory '*'
+
+    warning: no previously-included files matching '*.py[co]' found under directory '*'
+
+    writing manifest file 'cookiecutter.egg-info/SOURCES.txt'
+    running install_lib
+    creating /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/cookiecutter
+    copying build/lib/cookiecutter/config.py -> /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/cookiecutter
+    copying build/lib/cookiecutter/__init__.py -> /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/cookiecutter
+    copying build/lib/cookiecutter/main.py -> /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/cookiecutter
+    copying build/lib/cookiecutter/utils.py -> /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/cookiecutter
+    copying build/lib/cookiecutter/generate.py -> /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/cookiecutter
+    copying build/lib/cookiecutter/prompt.py -> /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/cookiecutter
+    copying build/lib/cookiecutter/exceptions.py -> /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/cookiecutter
+    copying build/lib/cookiecutter/vcs.py -> /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/cookiecutter
+    copying build/lib/cookiecutter/hooks.py -> /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/cookiecutter
+    copying build/lib/cookiecutter/find.py -> /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/cookiecutter
+    byte-compiling /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/cookiecutter/config.py to config.pyc
+    byte-compiling /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/cookiecutter/__init__.py to __init__.pyc
+    byte-compiling /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/cookiecutter/main.py to main.pyc
+    byte-compiling /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/cookiecutter/utils.py to utils.pyc
+    byte-compiling /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/cookiecutter/generate.py to generate.pyc
+    byte-compiling /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/cookiecutter/prompt.py to prompt.pyc
+    byte-compiling /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/cookiecutter/exceptions.py to exceptions.pyc
+    byte-compiling /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/cookiecutter/vcs.py to vcs.pyc
+    byte-compiling /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/cookiecutter/hooks.py to hooks.pyc
+    byte-compiling /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/cookiecutter/find.py to find.pyc
+    running install_egg_info
+    Copying cookiecutter.egg-info to /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/cookiecutter-0.7.1-py2.7.egg-info
+    running install_scripts
+    Installing cookiecutter script to /tmp/oslo-graduate.98CC/venv/bin
+
+    writing list of installed files to '/tmp/pip-qagH55-record/install-record.txt'
+  Running setup.py install for binaryornot
+
+    Running command /tmp/oslo-graduate.98CC/venv/bin/python -c "import setuptools;__file__='/tmp/oslo-graduate.98CC/venv/build/binaryornot/setup.py';exec(compile(open(__file__).read().replace('\r\n', '\n'), __file__, 'exec'))" install --record /tmp/pip-UntluG-record/install-record.txt --single-version-externally-managed --install-headers /tmp/oslo-graduate.98CC/venv/include/site/python2.7
+    running install
+    running build
+    running build_py
+    creating build
+    creating build/lib
+    creating build/lib/binaryornot
+    copying binaryornot/helpers.py -> build/lib/binaryornot
+    copying binaryornot/__init__.py -> build/lib/binaryornot
+    copying binaryornot/check.py -> build/lib/binaryornot
+    running egg_info
+    writing binaryornot.egg-info/PKG-INFO
+    writing top-level names to binaryornot.egg-info/top_level.txt
+    writing dependency_links to binaryornot.egg-info/dependency_links.txt
+    warning: manifest_maker: standard file '-c' not found
+    
+
+    reading manifest file 'binaryornot.egg-info/SOURCES.txt'
+    reading manifest template 'MANIFEST.in'
+    warning: no previously-included files matching '__pycache__' found under directory '*'
+
+    warning: no previously-included files matching '*.py[co]' found under directory '*'
+
+    writing manifest file 'binaryornot.egg-info/SOURCES.txt'
+    running install_lib
+    creating /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/binaryornot
+    copying build/lib/binaryornot/helpers.py -> /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/binaryornot
+    copying build/lib/binaryornot/__init__.py -> /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/binaryornot
+    copying build/lib/binaryornot/check.py -> /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/binaryornot
+    byte-compiling /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/binaryornot/helpers.py to helpers.pyc
+    byte-compiling /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/binaryornot/__init__.py to __init__.pyc
+    byte-compiling /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/binaryornot/check.py to check.pyc
+    running install_egg_info
+    Copying binaryornot.egg-info to /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/binaryornot-0.3.0-py2.7.egg-info
+    running install_scripts
+    writing list of installed files to '/tmp/pip-UntluG-record/install-record.txt'
+  Running setup.py install for jinja2
+
+    Running command /tmp/oslo-graduate.98CC/venv/bin/python -c "import setuptools;__file__='/tmp/oslo-graduate.98CC/venv/build/jinja2/setup.py';exec(compile(open(__file__).read().replace('\r\n', '\n'), __file__, 'exec'))" install --record /tmp/pip-48wa7X-record/install-record.txt --single-version-externally-managed --install-headers /tmp/oslo-graduate.98CC/venv/include/site/python2.7
+    running install
+    running build
+    running build_py
+    creating build
+    creating build/lib
+    creating build/lib/jinja2
+    copying jinja2/meta.py -> build/lib/jinja2
+    copying jinja2/lexer.py -> build/lib/jinja2
+    copying jinja2/parser.py -> build/lib/jinja2
+    copying jinja2/environment.py -> build/lib/jinja2
+    copying jinja2/sandbox.py -> build/lib/jinja2
+    copying jinja2/bccache.py -> build/lib/jinja2
+    copying jinja2/nodes.py -> build/lib/jinja2
+    copying jinja2/filters.py -> build/lib/jinja2
+    copying jinja2/__init__.py -> build/lib/jinja2
+    copying jinja2/utils.py -> build/lib/jinja2
+    copying jinja2/ext.py -> build/lib/jinja2
+    copying jinja2/loaders.py -> build/lib/jinja2
+    copying jinja2/exceptions.py -> build/lib/jinja2
+    copying jinja2/optimizer.py -> build/lib/jinja2
+    copying jinja2/runtime.py -> build/lib/jinja2
+    copying jinja2/constants.py -> build/lib/jinja2
+    copying jinja2/defaults.py -> build/lib/jinja2
+    copying jinja2/visitor.py -> build/lib/jinja2
+    copying jinja2/tests.py -> build/lib/jinja2
+    copying jinja2/_stringdefs.py -> build/lib/jinja2
+    copying jinja2/_compat.py -> build/lib/jinja2
+    copying jinja2/compiler.py -> build/lib/jinja2
+    copying jinja2/debug.py -> build/lib/jinja2
+    creating build/lib/jinja2/testsuite
+    copying jinja2/testsuite/imports.py -> build/lib/jinja2/testsuite
+    copying jinja2/testsuite/core_tags.py -> build/lib/jinja2/testsuite
+    copying jinja2/testsuite/filters.py -> build/lib/jinja2/testsuite
+    copying jinja2/testsuite/__init__.py -> build/lib/jinja2/testsuite
+    copying jinja2/testsuite/api.py -> build/lib/jinja2/testsuite
+    copying jinja2/testsuite/utils.py -> build/lib/jinja2/testsuite
+    copying jinja2/testsuite/ext.py -> build/lib/jinja2/testsuite
+    copying jinja2/testsuite/doctests.py -> build/lib/jinja2/testsuite
+    copying jinja2/testsuite/security.py -> build/lib/jinja2/testsuite
+    copying jinja2/testsuite/lexnparse.py -> build/lib/jinja2/testsuite
+    copying jinja2/testsuite/regression.py -> build/lib/jinja2/testsuite
+    copying jinja2/testsuite/bytecode_cache.py -> build/lib/jinja2/testsuite
+    copying jinja2/testsuite/inheritance.py -> build/lib/jinja2/testsuite
+    copying jinja2/testsuite/tests.py -> build/lib/jinja2/testsuite
+    copying jinja2/testsuite/loader.py -> build/lib/jinja2/testsuite
+    copying jinja2/testsuite/debug.py -> build/lib/jinja2/testsuite
+    creating build/lib/jinja2/testsuite/res
+    copying jinja2/testsuite/res/__init__.py -> build/lib/jinja2/testsuite/res
+    running egg_info
+    writing requirements to Jinja2.egg-info/requires.txt
+    writing Jinja2.egg-info/PKG-INFO
+    writing top-level names to Jinja2.egg-info/top_level.txt
+    writing dependency_links to Jinja2.egg-info/dependency_links.txt
+    writing entry points to Jinja2.egg-info/entry_points.txt
+    warning: manifest_maker: standard file '-c' not found
+    
+
+    reading manifest file 'Jinja2.egg-info/SOURCES.txt'
+    reading manifest template 'MANIFEST.in'
+    warning: no files found matching '*' under directory 'custom_fixers'
+
+    warning: no previously-included files matching '*' found under directory 'docs/_build'
+
+    warning: no previously-included files matching '*.pyc' found under directory 'jinja2'
+
+    warning: no previously-included files matching '*.pyc' found under directory 'docs'
+
+    warning: no previously-included files matching '*.pyo' found under directory 'jinja2'
+
+    warning: no previously-included files matching '*.pyo' found under directory 'docs'
+
+    writing manifest file 'Jinja2.egg-info/SOURCES.txt'
+    creating build/lib/jinja2/testsuite/res/templates
+    copying jinja2/testsuite/res/templates/broken.html -> build/lib/jinja2/testsuite/res/templates
+    copying jinja2/testsuite/res/templates/syntaxerror.html -> build/lib/jinja2/testsuite/res/templates
+    copying jinja2/testsuite/res/templates/test.html -> build/lib/jinja2/testsuite/res/templates
+    creating build/lib/jinja2/testsuite/res/templates/foo
+    copying jinja2/testsuite/res/templates/foo/test.html -> build/lib/jinja2/testsuite/res/templates/foo
+    running install_lib
+    creating /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2
+    copying build/lib/jinja2/meta.py -> /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2
+    copying build/lib/jinja2/lexer.py -> /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2
+    copying build/lib/jinja2/parser.py -> /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2
+    copying build/lib/jinja2/environment.py -> /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2
+    copying build/lib/jinja2/sandbox.py -> /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2
+    copying build/lib/jinja2/bccache.py -> /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2
+    copying build/lib/jinja2/nodes.py -> /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2
+    copying build/lib/jinja2/filters.py -> /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2
+    creating /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2/testsuite
+    copying build/lib/jinja2/testsuite/imports.py -> /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2/testsuite
+    creating /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2/testsuite/res
+    copying build/lib/jinja2/testsuite/res/__init__.py -> /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2/testsuite/res
+    creating /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2/testsuite/res/templates
+    creating /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2/testsuite/res/templates/foo
+    copying build/lib/jinja2/testsuite/res/templates/foo/test.html -> /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2/testsuite/res/templates/foo
+    copying build/lib/jinja2/testsuite/res/templates/broken.html -> /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2/testsuite/res/templates
+    copying build/lib/jinja2/testsuite/res/templates/syntaxerror.html -> /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2/testsuite/res/templates
+    copying build/lib/jinja2/testsuite/res/templates/test.html -> /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2/testsuite/res/templates
+    copying build/lib/jinja2/testsuite/core_tags.py -> /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2/testsuite
+    copying build/lib/jinja2/testsuite/filters.py -> /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2/testsuite
+    copying build/lib/jinja2/testsuite/__init__.py -> /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2/testsuite
+    copying build/lib/jinja2/testsuite/api.py -> /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2/testsuite
+    copying build/lib/jinja2/testsuite/utils.py -> /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2/testsuite
+    copying build/lib/jinja2/testsuite/ext.py -> /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2/testsuite
+    copying build/lib/jinja2/testsuite/doctests.py -> /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2/testsuite
+    copying build/lib/jinja2/testsuite/security.py -> /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2/testsuite
+    copying build/lib/jinja2/testsuite/lexnparse.py -> /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2/testsuite
+    copying build/lib/jinja2/testsuite/regression.py -> /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2/testsuite
+    copying build/lib/jinja2/testsuite/bytecode_cache.py -> /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2/testsuite
+    copying build/lib/jinja2/testsuite/inheritance.py -> /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2/testsuite
+    copying build/lib/jinja2/testsuite/tests.py -> /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2/testsuite
+    copying build/lib/jinja2/testsuite/loader.py -> /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2/testsuite
+    copying build/lib/jinja2/testsuite/debug.py -> /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2/testsuite
+    copying build/lib/jinja2/__init__.py -> /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2
+    copying build/lib/jinja2/utils.py -> /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2
+    copying build/lib/jinja2/ext.py -> /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2
+    copying build/lib/jinja2/loaders.py -> /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2
+    copying build/lib/jinja2/exceptions.py -> /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2
+    copying build/lib/jinja2/optimizer.py -> /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2
+    copying build/lib/jinja2/runtime.py -> /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2
+    copying build/lib/jinja2/constants.py -> /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2
+    copying build/lib/jinja2/defaults.py -> /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2
+    copying build/lib/jinja2/visitor.py -> /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2
+    copying build/lib/jinja2/tests.py -> /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2
+    copying build/lib/jinja2/_stringdefs.py -> /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2
+    copying build/lib/jinja2/_compat.py -> /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2
+    copying build/lib/jinja2/compiler.py -> /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2
+    copying build/lib/jinja2/debug.py -> /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2
+    byte-compiling /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2/meta.py to meta.pyc
+    byte-compiling /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2/lexer.py to lexer.pyc
+    byte-compiling /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2/parser.py to parser.pyc
+    byte-compiling /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2/environment.py to environment.pyc
+    byte-compiling /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2/sandbox.py to sandbox.pyc
+    byte-compiling /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2/bccache.py to bccache.pyc
+    byte-compiling /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2/nodes.py to nodes.pyc
+    byte-compiling /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2/filters.py to filters.pyc
+    byte-compiling /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2/testsuite/imports.py to imports.pyc
+    byte-compiling /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2/testsuite/res/__init__.py to __init__.pyc
+    byte-compiling /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2/testsuite/core_tags.py to core_tags.pyc
+    byte-compiling /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2/testsuite/filters.py to filters.pyc
+    byte-compiling /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2/testsuite/__init__.py to __init__.pyc
+    byte-compiling /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2/testsuite/api.py to api.pyc
+    byte-compiling /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2/testsuite/utils.py to utils.pyc
+    byte-compiling /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2/testsuite/ext.py to ext.pyc
+    byte-compiling /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2/testsuite/doctests.py to doctests.pyc
+    byte-compiling /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2/testsuite/security.py to security.pyc
+    byte-compiling /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2/testsuite/lexnparse.py to lexnparse.pyc
+    byte-compiling /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2/testsuite/regression.py to regression.pyc
+    byte-compiling /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2/testsuite/bytecode_cache.py to bytecode_cache.pyc
+    byte-compiling /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2/testsuite/inheritance.py to inheritance.pyc
+    byte-compiling /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2/testsuite/tests.py to tests.pyc
+    byte-compiling /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2/testsuite/loader.py to loader.pyc
+    byte-compiling /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2/testsuite/debug.py to debug.pyc
+    byte-compiling /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2/__init__.py to __init__.pyc
+    byte-compiling /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2/utils.py to utils.pyc
+    byte-compiling /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2/ext.py to ext.pyc
+    byte-compiling /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2/loaders.py to loaders.pyc
+    byte-compiling /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2/exceptions.py to exceptions.pyc
+    byte-compiling /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2/optimizer.py to optimizer.pyc
+    byte-compiling /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2/runtime.py to runtime.pyc
+    byte-compiling /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2/constants.py to constants.pyc
+    byte-compiling /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2/defaults.py to defaults.pyc
+    byte-compiling /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2/visitor.py to visitor.pyc
+    byte-compiling /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2/tests.py to tests.pyc
+    byte-compiling /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2/_stringdefs.py to _stringdefs.pyc
+    byte-compiling /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2/_compat.py to _compat.pyc
+    byte-compiling /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2/compiler.py to compiler.pyc
+    byte-compiling /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/jinja2/debug.py to debug.pyc
+    running install_egg_info
+    Copying Jinja2.egg-info to /tmp/oslo-graduate.98CC/venv/lib/python2.7/site-packages/Jinja2-2.7.3-py2.7.egg-info
+    running install_scripts
+    writing list of installed files to '/tmp/pip-48wa7X-record/install-record.txt'
+  Running setup.py install for PyYAML
+
+    Running command /tmp/oslo-graduate.98CC/venv/bin/python -c "import setuptools;__file__='/tmp/oslo-graduate.98CC/venv/build/PyYAML/setup.py';exec(compile(open(__file__).read().replace('\r\n', '\n'), __file__, 'exec'))" install --record /tmp/pip-oUSXoF-record/install-record.txt --single-version-externally-managed --install-headers /tmp/oslo-graduate.98CC/venv/include/site/python2.7
+    running install
+    running build
+    running build_py
+    creating build
+    creating build/lib.linux-x86_64-2.7
+    creating build/lib.linux-x86_64-2.7/yaml
+    copying lib/yaml/parser.py -> build/lib.linux-x86_64-2.7/yaml
+    copying lib/yaml/scanner.py -> build/lib.linux-x86_64-2.7/yaml
+    copying lib/yaml/error.py -> build/lib.linux-x86_64-2.7/yaml
+    copying lib/yaml/representer.py -> build/lib.linux-x86_64-2.7/yaml
+    copying lib/yaml/constructor.py -> build/lib.linux-x86_64-2.7/yaml
+    copying lib/yaml/nodes.py -> build/lib.linux-x86_64-2.7/yaml
+    copying lib/yaml/__init__.py -> build/lib.linux-x86_64-2.7/yaml
+    copying lib/yaml/composer.py -> build/lib.linux-x86_64-2.7/yaml
+    copying lib/yaml/tokens.py -> build/lib.linux-x86_64-2.7/yaml
+    copying lib/yaml/cyaml.py -> build/lib.linux-x86_64-2.7/yaml
+    copying lib/yaml/serializer.py -> build/lib.linux-x86_64-2.7/yaml
+    copying lib/yaml/emitter.py -> build/lib.linux-x86_64-2.7/yaml
+    copying lib/yaml/reader.py -> build/lib.linux-x86_64-2.7/yaml
+    copying lib/yaml/dumper.py -> build/lib.linux-x86_64-2.7/yaml
+    copying lib/yaml/loader.py -> build/lib.linux-x86_64-2.7/yaml
+    copying lib/yaml/events.py -> build/lib.linux-x86_64-2.7/yaml
+    copying lib/yaml/resolver.py -> build/lib.linux-x86_64-2.7/yaml
+    running build_ext
+    creating build/temp.linux-x86_64-2.7
+    checking if libyaml is compilable
+
+    gcc -pthread -fno-strict-aliasing -O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong --param=ssp-buffer-size=4 -grecord-gcc-switches -m64 -mtune=generic -D_GNU_SOURCE -fPIC -fwrapv -DNDEBUG -O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong --param=ssp-buffer-size=4 -grecord-gcc-switches -m64 -mtune=generic -D_GNU_SOURCE -fPIC -fwrapv -fPIC -I/usr/include/python2.7 -c build/temp.linux-x86_64-2.7/check_libyaml.c -o build/temp.linux-x86_64-2.7/check_libyaml.o
+
+    checking if libyaml is linkable
+
+    gcc -pthread build/temp.linux-x86_64-2.7/check_libyaml.o -L/usr/lib64 -lyaml -o build/temp.linux-x86_64-2.7/check_libyaml
+
+    building '_yaml' extension
+
+    creating build/temp.linux-x86_64-2.7/ext
+    gcc -pthread -fno-strict-aliasing -O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong --param=ssp-buffer-size=4 -grecord-gcc-switches -m64 -mtune=generic -D_GNU_SOURCE -fPIC -fwrapv -DNDEBUG -O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong --param=ssp-buffer-size=4 -grecord-gcc-switches -m64 -mtune=generic -D_GNU_SOURCE -fPIC -fwrapv -fPIC -I/usr/include/python2.7 -c ext/_yaml.c -o build/temp.linux-x86_64-2.7/ext/_yaml.o
+
+    In file included from ext/_yaml.c:343:0:
+
+    ext/_yaml.h:6:0: warning: "PyUnicode_FromString" redefined [enabled by default]
+
+     #define PyUnicode_FromString(s) PyUnicode_DecodeUTF8((s), strlen(s), "strict")
+
+     ^
+
+    In file included from /usr/include/python2.7/Python.h:85:0,
+
+                     from ext/_yaml.c:16:
+
+    /usr/include/python2.7/unicodeobject.h:281:0: note: this is the location of the previous definition
+
+     # define PyUnicode_FromString PyUnicodeUCS4_FromString
+
+     ^
+
+    ext/_yaml.c: In function ‘__pyx_pf_5_yaml_get_version_string’:
+
+    ext/_yaml.c:1346:17: warning: assignment discards ‘const’ qualifier from pointer target type [enabled by default]
+
+       __pyx_v_value = yaml_get_version_string();
+
+                     ^
+
+    ext/_yaml.c: In function ‘__pyx_pf_5_yaml_7CParser___init__’:
+
+    ext/_yaml.c:2471:5: warning: passing argument 2 of ‘yaml_parser_set_input’ from incompatible pointer type [enabled by default]
+
+         yaml_parser_set_input((&__pyx_v_self->parser), __pyx_f_5_yaml_input_handler, ((void *)__pyx_v_self));
+
+         ^
+
+    In file included from ext/_yaml.h:2:0,
+
+                     from ext/_yaml.c:343:
+
+    /usr/include/yaml.h:1367:1: note: expected ‘int (*)(void *, unsigned char *, size_t,  size_t *)’ but argument is of type ‘int (*)(void *, char *, int,  int *)’
+
+     yaml_parser_set_input(yaml_parser_t *parser,
+
+     ^
+
+    ext/_yaml.c:2664:5: warning: pointer targets in passing argument 2 of ‘yaml_parser_set_input_string’ differ in signedness [-Wpointer-sign]
+
+         yaml_parser_set_input_string((&__pyx_v_self->parser), PyString_AS_STRING(__pyx_v_stream), PyString_GET_SIZE(__pyx_v_stream));
+
+         ^
+
+    In file included from ext/_yaml.h:2:0,
+
+                     from ext/_yaml.c:343:
+
+    /usr/include/yaml.h:1341:1: note: expected ‘const unsigned char *’ but argument is of type ‘char *’
+
+     yaml_parser_set_input_string(yaml_parser_t *parser,
+
+     ^
+
+    ext/_yaml.c: In function ‘__pyx_f_5_yaml_7CParser__token_to_object’:
+
+    ext/_yaml.c:4183:5: warning: pointer targets in passing argument 1 of ‘strlen’ differ in signedness [-Wpointer-sign]
+
+         __pyx_t_3 = PyUnicode_FromString(__pyx_v_token->data.tag_directive.handle); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 417; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+
+         ^
+
+    In file included from /usr/include/python2.7/Python.h:38:0,
+
+                     from ext/_yaml.c:16:
+
+    /usr/include/string.h:395:15: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’
+
+     extern size_t strlen (const char *__s)
+
+                   ^
+
+    ext/_yaml.c:4183:5: warning: pointer targets in passing argument 1 of ‘PyUnicodeUCS4_DecodeUTF8’ differ in signedness [-Wpointer-sign]
+
+         __pyx_t_3 = PyUnicode_FromString(__pyx_v_token->data.tag_directive.handle); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 417; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+
+         ^
+
+    In file included from /usr/include/python2.7/Python.h:85:0,
+
+                     from ext/_yaml.c:16:
+
+    /usr/include/python2.7/unicodeobject.h:750:11: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’
+
+     PyAPI_FUNC(PyObject*) PyUnicode_DecodeUTF8(
+
+               ^
+
+    ext/_yaml.c:4195:5: warning: pointer targets in passing argument 1 of ‘strlen’ differ in signedness [-Wpointer-sign]
+
+         __pyx_t_3 = PyUnicode_FromString(__pyx_v_token->data.tag_directive.prefix); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 418; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+
+         ^
+
+    In file included from /usr/include/python2.7/Python.h:38:0,
+
+                     from ext/_yaml.c:16:
+
+    /usr/include/string.h:395:15: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’
+
+     extern size_t strlen (const char *__s)
+
+                   ^
+
+    ext/_yaml.c:4195:5: warning: pointer targets in passing argument 1 of ‘PyUnicodeUCS4_DecodeUTF8’ differ in signedness [-Wpointer-sign]
+
+         __pyx_t_3 = PyUnicode_FromString(__pyx_v_token->data.tag_directive.prefix); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 418; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+
+         ^
+
+    In file included from /usr/include/python2.7/Python.h:85:0,
+
+                     from ext/_yaml.c:16:
+
+    /usr/include/python2.7/unicodeobject.h:750:11: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’
+
+     PyAPI_FUNC(PyObject*) PyUnicode_DecodeUTF8(
+
+               ^
+
+    ext/_yaml.c:4741:5: warning: pointer targets in passing argument 1 of ‘strlen’ differ in signedness [-Wpointer-sign]
+
+         __pyx_t_3 = PyUnicode_FromString(__pyx_v_token->data.alias.value); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 448; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+
+         ^
+
+    In file included from /usr/include/python2.7/Python.h:38:0,
+
+                     from ext/_yaml.c:16:
+
+    /usr/include/string.h:395:15: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’
+
+     extern size_t strlen (const char *__s)
+
+                   ^
+
+    ext/_yaml.c:4741:5: warning: pointer targets in passing argument 1 of ‘PyUnicodeUCS4_DecodeUTF8’ differ in signedness [-Wpointer-sign]
+
+         __pyx_t_3 = PyUnicode_FromString(__pyx_v_token->data.alias.value); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 448; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+
+         ^
+
+    In file included from /usr/include/python2.7/Python.h:85:0,
+
+                     from ext/_yaml.c:16:
+
+    /usr/include/python2.7/unicodeobject.h:750:11: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’
+
+     PyAPI_FUNC(PyObject*) PyUnicode_DecodeUTF8(
+
+               ^
+
+    ext/_yaml.c:4792:5: warning: pointer targets in passing argument 1 of ‘strlen’ differ in signedness [-Wpointer-sign]
+
+         __pyx_t_4 = PyUnicode_FromString(__pyx_v_token->data.anchor.value); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 451; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+
+         ^
+
+    In file included from /usr/include/python2.7/Python.h:38:0,
+
+                     from ext/_yaml.c:16:
+
+    /usr/include/string.h:395:15: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’
+
+     extern size_t strlen (const char *__s)
+
+                   ^
+
+    ext/_yaml.c:4792:5: warning: pointer targets in passing argument 1 of ‘PyUnicodeUCS4_DecodeUTF8’ differ in signedness [-Wpointer-sign]
+
+         __pyx_t_4 = PyUnicode_FromString(__pyx_v_token->data.anchor.value); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 451; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+
+         ^
+
+    In file included from /usr/include/python2.7/Python.h:85:0,
+
+                     from ext/_yaml.c:16:
+
+    /usr/include/python2.7/unicodeobject.h:750:11: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’
+
+     PyAPI_FUNC(PyObject*) PyUnicode_DecodeUTF8(
+
+               ^
+
+    ext/_yaml.c:4843:5: warning: pointer targets in passing argument 1 of ‘strlen’ differ in signedness [-Wpointer-sign]
+
+         __pyx_t_3 = PyUnicode_FromString(__pyx_v_token->data.tag.handle); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 454; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+
+         ^
+
+    In file included from /usr/include/python2.7/Python.h:38:0,
+
+                     from ext/_yaml.c:16:
+
+    /usr/include/string.h:395:15: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’
+
+     extern size_t strlen (const char *__s)
+
+                   ^
+
+    ext/_yaml.c:4843:5: warning: pointer targets in passing argument 1 of ‘PyUnicodeUCS4_DecodeUTF8’ differ in signedness [-Wpointer-sign]
+
+         __pyx_t_3 = PyUnicode_FromString(__pyx_v_token->data.tag.handle); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 454; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+
+         ^
+
+    In file included from /usr/include/python2.7/Python.h:85:0,
+
+                     from ext/_yaml.c:16:
+
+    /usr/include/python2.7/unicodeobject.h:750:11: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’
+
+     PyAPI_FUNC(PyObject*) PyUnicode_DecodeUTF8(
+
+               ^
+
+    ext/_yaml.c:4855:5: warning: pointer targets in passing argument 1 of ‘strlen’ differ in signedness [-Wpointer-sign]
+
+         __pyx_t_3 = PyUnicode_FromString(__pyx_v_token->data.tag.suffix); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 455; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+
+         ^
+
+    In file included from /usr/include/python2.7/Python.h:38:0,
+
+                     from ext/_yaml.c:16:
+
+    /usr/include/string.h:395:15: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’
+
+     extern size_t strlen (const char *__s)
+
+                   ^
+
+    ext/_yaml.c:4855:5: warning: pointer targets in passing argument 1 of ‘PyUnicodeUCS4_DecodeUTF8’ differ in signedness [-Wpointer-sign]
+
+         __pyx_t_3 = PyUnicode_FromString(__pyx_v_token->data.tag.suffix); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 455; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+
+         ^
+
+    In file included from /usr/include/python2.7/Python.h:85:0,
+
+                     from ext/_yaml.c:16:
+
+    /usr/include/python2.7/unicodeobject.h:750:11: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’
+
+     PyAPI_FUNC(PyObject*) PyUnicode_DecodeUTF8(
+
+               ^
+
+    ext/_yaml.c:4938:5: warning: pointer targets in passing argument 1 of ‘PyUnicodeUCS4_DecodeUTF8’ differ in signedness [-Wpointer-sign]
+
+         __pyx_t_2 = PyUnicode_DecodeUTF8(__pyx_v_token->data.scalar.value, __pyx_v_token->data.scalar.length, __pyx_k_strict); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 460; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+
+         ^
+
+    In file included from /usr/include/python2.7/Python.h:85:0,
+
+                     from ext/_yaml.c:16:
+
+    /usr/include/python2.7/unicodeobject.h:750:11: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’
+
+     PyAPI_FUNC(PyObject*) PyUnicode_DecodeUTF8(
+
+               ^
+
+    ext/_yaml.c: In function ‘__pyx_f_5_yaml_7CParser__event_to_object’:
+
+    ext/_yaml.c:6435:9: warning: pointer targets in passing argument 1 of ‘strlen’ differ in signedness [-Wpointer-sign]
+
+             __pyx_t_4 = PyUnicode_FromString(__pyx_v_tag_directive->handle); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 574; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+
+             ^
+
+    In file included from /usr/include/python2.7/Python.h:38:0,
+
+                     from ext/_yaml.c:16:
+
+    /usr/include/string.h:395:15: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’
+
+     extern size_t strlen (const char *__s)
+
+                   ^
+
+    ext/_yaml.c:6435:9: warning: pointer targets in passing argument 1 of ‘PyUnicodeUCS4_DecodeUTF8’ differ in signedness [-Wpointer-sign]
+
+             __pyx_t_4 = PyUnicode_FromString(__pyx_v_tag_directive->handle); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 574; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+
+             ^
+
+    In file included from /usr/include/python2.7/Python.h:85:0,
+
+                     from ext/_yaml.c:16:
+
+    /usr/include/python2.7/unicodeobject.h:750:11: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’
+
+     PyAPI_FUNC(PyObject*) PyUnicode_DecodeUTF8(
+
+               ^
+
+    ext/_yaml.c:6447:9: warning: pointer targets in passing argument 1 of ‘strlen’ differ in signedness [-Wpointer-sign]
+
+             __pyx_t_4 = PyUnicode_FromString(__pyx_v_tag_directive->prefix); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 575; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+
+             ^
+
+    In file included from /usr/include/python2.7/Python.h:38:0,
+
+                     from ext/_yaml.c:16:
+
+    /usr/include/string.h:395:15: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’
+
+     extern size_t strlen (const char *__s)
+
+                   ^
+
+    ext/_yaml.c:6447:9: warning: pointer targets in passing argument 1 of ‘PyUnicodeUCS4_DecodeUTF8’ differ in signedness [-Wpointer-sign]
+
+             __pyx_t_4 = PyUnicode_FromString(__pyx_v_tag_directive->prefix); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 575; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+
+             ^
+
+    In file included from /usr/include/python2.7/Python.h:85:0,
+
+                     from ext/_yaml.c:16:
+
+    /usr/include/python2.7/unicodeobject.h:750:11: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’
+
+     PyAPI_FUNC(PyObject*) PyUnicode_DecodeUTF8(
+
+               ^
+
+    ext/_yaml.c:6616:5: warning: pointer targets in passing argument 1 of ‘strlen’ differ in signedness [-Wpointer-sign]
+
+         __pyx_t_2 = PyUnicode_FromString(__pyx_v_event->data.alias.anchor); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 586; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+
+         ^
+
+    In file included from /usr/include/python2.7/Python.h:38:0,
+
+                     from ext/_yaml.c:16:
+
+    /usr/include/string.h:395:15: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’
+
+     extern size_t strlen (const char *__s)
+
+                   ^
+
+    ext/_yaml.c:6616:5: warning: pointer targets in passing argument 1 of ‘PyUnicodeUCS4_DecodeUTF8’ differ in signedness [-Wpointer-sign]
+
+         __pyx_t_2 = PyUnicode_FromString(__pyx_v_event->data.alias.anchor); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 586; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+
+         ^
+
+    In file included from /usr/include/python2.7/Python.h:85:0,
+
+                     from ext/_yaml.c:16:
+
+    /usr/include/python2.7/unicodeobject.h:750:11: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’
+
+     PyAPI_FUNC(PyObject*) PyUnicode_DecodeUTF8(
+
+               ^
+
+    ext/_yaml.c:6687:7: warning: pointer targets in passing argument 1 of ‘strlen’ differ in signedness [-Wpointer-sign]
+
+           __pyx_t_1 = PyUnicode_FromString(__pyx_v_event->data.scalar.anchor); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 591; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+
+           ^
+
+    In file included from /usr/include/python2.7/Python.h:38:0,
+
+                     from ext/_yaml.c:16:
+
+    /usr/include/string.h:395:15: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’
+
+     extern size_t strlen (const char *__s)
+
+                   ^
+
+    ext/_yaml.c:6687:7: warning: pointer targets in passing argument 1 of ‘PyUnicodeUCS4_DecodeUTF8’ differ in signedness [-Wpointer-sign]
+
+           __pyx_t_1 = PyUnicode_FromString(__pyx_v_event->data.scalar.anchor); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 591; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+
+           ^
+
+    In file included from /usr/include/python2.7/Python.h:85:0,
+
+                     from ext/_yaml.c:16:
+
+    /usr/include/python2.7/unicodeobject.h:750:11: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’
+
+     PyAPI_FUNC(PyObject*) PyUnicode_DecodeUTF8(
+
+               ^
+
+    ext/_yaml.c:6722:7: warning: pointer targets in passing argument 1 of ‘strlen’ differ in signedness [-Wpointer-sign]
+
+           __pyx_t_1 = PyUnicode_FromString(__pyx_v_event->data.scalar.tag); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 594; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+
+           ^
+
+    In file included from /usr/include/python2.7/Python.h:38:0,
+
+                     from ext/_yaml.c:16:
+
+    /usr/include/string.h:395:15: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’
+
+     extern size_t strlen (const char *__s)
+
+                   ^
+
+    ext/_yaml.c:6722:7: warning: pointer targets in passing argument 1 of ‘PyUnicodeUCS4_DecodeUTF8’ differ in signedness [-Wpointer-sign]
+
+           __pyx_t_1 = PyUnicode_FromString(__pyx_v_event->data.scalar.tag); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 594; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+
+           ^
+
+    In file included from /usr/include/python2.7/Python.h:85:0,
+
+                     from ext/_yaml.c:16:
+
+    /usr/include/python2.7/unicodeobject.h:750:11: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’
+
+     PyAPI_FUNC(PyObject*) PyUnicode_DecodeUTF8(
+
+               ^
+
+    ext/_yaml.c:6737:5: warning: pointer targets in passing argument 1 of ‘PyUnicodeUCS4_DecodeUTF8’ differ in signedness [-Wpointer-sign]
+
+         __pyx_t_1 = PyUnicode_DecodeUTF8(__pyx_v_event->data.scalar.value, __pyx_v_event->data.scalar.length, __pyx_k_strict); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 595; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+
+         ^
+
+    In file included from /usr/include/python2.7/Python.h:85:0,
+
+                     from ext/_yaml.c:16:
+
+    /usr/include/python2.7/unicodeobject.h:750:11: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’
+
+     PyAPI_FUNC(PyObject*) PyUnicode_DecodeUTF8(
+
+               ^
+
+    ext/_yaml.c:7031:7: warning: pointer targets in passing argument 1 of ‘strlen’ differ in signedness [-Wpointer-sign]
+
+           __pyx_t_3 = PyUnicode_FromString(__pyx_v_event->data.sequence_start.anchor); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 620; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+
+           ^
+
+    In file included from /usr/include/python2.7/Python.h:38:0,
+
+                     from ext/_yaml.c:16:
+
+    /usr/include/string.h:395:15: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’
+
+     extern size_t strlen (const char *__s)
+
+                   ^
+
+    ext/_yaml.c:7031:7: warning: pointer targets in passing argument 1 of ‘PyUnicodeUCS4_DecodeUTF8’ differ in signedness [-Wpointer-sign]
+
+           __pyx_t_3 = PyUnicode_FromString(__pyx_v_event->data.sequence_start.anchor); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 620; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+
+           ^
+
+    In file included from /usr/include/python2.7/Python.h:85:0,
+
+                     from ext/_yaml.c:16:
+
+    /usr/include/python2.7/unicodeobject.h:750:11: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’
+
+     PyAPI_FUNC(PyObject*) PyUnicode_DecodeUTF8(
+
+               ^
+
+    ext/_yaml.c:7066:7: warning: pointer targets in passing argument 1 of ‘strlen’ differ in signedness [-Wpointer-sign]
+
+           __pyx_t_3 = PyUnicode_FromString(__pyx_v_event->data.sequence_start.tag); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 623; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+
+           ^
+
+    In file included from /usr/include/python2.7/Python.h:38:0,
+
+                     from ext/_yaml.c:16:
+
+    /usr/include/string.h:395:15: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’
+
+     extern size_t strlen (const char *__s)
+
+                   ^
+
+    ext/_yaml.c:7066:7: warning: pointer targets in passing argument 1 of ‘PyUnicodeUCS4_DecodeUTF8’ differ in signedness [-Wpointer-sign]
+
+           __pyx_t_3 = PyUnicode_FromString(__pyx_v_event->data.sequence_start.tag); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 623; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+
+           ^
+
+    In file included from /usr/include/python2.7/Python.h:85:0,
+
+                     from ext/_yaml.c:16:
+
+    /usr/include/python2.7/unicodeobject.h:750:11: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’
+
+     PyAPI_FUNC(PyObject*) PyUnicode_DecodeUTF8(
+
+               ^
+
+    ext/_yaml.c:7253:7: warning: pointer targets in passing argument 1 of ‘strlen’ differ in signedness [-Wpointer-sign]
+
+           __pyx_t_2 = PyUnicode_FromString(__pyx_v_event->data.mapping_start.anchor); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 637; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+
+           ^
+
+    In file included from /usr/include/python2.7/Python.h:38:0,
+
+                     from ext/_yaml.c:16:
+
+    /usr/include/string.h:395:15: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’
+
+     extern size_t strlen (const char *__s)
+
+                   ^
+
+    ext/_yaml.c:7253:7: warning: pointer targets in passing argument 1 of ‘PyUnicodeUCS4_DecodeUTF8’ differ in signedness [-Wpointer-sign]
+
+           __pyx_t_2 = PyUnicode_FromString(__pyx_v_event->data.mapping_start.anchor); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 637; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+
+           ^
+
+    In file included from /usr/include/python2.7/Python.h:85:0,
+
+                     from ext/_yaml.c:16:
+
+    /usr/include/python2.7/unicodeobject.h:750:11: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’
+
+     PyAPI_FUNC(PyObject*) PyUnicode_DecodeUTF8(
+
+               ^
+
+    ext/_yaml.c:7288:7: warning: pointer targets in passing argument 1 of ‘strlen’ differ in signedness [-Wpointer-sign]
+
+           __pyx_t_2 = PyUnicode_FromString(__pyx_v_event->data.mapping_start.tag); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 640; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+
+           ^
+
+    In file included from /usr/include/python2.7/Python.h:38:0,
+
+                     from ext/_yaml.c:16:
+
+    /usr/include/string.h:395:15: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’
+
+     extern size_t strlen (const char *__s)
+
+                   ^
+
+    ext/_yaml.c:7288:7: warning: pointer targets in passing argument 1 of ‘PyUnicodeUCS4_DecodeUTF8’ differ in signedness [-Wpointer-sign]
+
+           __pyx_t_2 = PyUnicode_FromString(__pyx_v_event->data.mapping_start.tag); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 640; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+
+           ^
+
+    In file included from /usr/include/python2.7/Python.h:85:0,
+
+                     from ext/_yaml.c:16:
+
+    /usr/include/python2.7/unicodeobject.h:750:11: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’
+
+     PyAPI_FUNC(PyObject*) PyUnicode_DecodeUTF8(
+
+               ^
+
+    ext/_yaml.c: In function ‘__pyx_f_5_yaml_7CParser__compose_node’:
+
+    ext/_yaml.c:8704:5: warning: pointer targets in passing argument 1 of ‘strlen’ differ in signedness [-Wpointer-sign]
+
+         __pyx_t_3 = PyUnicode_FromString(__pyx_v_self->parsed_event.data.alias.anchor); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 734; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+
+         ^
+
+    In file included from /usr/include/python2.7/Python.h:38:0,
+
+                     from ext/_yaml.c:16:
+
+    /usr/include/string.h:395:15: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’
+
+     extern size_t strlen (const char *__s)
+
+                   ^
+
+    ext/_yaml.c:8704:5: warning: pointer targets in passing argument 1 of ‘PyUnicodeUCS4_DecodeUTF8’ differ in signedness [-Wpointer-sign]
+
+         __pyx_t_3 = PyUnicode_FromString(__pyx_v_self->parsed_event.data.alias.anchor); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 734; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+
+         ^
+
+    In file included from /usr/include/python2.7/Python.h:85:0,
+
+                     from ext/_yaml.c:16:
+
+    /usr/include/python2.7/unicodeobject.h:750:11: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’
+
+     PyAPI_FUNC(PyObject*) PyUnicode_DecodeUTF8(
+
+               ^
+
+    ext/_yaml.c:8924:5: warning: pointer targets in passing argument 1 of ‘strlen’ differ in signedness [-Wpointer-sign]
+
+         __pyx_t_6 = PyUnicode_FromString(__pyx_v_self->parsed_event.data.scalar.anchor); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 750; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+
+         ^
+
+    In file included from /usr/include/python2.7/Python.h:38:0,
+
+                     from ext/_yaml.c:16:
+
+    /usr/include/string.h:395:15: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’
+
+     extern size_t strlen (const char *__s)
+
+                   ^
+
+    ext/_yaml.c:8924:5: warning: pointer targets in passing argument 1 of ‘PyUnicodeUCS4_DecodeUTF8’ differ in signedness [-Wpointer-sign]
+
+         __pyx_t_6 = PyUnicode_FromString(__pyx_v_self->parsed_event.data.scalar.anchor); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 750; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+
+         ^
+
+    In file included from /usr/include/python2.7/Python.h:85:0,
+
+                     from ext/_yaml.c:16:
+
+    /usr/include/python2.7/unicodeobject.h:750:11: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’
+
+     PyAPI_FUNC(PyObject*) PyUnicode_DecodeUTF8(
+
+               ^
+
+    ext/_yaml.c:8962:5: warning: pointer targets in passing argument 1 of ‘strlen’ differ in signedness [-Wpointer-sign]
+
+         __pyx_t_6 = PyUnicode_FromString(__pyx_v_self->parsed_event.data.sequence_start.anchor); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 753; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+
+         ^
+
+    In file included from /usr/include/python2.7/Python.h:38:0,
+
+                     from ext/_yaml.c:16:
+
+    /usr/include/string.h:395:15: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’
+
+     extern size_t strlen (const char *__s)
+
+                   ^
+
+    ext/_yaml.c:8962:5: warning: pointer targets in passing argument 1 of ‘PyUnicodeUCS4_DecodeUTF8’ differ in signedness [-Wpointer-sign]
+
+         __pyx_t_6 = PyUnicode_FromString(__pyx_v_self->parsed_event.data.sequence_start.anchor); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 753; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+
+         ^
+
+    In file included from /usr/include/python2.7/Python.h:85:0,
+
+                     from ext/_yaml.c:16:
+
+    /usr/include/python2.7/unicodeobject.h:750:11: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’
+
+     PyAPI_FUNC(PyObject*) PyUnicode_DecodeUTF8(
+
+               ^
+
+    ext/_yaml.c:9000:5: warning: pointer targets in passing argument 1 of ‘strlen’ differ in signedness [-Wpointer-sign]
+
+         __pyx_t_6 = PyUnicode_FromString(__pyx_v_self->parsed_event.data.mapping_start.anchor); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 756; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+
+         ^
+
+    In file included from /usr/include/python2.7/Python.h:38:0,
+
+                     from ext/_yaml.c:16:
+
+    /usr/include/string.h:395:15: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’
+
+     extern size_t strlen (const char *__s)
+
+                   ^
+
+    ext/_yaml.c:9000:5: warning: pointer targets in passing argument 1 of ‘PyUnicodeUCS4_DecodeUTF8’ differ in signedness [-Wpointer-sign]
+
+         __pyx_t_6 = PyUnicode_FromString(__pyx_v_self->parsed_event.data.mapping_start.anchor); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 756; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+
+         ^
+
+    In file included from /usr/include/python2.7/Python.h:85:0,
+
+                     from ext/_yaml.c:16:
+
+    /usr/include/python2.7/unicodeobject.h:750:11: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’
+
+     PyAPI_FUNC(PyObject*) PyUnicode_DecodeUTF8(
+
+               ^
+
+    ext/_yaml.c: In function ‘__pyx_f_5_yaml_7CParser__compose_scalar_node’:
+
+    ext/_yaml.c:9532:3: warning: pointer targets in passing argument 1 of ‘PyUnicodeUCS4_DecodeUTF8’ differ in signedness [-Wpointer-sign]
+
+       __pyx_t_2 = PyUnicode_DecodeUTF8(__pyx_v_self->parsed_event.data.scalar.value, __pyx_v_self->parsed_event.data.scalar.length, __pyx_k_strict); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 791; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+
+       ^
+
+    In file included from /usr/include/python2.7/Python.h:85:0,
+
+                     from ext/_yaml.c:16:
+
+    /usr/include/python2.7/unicodeobject.h:750:11: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’
+
+     PyAPI_FUNC(PyObject*) PyUnicode_DecodeUTF8(
+
+               ^
+
+    ext/_yaml.c:9688:5: warning: pointer targets in passing argument 1 of ‘strlen’ differ in signedness [-Wpointer-sign]
+
+         __pyx_t_9 = PyUnicode_FromString(__pyx_v_self->parsed_event.data.scalar.tag); if (unlikely(!__pyx_t_9)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 804; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+
+         ^
+
+    In file included from /usr/include/python2.7/Python.h:38:0,
+
+                     from ext/_yaml.c:16:
+
+    /usr/include/string.h:395:15: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’
+
+     extern size_t strlen (const char *__s)
+
+                   ^
+
+    ext/_yaml.c:9688:5: warning: pointer targets in passing argument 1 of ‘PyUnicodeUCS4_DecodeUTF8’ differ in signedness [-Wpointer-sign]
+
+         __pyx_t_9 = PyUnicode_FromString(__pyx_v_self->parsed_event.data.scalar.tag); if (unlikely(!__pyx_t_9)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 804; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+
+         ^
+
+    In file included from /usr/include/python2.7/Python.h:85:0,
+
+                     from ext/_yaml.c:16:
+
+    /usr/include/python2.7/unicodeobject.h:750:11: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’
+
+     PyAPI_FUNC(PyObject*) PyUnicode_DecodeUTF8(
+
+               ^
+
+    ext/_yaml.c: In function ‘__pyx_f_5_yaml_7CParser__compose_sequence_node’:
+
+    ext/_yaml.c:10128:5: warning: pointer targets in passing argument 1 of ‘strlen’ differ in signedness [-Wpointer-sign]
+
+         __pyx_t_2 = PyUnicode_FromString(__pyx_v_self->parsed_event.data.sequence_start.tag); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 837; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+
+         ^
+
+    In file included from /usr/include/python2.7/Python.h:38:0,
+
+                     from ext/_yaml.c:16:
+
+    /usr/include/string.h:395:15: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’
+
+     extern size_t strlen (const char *__s)
+
+                   ^
+
+    ext/_yaml.c:10128:5: warning: pointer targets in passing argument 1 of ‘PyUnicodeUCS4_DecodeUTF8’ differ in signedness [-Wpointer-sign]
+
+         __pyx_t_2 = PyUnicode_FromString(__pyx_v_self->parsed_event.data.sequence_start.tag); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 837; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+
+         ^
+
+    In file included from /usr/include/python2.7/Python.h:85:0,
+
+                     from ext/_yaml.c:16:
+
+    /usr/include/python2.7/unicodeobject.h:750:11: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’
+
+     PyAPI_FUNC(PyObject*) PyUnicode_DecodeUTF8(
+
+               ^
+
+    ext/_yaml.c: In function ‘__pyx_f_5_yaml_7CParser__compose_mapping_node’:
+
+    ext/_yaml.c:10654:5: warning: pointer targets in passing argument 1 of ‘strlen’ differ in signedness [-Wpointer-sign]
+
+         __pyx_t_2 = PyUnicode_FromString(__pyx_v_self->parsed_event.data.mapping_start.tag); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 876; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+
+         ^
+
+    In file included from /usr/include/python2.7/Python.h:38:0,
+
+                     from ext/_yaml.c:16:
+
+    /usr/include/string.h:395:15: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’
+
+     extern size_t strlen (const char *__s)
+
+                   ^
+
+    ext/_yaml.c:10654:5: warning: pointer targets in passing argument 1 of ‘PyUnicodeUCS4_DecodeUTF8’ differ in signedness [-Wpointer-sign]
+
+         __pyx_t_2 = PyUnicode_FromString(__pyx_v_self->parsed_event.data.mapping_start.tag); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 876; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+
+         ^
+
+    In file included from /usr/include/python2.7/Python.h:85:0,
+
+                     from ext/_yaml.c:16:
+
+    /usr/include/python2.7/unicodeobject.h:750:11: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’
+
+     PyAPI_FUNC(PyObject*) PyUnicode_DecodeUTF8(
+
+               ^
+
+    ext/_yaml.c: In function ‘__pyx_pf_5_yaml_8CEmitter___init__’:
+
+    ext/_yaml.c:11721:3: warning: passing argument 2 of ‘yaml_emitter_set_output’ from incompatible pointer type [enabled by default]
+
+       yaml_emitter_set_output((&__pyx_v_self->emitter), __pyx_f_5_yaml_output_handler, ((void *)__pyx_v_self));
+
+       ^
+
+    In file included from ext/_yaml.h:2:0,
+
+                     from ext/_yaml.c:343:
+
+    /usr/include/yaml.h:1829:1: note: expected ‘int (*)(void *, unsigned char *, size_t)’ but argument is of type ‘int (*)(void *, char *, int)’
+
+     yaml_emitter_set_output(yaml_emitter_t *emitter,
+
+     ^
+
+    ext/_yaml.c: In function ‘__pyx_f_5_yaml_8CEmitter__object_to_event’:
+
+    ext/_yaml.c:12898:44: warning: pointer targets in assignment differ in signedness [-Wpointer-sign]
+
+             __pyx_v_tag_directives_end->handle = PyString_AS_STRING(__pyx_v_handle);
+
+                                                ^
+
+    ext/_yaml.c:12991:44: warning: pointer targets in assignment differ in signedness [-Wpointer-sign]
+
+             __pyx_v_tag_directives_end->prefix = PyString_AS_STRING(__pyx_v_prefix);
+
+                                                ^
+
+    ext/_yaml.c:13248:5: warning: pointer targets in passing argument 2 of ‘yaml_alias_event_initialize’ differ in signedness [-Wpointer-sign]
+
+         __pyx_t_4 = ((yaml_alias_event_initialize(__pyx_v_event, __pyx_v_anchor) == 0) != 0);
+
+         ^
+
+    In file included from ext/_yaml.h:2:0,
+
+                     from ext/_yaml.c:343:
+
+    /usr/include/yaml.h:553:1: note: expected ‘yaml_char_t *’ but argument is of type ‘char *’
+
+     yaml_alias_event_initialize(yaml_event_t *event, yaml_char_t *anchor);
+
+     ^
+
+    ext/_yaml.c:13824:5: warning: pointer targets in passing argument 2 of ‘yaml_scalar_event_initialize’ differ in signedness [-Wpointer-sign]
+
+         __pyx_t_3 = ((yaml_scalar_event_initialize(__pyx_v_event, __pyx_v_anchor, __pyx_v_tag, __pyx_v_value, __pyx_v_length, __pyx_v_plain_implicit, __pyx_v_quoted_implicit, __pyx_v_scalar_style) == 0) != 0);
+
+         ^
+
+    In file included from ext/_yaml.h:2:0,
+
+                     from ext/_yaml.c:343:
+
+    /usr/include/yaml.h:578:1: note: expected ‘yaml_char_t *’ but argument is of type ‘char *’
+
+     yaml_scalar_event_initialize(yaml_event_t *event,
+
+     ^
+
+    ext/_yaml.c:13824:5: warning: pointer targets in passing argument 3 of ‘yaml_scalar_event_initialize’ differ in signedness [-Wpointer-sign]
+
+         __pyx_t_3 = ((yaml_scalar_event_initialize(__pyx_v_event, __pyx_v_anchor, __pyx_v_tag, __pyx_v_value, __pyx_v_length, __pyx_v_plain_implicit, __pyx_v_quoted_implicit, __pyx_v_scalar_style) == 0) != 0);
+
+         ^
+
+    In file included from ext/_yaml.h:2:0,
+
+                     from ext/_yaml.c:343:
+
+    /usr/include/yaml.h:578:1: note: expected ‘yaml_char_t *’ but argument is of type ‘char *’
+
+     yaml_scalar_event_initialize(yaml_event_t *event,
+
+     ^
+
+    ext/_yaml.c:13824:5: warning: pointer targets in passing argument 4 of ‘yaml_scalar_event_initialize’ differ in signedness [-Wpointer-sign]
+
+         __pyx_t_3 = ((yaml_scalar_event_initialize(__pyx_v_event, __pyx_v_anchor, __pyx_v_tag, __pyx_v_value, __pyx_v_length, __pyx_v_plain_implicit, __pyx_v_quoted_implicit, __pyx_v_scalar_style) == 0) != 0);
+
+         ^
+
+    In file included from ext/_yaml.h:2:0,
+
+                     from ext/_yaml.c:343:
+
+    /usr/include/yaml.h:578:1: note: expected ‘yaml_char_t *’ but argument is of type ‘char *’
+
+     yaml_scalar_event_initialize(yaml_event_t *event,
+
+     ^
+
+    ext/_yaml.c:14166:5: warning: pointer targets in passing argument 2 of ‘yaml_sequence_start_event_initialize’ differ in signedness [-Wpointer-sign]
+
+         __pyx_t_4 = ((yaml_sequence_start_event_initialize(__pyx_v_event, __pyx_v_anchor, __pyx_v_tag, __pyx_v_implicit, __pyx_v_sequence_style) == 0) != 0);
+
+         ^
+
+    In file included from ext/_yaml.h:2:0,
+
+                     from ext/_yaml.c:343:
+
+    /usr/include/yaml.h:601:1: note: expected ‘yaml_char_t *’ but argument is of type ‘char *’
+
+     yaml_sequence_start_event_initialize(yaml_event_t *event,
+
+     ^
+
+    ext/_yaml.c:14166:5: warning: pointer targets in passing argument 3 of ‘yaml_sequence_start_event_initialize’ differ in signedness [-Wpointer-sign]
+
+         __pyx_t_4 = ((yaml_sequence_start_event_initialize(__pyx_v_event, __pyx_v_anchor, __pyx_v_tag, __pyx_v_implicit, __pyx_v_sequence_style) == 0) != 0);
+
+         ^
+
+    In file included from ext/_yaml.h:2:0,
+
+                     from ext/_yaml.c:343:
+
+    /usr/include/yaml.h:601:1: note: expected ‘yaml_char_t *’ but argument is of type ‘char *’
+
+     yaml_sequence_start_event_initialize(yaml_event_t *event,
+
+     ^
+
+    ext/_yaml.c:14508:5: warning: pointer targets in passing argument 2 of ‘yaml_mapping_start_event_initialize’ differ in signedness [-Wpointer-sign]
+
+         __pyx_t_3 = ((yaml_mapping_start_event_initialize(__pyx_v_event, __pyx_v_anchor, __pyx_v_tag, __pyx_v_implicit, __pyx_v_mapping_style) == 0) != 0);
+
+         ^
+
+    In file included from ext/_yaml.h:2:0,
+
+                     from ext/_yaml.c:343:
+
+    /usr/include/yaml.h:633:1: note: expected ‘yaml_char_t *’ but argument is of type ‘char *’
+
+     yaml_mapping_start_event_initialize(yaml_event_t *event,
+
+     ^
+
+    ext/_yaml.c:14508:5: warning: pointer targets in passing argument 3 of ‘yaml_mapping_start_event_initialize’ differ in signedness [-Wpointer-sign]
+
+         __pyx_t_3 = ((yaml_mapping_start_event_initialize(__pyx_v_event, __pyx_v_anchor, __pyx_v_tag, __pyx_v_implicit, __pyx_v_mapping_style) == 0) != 0);
+
+         ^
+
+    In file included from ext/_yaml.h:2:0,
+
+                     from ext/_yaml.c:343:
+
+    /usr/include/yaml.h:633:1: note: expected ‘yaml_char_t *’ but argument is of type ‘char *’
+
+     yaml_mapping_start_event_initialize(yaml_event_t *event,
+
+     ^
+
+    ext/_yaml.c: In function ‘__pyx_pf_5_yaml_8CEmitter_12serialize’:
+
+    ext/_yaml.c:15784:42: warning: pointer targets in assignment differ in signedness [-Wpointer-sign]
+
+           __pyx_v_tag_directives_end->handle = PyString_AS_STRING(__pyx_v_handle);
+
+                                              ^
+
+    ext/_yaml.c:15877:42: warning: pointer targets in assignment differ in signedness [-Wpointer-sign]
+
+           __pyx_v_tag_directives_end->prefix = PyString_AS_STRING(__pyx_v_prefix);
+
+                                              ^
+
+    ext/_yaml.c: In function ‘__pyx_f_5_yaml_8CEmitter__serialize_node’:
+
+    ext/_yaml.c:16616:5: warning: pointer targets in passing argument 2 of ‘yaml_alias_event_initialize’ differ in signedness [-Wpointer-sign]
+
+         __pyx_t_2 = ((yaml_alias_event_initialize((&__pyx_v_event), __pyx_v_anchor) == 0) != 0);
+
+         ^
+
+    In file included from ext/_yaml.h:2:0,
+
+                     from ext/_yaml.c:343:
+
+    /usr/include/yaml.h:553:1: note: expected ‘yaml_char_t *’ but argument is of type ‘char *’
+
+     yaml_alias_event_initialize(yaml_event_t *event, yaml_char_t *anchor);
+
+     ^
+
+    ext/_yaml.c:17195:7: warning: pointer targets in passing argument 2 of ‘yaml_scalar_event_initialize’ differ in signedness [-Wpointer-sign]
+
+           __pyx_t_8 = ((yaml_scalar_event_initialize((&__pyx_v_event), __pyx_v_anchor, __pyx_v_tag, __pyx_v_value, __pyx_v_length, __pyx_v_plain_implicit, __pyx_v_quoted_implicit, __pyx_v_scalar_style) == 0) != 0);
+
+           ^
+
+    In file included from ext/_yaml.h:2:0,
+
+                     from ext/_yaml.c:343:
+
+    /usr/include/yaml.h:578:1: note: expected ‘yaml_char_t *’ but argument is of type ‘char *’
+
+     yaml_scalar_event_initialize(yaml_event_t *event,
+
+     ^
+
+    ext/_yaml.c:17195:7: warning: pointer targets in passing argument 3 of ‘yaml_scalar_event_initialize’ differ in signedness [-Wpointer-sign]
+
+           __pyx_t_8 = ((yaml_scalar_event_initialize((&__pyx_v_event), __pyx_v_anchor, __pyx_v_tag, __pyx_v_value, __pyx_v_length, __pyx_v_plain_implicit, __pyx_v_quoted_implicit, __pyx_v_scalar_style) == 0) != 0);
+
+           ^
+
+    In file included from ext/_yaml.h:2:0,
+
+                     from ext/_yaml.c:343:
+
+    /usr/include/yaml.h:578:1: note: expected ‘yaml_char_t *’ but argument is of type ‘char *’
+
+     yaml_scalar_event_initialize(yaml_event_t *event,
+
+     ^
+
+    ext/_yaml.c:17195:7: warning: pointer targets in passing argument 4 of ‘yaml_scalar_event_initialize’ differ in signedness [-Wpointer-sign]
+
+           __pyx_t_8 = ((yaml_scalar_event_initialize((&__pyx_v_event), __pyx_v_anchor, __pyx_v_tag, __pyx_v_value, __pyx_v_length, __pyx_v_plain_implicit, __pyx_v_quoted_implicit, __pyx_v_scalar_style) == 0) != 0);
+
+           ^
+
+    In file included from ext/_yaml.h:2:0,
+
+                     from ext/_yaml.c:343:
+
+    /usr/include/yaml.h:578:1: note: expected ‘yaml_char_t *’ but argument is of type ‘char *’
+
+     yaml_scalar_event_initialize(yaml_event_t *event,
+
+     ^
+
+    ext/_yaml.c:17473:7: warning: pointer targets in passing argument 2 of ‘yaml_sequence_start_event_initialize’ differ in signedness [-Wpointer-sign]
+
+           __pyx_t_8 = ((yaml_sequence_start_event_initialize((&__pyx_v_event), __pyx_v_anchor, __pyx_v_tag, __pyx_v_implicit, __pyx_v_sequence_style) == 0) != 0);
+
+           ^
+
+    In file included from ext/_yaml.h:2:0,
+
+                     from ext/_yaml.c:343:
+
+    /usr/include/yaml.h:601:1: note: expected ‘yaml_char_t *’ but argument is of type ‘char *’
+
+     yaml_sequence_start_event_initialize(yaml_event_t *event,
+
+     ^
+
+    ext/_yaml.c:17473:7: warning: pointer targets in passing argument 3 of ‘yaml_sequence_start_event_initialize’ differ in signedness [-Wpointer-sign]
+
+           __pyx_t_8 = ((yaml_sequence_start_event_initialize((&__pyx_v_event), __pyx_v_anchor, __pyx_v_tag, __pyx_v_implicit, __pyx_v_sequence_style) == 0) != 0);
+
+           ^
+
+    In file included from ext/_yaml.h:2:0,
+
+                     from ext/_yaml.c:343:
+
+    /usr/include/yaml.h:601:1: note: expected ‘yaml_char_t *’ but argument is of type ‘char *’
+
+     yaml_sequence_start_event_initialize(yaml_event_t *event,
+
+     ^
+
+    ext/_yaml.c:17874:7: warning: pointer targets in passing argument 2 of ‘yaml_mapping_start_event_initialize’ differ in signedness [-Wpointer-sign]
+
+           __pyx_t_8 = ((yaml_mapping_start_event_initialize((&__pyx_v_event), __pyx_v_anchor, __pyx_v_tag, __pyx_v_implicit, __pyx_v_mapping_style) == 0) != 0);
+
+           ^
+
+    In file included from ext/_yaml.h:2:0,
+
+                     from ext/_yaml.c:343:
+
+    /usr/include/yaml.h:633:1: note: expected ‘yaml_char_t *’ but argument is of type ‘char *’
+
+     yaml_mapping_start_event_initialize(yaml_event_t *event,
+
+     ^
+
+    ext/_yaml.c:17874:7: warning: pointer targets in passing argument 3 of ‘yaml_mapping_start_event_initialize’ differ in signedness [-Wpointer-sign]
+
+           __pyx_t_8 = ((yaml_mapping_start_event_initialize((&__pyx_v_event), __pyx_v_anchor, __pyx_v_tag, __pyx_v_implicit, __pyx_v_mapping_style) == 0) != 0);
+
+           ^
+
+    In file included from ext/_yaml.h:2:0,
+
+                     from ext/_yaml.c:343:
+
+    /usr/include/yaml.h:633:1: note: expected ‘yaml_char_t *’ but argument is of type ‘char *’
+
+     yaml_mapping_start_event_initialize(yaml_event_t *event,
+
+     ^
+
+    gcc -pthread -shared -Wl,-z,relro build/temp.linux-x86_64-2.7/ext/_yaml.o -L/usr/lib64 -lyaml -lpython2.7 -o build/lib.linux-x86_64-2.7/_yaml.so
+
+    running install_lib
+    creating /tmp/oslo-graduate.98CC/venv/lib64/python2.7/site-packages/yaml
+    copying build/lib.linux-x86_64-2.7/yaml/parser.py -> /tmp/oslo-graduate.98CC/venv/lib64/python2.7/site-packages/yaml
+    copying build/lib.linux-x86_64-2.7/yaml/scanner.py -> /tmp/oslo-graduate.98CC/venv/lib64/python2.7/site-packages/yaml
+    copying build/lib.linux-x86_64-2.7/yaml/error.py -> /tmp/oslo-graduate.98CC/venv/lib64/python2.7/site-packages/yaml
+    copying build/lib.linux-x86_64-2.7/yaml/representer.py -> /tmp/oslo-graduate.98CC/venv/lib64/python2.7/site-packages/yaml
+    copying build/lib.linux-x86_64-2.7/yaml/constructor.py -> /tmp/oslo-graduate.98CC/venv/lib64/python2.7/site-packages/yaml
+    copying build/lib.linux-x86_64-2.7/yaml/nodes.py -> /tmp/oslo-graduate.98CC/venv/lib64/python2.7/site-packages/yaml
+    copying build/lib.linux-x86_64-2.7/yaml/__init__.py -> /tmp/oslo-graduate.98CC/venv/lib64/python2.7/site-packages/yaml
+    copying build/lib.linux-x86_64-2.7/yaml/composer.py -> /tmp/oslo-graduate.98CC/venv/lib64/python2.7/site-packages/yaml
+    copying build/lib.linux-x86_64-2.7/yaml/tokens.py -> /tmp/oslo-graduate.98CC/venv/lib64/python2.7/site-packages/yaml
+    copying build/lib.linux-x86_64-2.7/yaml/cyaml.py -> /tmp/oslo-graduate.98CC/venv/lib64/python2.7/site-packages/yaml
+    copying build/lib.linux-x86_64-2.7/yaml/serializer.py -> /tmp/oslo-graduate.98CC/venv/lib64/python2.7/site-packages/yaml
+    copying build/lib.linux-x86_64-2.7/yaml/emitter.py -> /tmp/oslo-graduate.98CC/venv/lib64/python2.7/site-packages/yaml
+    copying build/lib.linux-x86_64-2.7/yaml/reader.py -> /tmp/oslo-graduate.98CC/venv/lib64/python2.7/site-packages/yaml
+    copying build/lib.linux-x86_64-2.7/yaml/dumper.py -> /tmp/oslo-graduate.98CC/venv/lib64/python2.7/site-packages/yaml
+    copying build/lib.linux-x86_64-2.7/yaml/loader.py -> /tmp/oslo-graduate.98CC/venv/lib64/python2.7/site-packages/yaml
+    copying build/lib.linux-x86_64-2.7/yaml/events.py -> /tmp/oslo-graduate.98CC/venv/lib64/python2.7/site-packages/yaml
+    copying build/lib.linux-x86_64-2.7/yaml/resolver.py -> /tmp/oslo-graduate.98CC/venv/lib64/python2.7/site-packages/yaml
+    copying build/lib.linux-x86_64-2.7/_yaml.so -> /tmp/oslo-graduate.98CC/venv/lib64/python2.7/site-packages
+    byte-compiling /tmp/oslo-graduate.98CC/venv/lib64/python2.7/site-packages/yaml/parser.py to parser.pyc
+    byte-compiling /tmp/oslo-graduate.98CC/venv/lib64/python2.7/site-packages/yaml/scanner.py to scanner.pyc
+    byte-compiling /tmp/oslo-graduate.98CC/venv/lib64/python2.7/site-packages/yaml/error.py to error.pyc
+    byte-compiling /tmp/oslo-graduate.98CC/venv/lib64/python2.7/site-packages/yaml/representer.py to representer.pyc
+    byte-compiling /tmp/oslo-graduate.98CC/venv/lib64/python2.7/site-packages/yaml/constructor.py to constructor.pyc
+    byte-compiling /tmp/oslo-graduate.98CC/venv/lib64/python2.7/site-packages/yaml/nodes.py to nodes.pyc
+    byte-compiling /tmp/oslo-graduate.98CC/venv/lib64/python2.7/site-packages/yaml/__init__.py to __init__.pyc
+    byte-compiling /tmp/oslo-graduate.98CC/venv/lib64/python2.7/site-packages/yaml/composer.py to composer.pyc
+    byte-compiling /tmp/oslo-graduate.98CC/venv/lib64/python2.7/site-packages/yaml/tokens.py to tokens.pyc
+    byte-compiling /tmp/oslo-graduate.98CC/venv/lib64/python2.7/site-packages/yaml/cyaml.py to cyaml.pyc
+    byte-compiling /tmp/oslo-graduate.98CC/venv/lib64/python2.7/site-packages/yaml/serializer.py to serializer.pyc
+    byte-compiling /tmp/oslo-graduate.98CC/venv/lib64/python2.7/site-packages/yaml/emitter.py to emitter.pyc
+    byte-compiling /tmp/oslo-graduate.98CC/venv/lib64/python2.7/site-packages/yaml/reader.py to reader.pyc
+    byte-compiling /tmp/oslo-graduate.98CC/venv/lib64/python2.7/site-packages/yaml/dumper.py to dumper.pyc
+    byte-compiling /tmp/oslo-graduate.98CC/venv/lib64/python2.7/site-packages/yaml/loader.py to loader.pyc
+    byte-compiling /tmp/oslo-graduate.98CC/venv/lib64/python2.7/site-packages/yaml/events.py to events.pyc
+    byte-compiling /tmp/oslo-graduate.98CC/venv/lib64/python2.7/site-packages/yaml/resolver.py to resolver.pyc
+    running install_egg_info
+    running egg_info
+    creating lib/PyYAML.egg-info
+    writing lib/PyYAML.egg-info/PKG-INFO
+    writing top-level names to lib/PyYAML.egg-info/top_level.txt
+    writing dependency_links to lib/PyYAML.egg-info/dependency_links.txt
+    writing manifest file 'lib/PyYAML.egg-info/SOURCES.txt'
+    warning: manifest_maker: standard file '-c' not found
+    
+
+    reading manifest file 'lib/PyYAML.egg-info/SOURCES.txt'
+    writing manifest file 'lib/PyYAML.egg-info/SOURCES.txt'
+    Copying lib/PyYAML.egg-info to /tmp/oslo-graduate.98CC/venv/lib64/python2.7/site-packages/PyYAML-3.11-py2.7.egg-info
+    running install_scripts
+    writing list of installed files to '/tmp/pip-oUSXoF-record/install-record.txt'
+  Running setup.py install for markupsafe
+
+    Running command /tmp/oslo-graduate.98CC/venv/bin/python -c "import setuptools;__file__='/tmp/oslo-graduate.98CC/venv/build/markupsafe/setup.py';exec(compile(open(__file__).read().replace('\r\n', '\n'), __file__, 'exec'))" install --record /tmp/pip-KqWzYq-record/install-record.txt --single-version-externally-managed --install-headers /tmp/oslo-graduate.98CC/venv/include/site/python2.7
+    running install
+    running build
+    running build_py
+    creating build
+    creating build/lib.linux-x86_64-2.7
+    creating build/lib.linux-x86_64-2.7/markupsafe
+    copying markupsafe/__init__.py -> build/lib.linux-x86_64-2.7/markupsafe
+    copying markupsafe/_native.py -> build/lib.linux-x86_64-2.7/markupsafe
+    copying markupsafe/_constants.py -> build/lib.linux-x86_64-2.7/markupsafe
+    copying markupsafe/tests.py -> build/lib.linux-x86_64-2.7/markupsafe
+    copying markupsafe/_compat.py -> build/lib.linux-x86_64-2.7/markupsafe
+    running egg_info
+    writing MarkupSafe.egg-info/PKG-INFO
+    writing top-level names to MarkupSafe.egg-info/top_level.txt
+    writing dependency_links to MarkupSafe.egg-info/dependency_links.txt
+    warning: manifest_maker: standard file '-c' not found
+    
+
+    reading manifest file 'MarkupSafe.egg-info/SOURCES.txt'
+    reading manifest template 'MANIFEST.in'
+    writing manifest file 'MarkupSafe.egg-info/SOURCES.txt'
+    copying markupsafe/_speedups.c -> build/lib.linux-x86_64-2.7/markupsafe
+    running build_ext
+    building 'markupsafe._speedups' extension
+
+    creating build/temp.linux-x86_64-2.7
+    creating build/temp.linux-x86_64-2.7/markupsafe
+    gcc -pthread -fno-strict-aliasing -O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong --param=ssp-buffer-size=4 -grecord-gcc-switches -m64 -mtune=generic -D_GNU_SOURCE -fPIC -fwrapv -DNDEBUG -O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong --param=ssp-buffer-size=4 -grecord-gcc-switches -m64 -mtune=generic -D_GNU_SOURCE -fPIC -fwrapv -fPIC -I/usr/include/python2.7 -c markupsafe/_speedups.c -o build/temp.linux-x86_64-2.7/markupsafe/_speedups.o
+
+    gcc -pthread -shared -Wl,-z,relro build/temp.linux-x86_64-2.7/markupsafe/_speedups.o -L/usr/lib64 -lpython2.7 -o build/lib.linux-x86_64-2.7/markupsafe/_speedups.so
+
+    running install_lib
+    creating /tmp/oslo-graduate.98CC/venv/lib64/python2.7/site-packages/markupsafe
+    copying build/lib.linux-x86_64-2.7/markupsafe/_speedups.c -> /tmp/oslo-graduate.98CC/venv/lib64/python2.7/site-packages/markupsafe
+    copying build/lib.linux-x86_64-2.7/markupsafe/__init__.py -> /tmp/oslo-graduate.98CC/venv/lib64/python2.7/site-packages/markupsafe
+    copying build/lib.linux-x86_64-2.7/markupsafe/_speedups.so -> /tmp/oslo-graduate.98CC/venv/lib64/python2.7/site-packages/markupsafe
+    copying build/lib.linux-x86_64-2.7/markupsafe/_native.py -> /tmp/oslo-graduate.98CC/venv/lib64/python2.7/site-packages/markupsafe
+    copying build/lib.linux-x86_64-2.7/markupsafe/_constants.py -> /tmp/oslo-graduate.98CC/venv/lib64/python2.7/site-packages/markupsafe
+    copying build/lib.linux-x86_64-2.7/markupsafe/tests.py -> /tmp/oslo-graduate.98CC/venv/lib64/python2.7/site-packages/markupsafe
+    copying build/lib.linux-x86_64-2.7/markupsafe/_compat.py -> /tmp/oslo-graduate.98CC/venv/lib64/python2.7/site-packages/markupsafe
+    byte-compiling /tmp/oslo-graduate.98CC/venv/lib64/python2.7/site-packages/markupsafe/__init__.py to __init__.pyc
+    byte-compiling /tmp/oslo-graduate.98CC/venv/lib64/python2.7/site-packages/markupsafe/_native.py to _native.pyc
+    byte-compiling /tmp/oslo-graduate.98CC/venv/lib64/python2.7/site-packages/markupsafe/_constants.py to _constants.pyc
+    byte-compiling /tmp/oslo-graduate.98CC/venv/lib64/python2.7/site-packages/markupsafe/tests.py to tests.pyc
+    byte-compiling /tmp/oslo-graduate.98CC/venv/lib64/python2.7/site-packages/markupsafe/_compat.py to _compat.pyc
+    running install_egg_info
+    Copying MarkupSafe.egg-info to /tmp/oslo-graduate.98CC/venv/lib64/python2.7/site-packages/MarkupSafe-0.23-py2.7.egg-info
+    running install_scripts
+    writing list of installed files to '/tmp/pip-KqWzYq-record/install-record.txt'
+Successfully installed cookiecutter binaryornot jinja2 PyYAML markupsafe
+
+Cleaning up...
+
+  Removing temporary dir /tmp/oslo-graduate.98CC/venv/build...
