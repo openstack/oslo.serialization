@@ -51,10 +51,10 @@ else:
 import six
 import six.moves.xmlrpc_client as xmlrpclib
 
-from openstack.common import gettextutils
-from openstack.common import importutils
-from openstack.common import strutils
-from openstack.common import timeutils
+from oslo.serialization.openstack.common import gettextutils
+from oslo.serialization.openstack.common import importutils
+from oslo.serialization.openstack.common import strutils
+from oslo.serialization.openstack.common import timeutils
 
 netaddr = importutils.try_import("netaddr")
 

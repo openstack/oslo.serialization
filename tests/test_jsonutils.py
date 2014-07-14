@@ -23,8 +23,8 @@ import simplejson
 import six
 import six.moves.xmlrpc_client as xmlrpclib
 
-from openstack.common import gettextutils
-from openstack.common import jsonutils
+from oslo.serialization import jsonutils
+from oslo.serialization.openstack.common import gettextutils
 
 
 class JSONUtilsTestMixin(object):
