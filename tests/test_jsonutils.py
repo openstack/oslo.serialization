@@ -19,13 +19,13 @@ import json
 
 import mock
 import netaddr
+from oslo.i18n import fixture
 from oslotest import base as test_base
 import simplejson
 import six
 import six.moves.xmlrpc_client as xmlrpclib
 
 from oslo.serialization import jsonutils
-from oslo.serialization.openstack.common import gettextutils
 
 
 class JSONUtilsTestMixin(object):
@@ -110,6 +110,10 @@ class JSONUtilsTestSimpleJson(JSONUtilsTestMixin, test_base.BaseTestCase):
 
 
 class ToPrimitiveTestCase(test_base.BaseTestCase):
+    def setUp(self):
+        super(ToPrimitiveTestCase, self).setUp()
+        self.trans_fixture = self.useFixture(fixture.Translation())
+
     def test_list(self):
         self.assertEqual(jsonutils.to_primitive([1, 2, 3]), [1, 2, 3])
 
@@ -258,15 +262,13 @@ class ToPrimitiveTestCase(test_base.BaseTestCase):
         self.assertEqual({'ip_addr': '1.2.3.4'}, ret)
 
     def test_message_with_param(self):
-        message_with_params = 'A message with param: %s'
-        msg = gettextutils.Message(message_with_params, domain='test_domain')
+        msg = self.trans_fixture.lazy('A message with param: %s')
         msg = msg % 'test_domain'
         ret = jsonutils.to_primitive(msg)
         self.assertEqual(msg, ret)
 
     def test_message_with_named_param(self):
-        message_with_params = 'A message with params: %(param)s'
-        msg = gettextutils.Message(message_with_params, domain='test_domain')
+        msg = self.trans_fixture.lazy('A message with params: %(param)s')
         msg = msg % {'param': 'hello'}
         ret = jsonutils.to_primitive(msg)
         self.assertEqual(msg, ret)

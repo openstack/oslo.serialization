@@ -53,10 +53,9 @@ else:
 import six
 import six.moves.xmlrpc_client as xmlrpclib
 
-from oslo.serialization.openstack.common import gettextutils
-from oslo.serialization.openstack.common import importutils
-from oslo.serialization.openstack.common import strutils
-from oslo.serialization.openstack.common import timeutils
+from oslo.utils import encodeutils
+from oslo.utils import importutils
+from oslo.utils import timeutils
 
 netaddr = importutils.try_import("netaddr")
 
@@ -144,8 +143,6 @@ def to_primitive(value, convert_instances=False, convert_datetime=True,
 
         if convert_datetime and isinstance(value, datetime.datetime):
             return timeutils.strtime(value)
-        elif isinstance(value, gettextutils.Message):
-            return value.data
         elif hasattr(value, 'iteritems'):
             return recursive(dict(value.iteritems()), level=level + 1)
         elif hasattr(value, '__iter__'):
@@ -179,7 +176,7 @@ def dump(obj, fp, *args, **kwargs):
 
 
 def loads(s, encoding='utf-8', **kwargs):
-    return json.loads(strutils.safe_decode(s, encoding), **kwargs)
+    return json.loads(encodeutils.safe_decode(s, encoding), **kwargs)
 
 
 def load(fp, encoding='utf-8', **kwargs):

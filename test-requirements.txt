@@ -4,3 +4,4 @@ netaddr
 oslosphinx
 oslotest
 simplejson
+oslo.i18n>=0.2.0

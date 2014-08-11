@@ -3,3 +3,4 @@ six>=1.7.0
 # Only for timeutils in openstack.common - once we're using the
 # library version this can be removed.
 iso8601>=0.1.9
+oslo.utils>=0.2.0
