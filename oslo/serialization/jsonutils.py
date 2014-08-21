@@ -163,6 +163,10 @@ def to_primitive(value, convert_instances=False, convert_datetime=True,
         return six.text_type(value)
 
 
+JSONEncoder = json.JSONEncoder
+JSONDecoder = json.JSONDecoder
+
+
 def dumps(obj, default=to_primitive, **kwargs):
     """Serialize ``obj`` to a JSON formatted ``str``.
     :param obj: object to be serialized
