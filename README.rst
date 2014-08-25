@@ -1,6 +1,6 @@
-===================================
-oslo.serialization
-===================================
+====================
+ oslo.serialization
+====================
 
 oslo.serialization library
 
