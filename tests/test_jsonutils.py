@@ -221,7 +221,8 @@ class ToPrimitiveTestCase(test_base.BaseTestCase):
         x = [datetime, foo, dir]
         ret = jsonutils.to_primitive(x)
         self.assertEqual(len(ret), 3)
-        self.assertTrue(ret[0].startswith(u"<module 'datetime' from "))
+        self.assertTrue(ret[0].startswith(u"<module 'datetime' from ") or
+                        ret[0].startswith(u"<module 'datetime' (built-in)"))
         if six.PY3:
             self.assertTrue(ret[1].startswith(
                 '<function ToPrimitiveTestCase.test_nasties.<locals>.foo at 0x'
