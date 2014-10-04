@@ -16,3 +16,4 @@ Contents
    api
    history
    contributing
+   history
