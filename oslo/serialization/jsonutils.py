@@ -88,7 +88,6 @@ def to_primitive(value, convert_instances=False, convert_datetime=True,
     track the depth of the object inspections and don't go too deep.
 
     Therefore, convert_instances=True is lossy ... be aware.
-
     """
     # handle obvious types first - order of basic types determined by running
     # full tests on nova project, resulting in the following counts:
@@ -175,9 +174,10 @@ JSONDecoder = json.JSONDecoder
 
 def dumps(obj, default=to_primitive, **kwargs):
     """Serialize ``obj`` to a JSON formatted ``str``.
+
     :param obj: object to be serialized
     :param default: function that returns a serializable version of an object
-    :param kwargs: extra named parameters, please see documentation
+    :param kwargs: extra named parameters, please see documentation \
     of `json.dumps <https://docs.python.org/2/library/json.html#basic-usage>`_
     :returns: json formatted string
     """
@@ -188,11 +188,12 @@ def dumps(obj, default=to_primitive, **kwargs):
 
 def dump(obj, fp, *args, **kwargs):
     """Serialize ``obj`` as a JSON formatted stream to ``fp``
+
     :param obj: object to be serialized
     :param fp: a ``.write()``-supporting file-like object
-    :param args: extra arguments, please see documentation
+    :param args: extra arguments, please see documentation \
     of `json.dump <https://docs.python.org/2/library/json.html#basic-usage>`_
-    :param kwargs: extra named parameters, please see documentation
+    :param kwargs: extra named parameters, please see documentation \
     of `json.dump <https://docs.python.org/2/library/json.html#basic-usage>`_
     """
     if is_simplejson:
@@ -202,9 +203,10 @@ def dump(obj, fp, *args, **kwargs):
 
 def loads(s, encoding='utf-8', **kwargs):
     """Deserialize ``s`` (a ``str`` or ``unicode`` instance containing a JSON
+
     :param s: string to deserialize
     :param encoding: encoding used to interpret the string
-    :param kwargs: extra named parameters, please see documentation
+    :param kwargs: extra named parameters, please see documentation \
     of `json.loads <https://docs.python.org/2/library/json.html#basic-usage>`_
     :returns: python object
     """
@@ -212,11 +214,11 @@ def loads(s, encoding='utf-8', **kwargs):
 
 
 def load(fp, encoding='utf-8', **kwargs):
-    """Deserialize ``fp`` (a ``.read()``-supporting file-like object containing
-    a JSON document) to a Python object.
-    :param fp: a ``.write()``-supporting file-like object
+    """Deserialize ``fp`` to a Python object.
+
+    :param fp: a ``.read()`` -supporting file-like object
     :param encoding: encoding used to interpret the string
-    :param kwargs: extra named parameters, please see documentation
+    :param kwargs: extra named parameters, please see documentation \
     of `json.loads <https://docs.python.org/2/library/json.html#basic-usage>`_
     :returns: python object
     """
