@@ -5,5 +5,5 @@
 jsonutils
 =========
 
-.. automodule:: oslo.serialization.jsonutils
+.. automodule:: oslo_serialization.jsonutils
    :members:
