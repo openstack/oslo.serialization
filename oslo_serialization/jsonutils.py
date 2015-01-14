@@ -37,6 +37,7 @@ import functools
 import inspect
 import itertools
 import sys
+import uuid
 
 is_simplejson = False
 if sys.version_info < (2, 7):
@@ -110,6 +111,9 @@ def to_primitive(value, convert_instances=False, convert_datetime=True,
             return timeutils.strtime(value)
         else:
             return value
+
+    if isinstance(value, uuid.UUID):
+        return six.text_type(value)
 
     # value of itertools.count doesn't get caught by nasty_type_tests
     # and results in infinite loop when list(value) is called.
