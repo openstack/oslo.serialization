@@ -262,6 +262,17 @@ class ToPrimitiveTestCase(test_base.BaseTestCase):
         ret = jsonutils.to_primitive(thing)
         self.assertEqual({'ip_addr': '1.2.3.4'}, ret)
 
+    def test_dumps_ipaddr(self):
+        thing = {'ip_addr': netaddr.IPAddress('1.2.3.4')}
+        ret = jsonutils.dumps(thing)
+        self.assertEqual('{"ip_addr": "1.2.3.4"}', ret)
+
+    def test_dump_ipaddr(self):
+        thing = {'ip_addr': netaddr.IPAddress('1.2.3.4')}
+        fp = six.StringIO()
+        jsonutils.dump(thing, fp)
+        self.assertEqual('{"ip_addr": "1.2.3.4"}', fp.getvalue())
+
     def test_message_with_param(self):
         msg = self.trans_fixture.lazy('A message with param: %s')
         msg = msg % 'test_domain'

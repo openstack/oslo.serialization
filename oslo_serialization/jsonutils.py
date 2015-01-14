@@ -191,14 +191,16 @@ def dump(obj, fp, *args, **kwargs):
 
     :param obj: object to be serialized
     :param fp: a ``.write()``-supporting file-like object
+    :param default: function that returns a serializable version of an object
     :param args: extra arguments, please see documentation \
     of `json.dump <https://docs.python.org/2/library/json.html#basic-usage>`_
     :param kwargs: extra named parameters, please see documentation \
     of `json.dump <https://docs.python.org/2/library/json.html#basic-usage>`_
     """
+    default = kwargs.get('default', to_primitive)
     if is_simplejson:
         kwargs['namedtuple_as_object'] = False
-    return json.dump(obj, fp, *args, **kwargs)
+    return json.dump(obj, fp, default=default, *args, **kwargs)
 
 
 def loads(s, encoding='utf-8', **kwargs):
