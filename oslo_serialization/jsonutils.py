@@ -56,12 +56,11 @@ if sys.version_info < (2, 7):
 else:
     import json
 
+from oslo_utils import encodeutils
+from oslo_utils import importutils
+from oslo_utils import timeutils
 import six
 import six.moves.xmlrpc_client as xmlrpclib
-
-from oslo.utils import encodeutils
-from oslo.utils import importutils
-from oslo.utils import timeutils
 
 netaddr = importutils.try_import("netaddr")
 
