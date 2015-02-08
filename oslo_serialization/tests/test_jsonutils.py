@@ -19,12 +19,12 @@ import json
 
 import mock
 import netaddr
+from oslo_i18n import fixture
 from oslotest import base as test_base
 import simplejson
 import six
 import six.moves.xmlrpc_client as xmlrpclib
 
-from oslo.i18n import fixture
 from oslo_serialization import jsonutils
 
 

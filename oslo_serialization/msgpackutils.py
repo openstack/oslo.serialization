@@ -18,8 +18,8 @@ import sys
 import uuid
 
 import msgpack
-from oslo.utils import importutils
-from oslo.utils import timeutils
+from oslo_utils import importutils
+from oslo_utils import timeutils
 import six
 import six.moves.xmlrpc_client as xmlrpclib
 
@@ -116,7 +116,7 @@ def load(fp):
 
 
 def dump(obj, fp):
-    """Serialize ``obj`` as a messagepack formatted stream to ``fp``"""
+    """Serialize ``obj`` as a messagepack formatted stream to ``fp``."""
     return msgpack.pack(obj, fp, default=_serializer, use_bin_type=True)
 
 
