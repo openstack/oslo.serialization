@@ -19,7 +19,7 @@ import uuid
 
 import msgpack
 from oslo_utils import importutils
-from oslo_utils import timeutils
+from pytz import timezone
 import six
 import six.moves.xmlrpc_client as xmlrpclib
 
@@ -34,14 +34,33 @@ else:
 
 
 def _serialize_datetime(dt):
-    blob = timeutils.strtime(dt)
-    if six.PY3:
-        return blob.encode('ascii')
-    return blob
+    dct = {
+        'day': dt.day,
+        'month': dt.month,
+        'year': dt.year,
+        'hour': dt.hour,
+        'minute': dt.minute,
+        'second': dt.second,
+        'microsecond': dt.microsecond,
+    }
+    if dt.tzinfo:
+        dct['tz'] = dt.tzinfo.tzname(None)
+    return dumps(dct)
 
 
 def _deserialize_datetime(blob):
-    return timeutils.parse_strtime(six.text_type(blob, encoding='ascii'))
+    dct = loads(blob)
+    dt = datetime.datetime(day=dct['day'],
+                           month=dct['month'],
+                           year=dct['year'],
+                           hour=dct['hour'],
+                           minute=dct['minute'],
+                           second=dct['second'],
+                           microsecond=dct['microsecond'])
+    if 'tz' in dct:
+        tzinfo = timezone(dct['tz'])
+        dt = tzinfo.localize(dt)
+    return dt
 
 
 def _serializer(obj):
