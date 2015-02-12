@@ -63,6 +63,22 @@ def _deserialize_datetime(blob):
     return dt
 
 
+def _serialize_date(d):
+    dct = {
+        'year': d.year,
+        'month': d.month,
+        'day': d.day,
+    }
+    return dumps(dct)
+
+
+def _deserialize_date(blob):
+    dct = loads(blob)
+    return datetime.date(year=dct['year'],
+                         month=dct['month'],
+                         day=dct['day'])
+
+
 def _serializer(obj):
     # Applications can assign 0 to 127 to store
     # application-specific type information...
@@ -96,6 +112,8 @@ def _serializer(obj):
     if isinstance(obj, xmlrpclib.DateTime):
         dt = datetime.datetime(*tuple(obj.timetuple())[:6])
         return msgpack.ExtType(6, _serialize_datetime(dt))
+    if isinstance(obj, datetime.date):
+        return msgpack.ExtType(7, _serialize_date(obj))
     raise TypeError("Unknown type: %r" % (obj,))
 
 
@@ -122,6 +140,8 @@ def _unserializer(code, data):
     if code == 6:
         dt = _deserialize_datetime(data)
         return xmlrpclib.DateTime(dt.timetuple())
+    if code == 7:
+        return _deserialize_date(data)
     return msgpack.ExtType(code, data)
 
 

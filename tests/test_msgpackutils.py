@@ -75,6 +75,7 @@ class MsgPackUtilsTestMixin(test_base.BaseTestCase):
             'zzz': uuid.uuid4(),
             'yyy': 'yyy',
             'ddd': b'bbb',
+            'today': datetime.date.today(),
         }
         self.assertEqual(_dumps_loads(src), src)
 
@@ -119,6 +120,10 @@ class MsgPackUtilsTestMixin(test_base.BaseTestCase):
     def test_ipaddr(self):
         thing = {'ip_addr': netaddr.IPAddress('1.2.3.4')}
         self.assertEqual(_dumps_loads(thing), thing)
+
+    def test_today(self):
+        today = datetime.date.today()
+        self.assertEqual(today, _dumps_loads(today))
 
     def test_datetime_tz_clone(self):
         eastern = timezone('US/Eastern')
