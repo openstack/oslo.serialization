@@ -140,8 +140,6 @@ def to_primitive(value, convert_instances=False, convert_datetime=True,
                                       max_depth=max_depth)
         if isinstance(value, dict):
             return dict((k, recursive(v)) for k, v in six.iteritems(value))
-        elif isinstance(value, (list, tuple)):
-            return [recursive(lv) for lv in value]
 
         # It's not clear why xmlrpclib created their own DateTime type, but
         # for our purposes, make it a datetime type which is explicitly
@@ -154,17 +152,16 @@ def to_primitive(value, convert_instances=False, convert_datetime=True,
         elif hasattr(value, 'iteritems'):
             return recursive(dict(value.iteritems()), level=level + 1)
         elif hasattr(value, '__iter__'):
-            return recursive(list(value))
+            return list(map(recursive, value))
         elif convert_instances and hasattr(value, '__dict__'):
             # Likely an instance of something. Watch for cycles.
             # Ignore class member vars.
             return recursive(value.__dict__, level=level + 1)
         elif netaddr and isinstance(value, netaddr.IPAddress):
             return six.text_type(value)
-        else:
-            if any(test(value) for test in _nasty_type_tests):
-                return six.text_type(value)
-            return value
+        elif any(test(value) for test in _nasty_type_tests):
+            return six.text_type(value)
+        return value
     except TypeError:
         # Class objects are tricky since they may define something like
         # __iter__ defined but it isn't callable as list().
