@@ -17,6 +17,7 @@ import collections
 import datetime
 import json
 
+import iso8601
 import mock
 import netaddr
 from oslo_i18n import fixture
@@ -135,6 +136,12 @@ class ToPrimitiveTestCase(test_base.BaseTestCase):
         self.assertEqual(jsonutils.to_primitive(x),
                          '1920-02-03T04:05:06.000007')
 
+    def test_datetime_timezone(self):
+        x = datetime.datetime(1920, 2, 3, 4, 5, 6, 7,
+                              tzinfo=iso8601.iso8601.UTC)
+        self.assertEqual(jsonutils.to_primitive(x),
+                         '1920-02-03T04:05:06.000007+00:00')
+
     def test_datetime_preserve(self):
         x = datetime.datetime(1920, 2, 3, 4, 5, 6, 7)
         self.assertEqual(jsonutils.to_primitive(x, convert_datetime=False), x)
@@ -143,7 +150,7 @@ class ToPrimitiveTestCase(test_base.BaseTestCase):
         x = xmlrpclib.DateTime()
         x.decode("19710203T04:05:06")
         self.assertEqual(jsonutils.to_primitive(x),
-                         '1971-02-03T04:05:06.000000')
+                         '1971-02-03T04:05:06')
 
     def test_iter(self):
         class IterClass(object):

@@ -57,7 +57,6 @@ else:
 
 from oslo_utils import encodeutils
 from oslo_utils import importutils
-from oslo_utils import timeutils
 import six
 import six.moves.xmlrpc_client as xmlrpclib
 
@@ -105,7 +104,7 @@ def to_primitive(value, convert_instances=False, convert_datetime=True,
 
     if isinstance(value, datetime.datetime):
         if convert_datetime:
-            return timeutils.strtime(value)
+            return value.isoformat()
         else:
             return value
 
@@ -146,7 +145,7 @@ def to_primitive(value, convert_instances=False, convert_datetime=True,
             value = datetime.datetime(*tuple(value.timetuple())[:6])
 
         if convert_datetime and isinstance(value, datetime.datetime):
-            return timeutils.strtime(value)
+            return value.isoformat()
         elif hasattr(value, 'iteritems'):
             return recursive(dict(value.iteritems()), level=level + 1)
         elif hasattr(value, '__iter__'):
