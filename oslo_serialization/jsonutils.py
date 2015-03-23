@@ -102,6 +102,12 @@ def to_primitive(value, convert_instances=False, convert_datetime=True,
     if isinstance(value, _simple_types):
         return value
 
+    # It's not clear why xmlrpclib created their own DateTime type, but
+    # for our purposes, make it a datetime type which is explicitly
+    # handled
+    if isinstance(value, xmlrpclib.DateTime):
+        value = datetime.datetime(*tuple(value.timetuple())[:6])
+
     if isinstance(value, datetime.datetime):
         if convert_datetime:
             return value.isoformat()
@@ -111,9 +117,15 @@ def to_primitive(value, convert_instances=False, convert_datetime=True,
     if isinstance(value, uuid.UUID):
         return six.text_type(value)
 
+    if netaddr and isinstance(value, netaddr.IPAddress):
+        return six.text_type(value)
+
     # value of itertools.count doesn't get caught by nasty_type_tests
     # and results in infinite loop when list(value) is called.
     if type(value) == itertools.count:
+        return six.text_type(value)
+
+    if any(test(value) for test in _nasty_type_tests):
         return six.text_type(value)
 
     # FIXME(vish): Workaround for LP bug 852095. Without this workaround,
@@ -137,15 +149,6 @@ def to_primitive(value, convert_instances=False, convert_datetime=True,
                                       max_depth=max_depth)
         if isinstance(value, dict):
             return dict((k, recursive(v)) for k, v in six.iteritems(value))
-
-        # It's not clear why xmlrpclib created their own DateTime type, but
-        # for our purposes, make it a datetime type which is explicitly
-        # handled
-        if isinstance(value, xmlrpclib.DateTime):
-            value = datetime.datetime(*tuple(value.timetuple())[:6])
-
-        if convert_datetime and isinstance(value, datetime.datetime):
-            return value.isoformat()
         elif hasattr(value, 'iteritems'):
             return recursive(dict(value.iteritems()), level=level + 1)
         elif hasattr(value, '__iter__'):
@@ -154,15 +157,12 @@ def to_primitive(value, convert_instances=False, convert_datetime=True,
             # Likely an instance of something. Watch for cycles.
             # Ignore class member vars.
             return recursive(value.__dict__, level=level + 1)
-        elif netaddr and isinstance(value, netaddr.IPAddress):
-            return six.text_type(value)
-        elif any(test(value) for test in _nasty_type_tests):
-            return six.text_type(value)
-        return value
     except TypeError:
         # Class objects are tricky since they may define something like
         # __iter__ defined but it isn't callable as list().
         return six.text_type(value)
+
+    return value
 
 
 JSONEncoder = json.JSONEncoder
