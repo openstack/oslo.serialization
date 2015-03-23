@@ -140,6 +140,18 @@ class ToPrimitiveTestCase(test_base.BaseTestCase):
         self.assertEqual(jsonutils.to_primitive(dict(a=1, b=2, c=3)),
                          dict(a=1, b=2, c=3))
 
+    def test_dict_values(self):
+        self.assertEqual(
+            jsonutils.to_primitive(
+                dict(a=uuid.UUID("DD9FB2B6-CE81-4A7B-8B56-90E35D650A0B"))),
+            dict(a=u"dd9fb2b6-ce81-4a7b-8b56-90e35d650a0b"))
+
+    def test_dict_keys(self):
+        self.assertEqual(
+            jsonutils.to_primitive(
+                {uuid.UUID("DD9FB2B6-CE81-4A7B-8B56-90E35D650A0B"): 4}),
+            {u"dd9fb2b6-ce81-4a7b-8b56-90e35d650a0b": 4})
+
     def test_empty_dict(self):
         self.assertEqual(jsonutils.to_primitive({}), {})
 
