@@ -2,7 +2,8 @@
  oslo.serialization
 ====================
 
-oslo.serialization library
+The Oslo Serialization library provides support for representing objects
+in transmittable and storable formats, such as JSON and MessagePack.
 
 * Free software: Apache license
 * Documentation: http://docs.openstack.org/developer/oslo.serialization
