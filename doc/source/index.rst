@@ -1,19 +1,30 @@
-====================
- oslo.serialization
-====================
+==============================================
+Welcome to oslo.serialization's documentation!
+==============================================
 
-An OpenStack library for representing objects in transmittable and
-storable formats.
-
-Contents
-========
+The `oslo`_ serialization library provides support for representing objects
+in transmittable and storable formats, such as JSON and MessagePack.
 
 .. toctree::
    :maxdepth: 1
 
-   readme
    installation
-   api
-   history
    contributing
    history
+
+API Documentation
+=================
+
+.. toctree::
+   :maxdepth: 2
+
+   api
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+
+.. _oslo: https://wiki.openstack.org/wiki/Oslo
