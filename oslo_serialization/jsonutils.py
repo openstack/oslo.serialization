@@ -20,14 +20,12 @@ JSON related utilities.
 
 This module provides a few things:
 
-    1) A handy function for getting an object down to something that can be
-    JSON serialized.  See to_primitive().
-
-    2) Wrappers around loads() and dumps().  The dumps() wrapper will
-    automatically use to_primitive() for you if needed.
-
-    3) This sets up anyjson to use the loads() and dumps() wrappers if anyjson
-    is available.
+#. A handy function for getting an object down to something that can be
+   JSON serialized.  See :func:`.to_primitive`.
+#. Wrappers around :func:`.loads` and :func:`.dumps`. The :func:`.dumps`
+   wrapper will automatically use :func:`.to_primitive` for you if needed.
+#. This sets up ``anyjson`` to use the :func:`.loads` and :func:`.dumps`
+   wrappers if ``anyjson`` is available.
 '''
 
 
@@ -87,7 +85,7 @@ def to_primitive(value, convert_instances=False, convert_datetime=True,
     visited in a set, but not all objects are hashable. Instead we just
     track the depth of the object inspections and don't go too deep.
 
-    Therefore, convert_instances=True is lossy ... be aware.
+    Therefore, ``convert_instances=True`` is lossy ... be aware.
     """
     # handle obvious types first - order of basic types determined by running
     # full tests on nova project, resulting in the following counts:

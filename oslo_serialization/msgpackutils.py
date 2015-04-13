@@ -12,6 +12,20 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
+'''
+Msgpack related utilities.
+
+This module provides a few things:
+
+#. A handy registry for getting an object down to something that can be
+   msgpack serialized.  See :class:`.HandlerRegistry`.
+#. Wrappers around :func:`.loads` and :func:`.dumps`. The :func:`.dumps`
+   wrapper will automatically use
+   the :py:attr:`~oslo_serialization.msgpackutils.default_registry` for
+   you if needed.
+'''
+
+
 import datetime
 import functools
 import itertools
