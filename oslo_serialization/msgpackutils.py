@@ -33,6 +33,11 @@ if sys.version_info[0:2] == (2, 6):
 else:
     _PY26 = False
 
+# Expose these so that users don't have to import msgpack to gain these.
+
+PackException = msgpack.PackException
+UnpackException = msgpack.UnpackException
+
 
 class HandlerRegistry(object):
     # Applications can assign 0 to 127 to store
