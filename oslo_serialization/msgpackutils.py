@@ -40,6 +40,17 @@ UnpackException = msgpack.UnpackException
 
 
 class HandlerRegistry(object):
+    """Registry of *type* specific msgpack handlers extensions.
+
+    See: https://github.com/msgpack/msgpack/blob/master/spec.md#formats-ext
+
+    Do note that due to the current limitations in the msgpack python
+    library we can not *currently* dump/load a tuple without converting
+    it to a list.
+
+    This may be fixed in: https://github.com/msgpack/msgpack-python/pull/100
+    """
+
     # Applications can assign 0 to 127 to store
     # application-specific type information...
     min_value = 0
@@ -53,6 +64,7 @@ class HandlerRegistry(object):
         return six.itervalues(self._handlers)
 
     def register(self, handler):
+        """Register a extension handler to handle its associated type."""
         if self.frozen:
             raise ValueError("Frozen handler registry can't be modified")
         ident = handler.identity
@@ -73,9 +85,11 @@ class HandlerRegistry(object):
         return len(self._handlers)
 
     def get(self, identity):
+        """Get the handle for the given numeric identity (or none)."""
         return self._handlers.get(identity, None)
 
     def match(self, obj):
+        """Match the registries handlers to the given object (or none)."""
         for handler in six.itervalues(self._handlers):
             if isinstance(obj, handler.handles):
                 return handler
@@ -268,8 +282,20 @@ def _create_default_registry():
     return registry
 
 
-#: Default, read-only/frozen registry that will be used when none is provided.
 default_registry = _create_default_registry()
+"""
+Default, read-only/frozen registry that will be used when none is provided.
+
+This registry has msgpack extensions for the following:
+
+* ``DateTime`` objects.
+* ``Date`` objects.
+* ``UUID`` objects.
+* ``itertools.count`` objects/iterators.
+* ``set`` and ``frozenset`` container(s).
+* ``netaddr.IPAddress`` objects (only if ``netaddr`` is importable).
+* ``xmlrpclib.DateTime`` datetime objects.
+"""
 
 
 def load(fp, registry=None):
