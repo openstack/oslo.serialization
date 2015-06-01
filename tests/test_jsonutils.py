@@ -173,7 +173,7 @@ class ToPrimitiveTestCase(test_base.BaseTestCase):
         x = xmlrpclib.DateTime()
         x.decode("19710203T04:05:06")
         self.assertEqual(jsonutils.to_primitive(x),
-                         '1971-02-03T04:05:06')
+                         '1971-02-03T04:05:06.000000')
 
     def test_iter(self):
         class IterClass(object):
