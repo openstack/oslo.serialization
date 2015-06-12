@@ -2,11 +2,11 @@
  oslo.serialization
 ====================
 
-.. image:: https://pypip.in/version/oslo.serialization/badge.svg
+.. image:: https://img.shields.io/pypi/v/oslo.serialization.svg
     :target: https://pypi.python.org/pypi/oslo.serialization/
     :alt: Latest Version
 
-.. image:: https://pypip.in/download/oslo.serialization/badge.svg?period=month
+.. image:: https://img.shields.io/pypi/dm/oslo.serialization.svg
     :target: https://pypi.python.org/pypi/oslo.serialization/
     :alt: Downloads
 
