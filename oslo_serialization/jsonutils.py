@@ -111,7 +111,7 @@ def to_primitive(value, convert_instances=False, convert_datetime=True,
 
     if isinstance(value, datetime.datetime):
         if convert_datetime:
-            return timeutils.strtime(value)
+            return value.strftime(timeutils.PERFECT_TIME_FORMAT)
         else:
             return value
 
