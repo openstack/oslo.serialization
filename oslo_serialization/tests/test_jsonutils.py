@@ -46,6 +46,9 @@ class JSONUtilsTestMixin(object):
     def test_dumps(self):
         self.assertEqual('{"a": "b"}', jsonutils.dumps({'a': 'b'}))
 
+    def test_dump_as_bytes(self):
+        self.assertEqual(b'{"a": "b"}', jsonutils.dump_as_bytes({'a': 'b'}))
+
     def test_dumps_namedtuple(self):
         n = collections.namedtuple("foo", "bar baz")(1, 2)
         self.assertEqual('[1, 2]', jsonutils.dumps(n))

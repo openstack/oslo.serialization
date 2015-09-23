@@ -179,10 +179,32 @@ def dumps(obj, default=to_primitive, **kwargs):
     :param kwargs: extra named parameters, please see documentation \
     of `json.dumps <https://docs.python.org/2/library/json.html#basic-usage>`_
     :returns: json formatted string
+
+    Use dump_as_bytes() to ensure that the result type is ``bytes`` on Python 2
+    and Python 3.
     """
     if is_simplejson:
         kwargs['namedtuple_as_object'] = False
     return json.dumps(obj, default=default, **kwargs)
+
+
+def dump_as_bytes(obj, default=to_primitive, encoding='utf-8', **kwargs):
+    """Serialize ``obj`` to a JSON formatted ``bytes``.
+
+    :param obj: object to be serialized
+    :param default: function that returns a serializable version of an object
+    :param encoding: encoding used to encode the serialized JSON output
+    :param kwargs: extra named parameters, please see documentation \
+    of `json.dumps <https://docs.python.org/2/library/json.html#basic-usage>`_
+    :returns: json formatted string
+
+    .. versionadded:: 2.0
+    """
+    serialized = dumps(obj, default=default, **kwargs)
+    if isinstance(serialized, six.text_type):
+        # On Python 3, json.dumps() returns Unicode
+        serialized = serialized.encode(encoding)
+    return serialized
 
 
 def dump(obj, fp, *args, **kwargs):
