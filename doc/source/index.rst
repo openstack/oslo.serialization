@@ -10,7 +10,6 @@ in transmittable and storable formats, such as JSON and MessagePack.
 
    installation
    contributing
-   history
 
 API Documentation
 =================
@@ -19,6 +18,14 @@ API Documentation
    :maxdepth: 2
 
    api
+
+Release Notes
+=============
+
+.. toctree::
+   :maxdepth: 1
+
+   history
 
 Indices and tables
 ==================
