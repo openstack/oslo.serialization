@@ -1,3 +1,9 @@
+base64
+======
+
+.. automodule:: oslo_serialization.base64
+   :members:
+
 jsonutils
 =========
 
