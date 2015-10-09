@@ -1,7 +1,8 @@
 [run]
 branch = True
-source = serialization
-omit = serialization/tests/*,serialization/openstack/*
+source = oslo_serialization
+omit = oslo_serialization/tests/*
 
 [report]
 ignore_errors = True
+precision = 2
