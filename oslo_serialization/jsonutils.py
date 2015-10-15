@@ -86,6 +86,12 @@ def to_primitive(value, convert_instances=False, convert_datetime=True,
     track the depth of the object inspections and don't go too deep.
 
     Therefore, ``convert_instances=True`` is lossy ... be aware.
+
+    .. versionchanged:: 1.3
+       Support UUID encoding.
+
+    .. versionchanged:: 1.6
+       Dictionary keys are now also encoded.
     """
     # handle obvious types first - order of basic types determined by running
     # full tests on nova project, resulting in the following counts:
@@ -178,7 +184,8 @@ def dumps(obj, default=to_primitive, **kwargs):
     """Serialize ``obj`` to a JSON formatted ``str``.
 
     :param obj: object to be serialized
-    :param default: function that returns a serializable version of an object
+    :param default: function that returns a serializable version of an object,
+                    :func:`to_primitive` is used by default.
     :param kwargs: extra named parameters, please see documentation \
     of `json.dumps <https://docs.python.org/2/library/json.html#basic-usage>`_
     :returns: json formatted string
@@ -195,13 +202,14 @@ def dump_as_bytes(obj, default=to_primitive, encoding='utf-8', **kwargs):
     """Serialize ``obj`` to a JSON formatted ``bytes``.
 
     :param obj: object to be serialized
-    :param default: function that returns a serializable version of an object
+    :param default: function that returns a serializable version of an object,
+                    :func:`to_primitive` is used by default.
     :param encoding: encoding used to encode the serialized JSON output
     :param kwargs: extra named parameters, please see documentation \
     of `json.dumps <https://docs.python.org/2/library/json.html#basic-usage>`_
     :returns: json formatted string
 
-    .. versionadded:: 2.0
+    .. versionadded:: 1.10
     """
     serialized = dumps(obj, default=default, **kwargs)
     if isinstance(serialized, six.text_type):
@@ -215,11 +223,15 @@ def dump(obj, fp, *args, **kwargs):
 
     :param obj: object to be serialized
     :param fp: a ``.write()``-supporting file-like object
-    :param default: function that returns a serializable version of an object
+    :param default: function that returns a serializable version of an object,
+                    :func:`to_primitive` is used by default.
     :param args: extra arguments, please see documentation \
     of `json.dump <https://docs.python.org/2/library/json.html#basic-usage>`_
     :param kwargs: extra named parameters, please see documentation \
     of `json.dump <https://docs.python.org/2/library/json.html#basic-usage>`_
+
+    .. versionchanged:: 1.3
+       The *default* parameter now uses :func:`to_primitive` by default.
     """
     default = kwargs.get('default', to_primitive)
     if is_simplejson:
