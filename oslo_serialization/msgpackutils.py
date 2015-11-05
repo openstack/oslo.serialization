@@ -23,6 +23,8 @@ This module provides a few things:
    wrapper will automatically use
    the :py:attr:`~oslo_serialization.msgpackutils.default_registry` for
    you if needed.
+
+.. versionadded:: 1.3
 '''
 
 
@@ -63,6 +65,8 @@ class HandlerRegistry(object):
     it to a list.
 
     This may be fixed in: https://github.com/msgpack/msgpack-python/pull/100
+
+    .. versionadded:: 1.5
     """
 
     # Applications can assign 0 to 127 to store
@@ -309,11 +313,17 @@ This registry has msgpack extensions for the following:
 * ``set`` and ``frozenset`` container(s).
 * ``netaddr.IPAddress`` objects (only if ``netaddr`` is importable).
 * ``xmlrpclib.DateTime`` datetime objects.
+
+.. versionadded:: 1.5
 """
 
 
 def load(fp, registry=None):
-    """Deserialize ``fp`` into a Python object."""
+    """Deserialize ``fp`` into a Python object.
+
+    .. versionchanged:: 1.5
+       Added *registry* parameter.
+    """
     if registry is None:
         registry = default_registry
     # NOTE(harlowja): the reason we can't use the more native msgpack functions
@@ -324,7 +334,11 @@ def load(fp, registry=None):
 
 
 def dump(obj, fp, registry=None):
-    """Serialize ``obj`` as a messagepack formatted stream to ``fp``."""
+    """Serialize ``obj`` as a messagepack formatted stream to ``fp``.
+
+    .. versionchanged:: 1.5
+       Added *registry* parameter.
+    """
     if registry is None:
         registry = default_registry
     return msgpack.pack(obj, fp,
@@ -333,7 +347,11 @@ def dump(obj, fp, registry=None):
 
 
 def dumps(obj, registry=None):
-    """Serialize ``obj`` to a messagepack formatted ``str``."""
+    """Serialize ``obj`` to a messagepack formatted ``str``.
+
+    .. versionchanged:: 1.5
+       Added *registry* parameter.
+    """
     if registry is None:
         registry = default_registry
     return msgpack.packb(obj,
@@ -342,7 +360,11 @@ def dumps(obj, registry=None):
 
 
 def loads(s, registry=None):
-    """Deserialize ``s`` messagepack ``str`` into a Python object."""
+    """Deserialize ``s`` messagepack ``str`` into a Python object.
+
+    .. versionchanged:: 1.5
+       Added *registry* parameter.
+    """
     if registry is None:
         registry = default_registry
     ext_hook = functools.partial(_unserializer, registry)
