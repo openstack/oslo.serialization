@@ -31,7 +31,6 @@ This module provides a few things:
 import datetime
 import functools
 import itertools
-import sys
 import uuid
 
 import msgpack
@@ -41,13 +40,6 @@ import six
 import six.moves.xmlrpc_client as xmlrpclib
 
 netaddr = importutils.try_import("netaddr")
-
-# NOTE(harlowja): itertools.count only started to take a step value
-# in python 2.7+ so we can't use it in 2.6...
-if sys.version_info[0:2] == (2, 6):
-    _PY26 = True
-else:
-    _PY26 = False
 
 # Expose these so that users don't have to import msgpack to gain these.
 
@@ -187,13 +179,7 @@ class CountHandler(object):
     def deserialize(data):
         value = msgpack.unpackb(data)
         start, step = value
-        if not _PY26:
-            return itertools.count(start, step)
-        else:
-            if step != 1:
-                raise ValueError("Python 2.6.x does not support steps"
-                                 " that are not equal to one")
-            return itertools.count(start)
+        return itertools.count(start, step)
 
 
 if netaddr is not None:
