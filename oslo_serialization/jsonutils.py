@@ -34,26 +34,8 @@ import datetime
 import functools
 import inspect
 import itertools
-import sys
+import json
 import uuid
-
-is_simplejson = False
-if sys.version_info < (2, 7):
-    # On Python <= 2.6, json module is not C boosted, so try to use
-    # simplejson module if available
-    try:
-        import simplejson as json
-        # NOTE(mriedem): Make sure we have a new enough version of simplejson
-        # to support the namedobject_as_tuple argument. This can be removed
-        # in the Kilo release when python 2.6 support is dropped.
-        if 'namedtuple_as_object' in inspect.getargspec(json.dumps).args:
-            is_simplejson = True
-        else:
-            import json
-    except ImportError:
-        import json
-else:
-    import json
 
 from oslo_utils import encodeutils
 from oslo_utils import importutils
@@ -193,8 +175,6 @@ def dumps(obj, default=to_primitive, **kwargs):
     Use dump_as_bytes() to ensure that the result type is ``bytes`` on Python 2
     and Python 3.
     """
-    if is_simplejson:
-        kwargs['namedtuple_as_object'] = False
     return json.dumps(obj, default=default, **kwargs)
 
 
@@ -234,8 +214,6 @@ def dump(obj, fp, *args, **kwargs):
        The *default* parameter now uses :func:`to_primitive` by default.
     """
     default = kwargs.get('default', to_primitive)
-    if is_simplejson:
-        kwargs['namedtuple_as_object'] = False
     return json.dump(obj, fp, default=default, *args, **kwargs)
 
 

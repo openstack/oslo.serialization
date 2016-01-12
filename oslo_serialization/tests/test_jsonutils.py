@@ -21,7 +21,6 @@ import mock
 import netaddr
 from oslo_i18n import fixture
 from oslotest import base as test_base
-import simplejson
 import six
 import six.moves.xmlrpc_client as xmlrpclib
 
@@ -36,7 +35,7 @@ class JSONUtilsTestMixin(object):
         super(JSONUtilsTestMixin, self).setUp()
         self.json_patcher = mock.patch.multiple(
             jsonutils, json=self.json_impl,
-            is_simplejson=self.json_impl is simplejson)
+        )
         self.json_impl_mock = self.json_patcher.start()
 
     def tearDown(self):
@@ -106,10 +105,6 @@ class JSONUtilsTestMixin(object):
 
 class JSONUtilsTestJson(JSONUtilsTestMixin, test_base.BaseTestCase):
     json_impl = json
-
-
-class JSONUtilsTestSimpleJson(JSONUtilsTestMixin, test_base.BaseTestCase):
-    json_impl = simplejson
 
 
 class ToPrimitiveTestCase(test_base.BaseTestCase):
