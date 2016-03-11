@@ -128,20 +128,37 @@ class DateTimeHandler(object):
 
     def serialize(self, dt):
         dct = {
-            'day': dt.day,
-            'month': dt.month,
-            'year': dt.year,
-            'hour': dt.hour,
-            'minute': dt.minute,
-            'second': dt.second,
-            'microsecond': dt.microsecond,
+            u'day': dt.day,
+            u'month': dt.month,
+            u'year': dt.year,
+            u'hour': dt.hour,
+            u'minute': dt.minute,
+            u'second': dt.second,
+            u'microsecond': dt.microsecond,
         }
         if dt.tzinfo:
-            dct['tz'] = dt.tzinfo.tzname(None)
+            tz = dt.tzinfo.tzname(None)
+            if six.PY2:
+                tz = tz.decode("ascii")
+            dct[u'tz'] = tz
         return dumps(dct, registry=self._registry)
 
     def deserialize(self, blob):
         dct = loads(blob, registry=self._registry)
+
+        if six.PY3 and b"day" in dct:
+            # NOTE(sileht): oslo.serialization <= 2.4.1 was
+            # storing thing as unicode for py3 while is was
+            # bytes for py2
+            # For python2, we don't care bytes or unicode works
+            # for dict keys and tz
+            # But for python3, we have some backward compability
+            # to take care in case of the payload have been produced
+            # by python2 and now read by python3
+            dct = dict((k.decode("ascii"), v) for k, v in dct.items())
+            if 'tz' in dct:
+                dct['tz'] = dct['tz'].decode("ascii")
+
         dt = datetime.datetime(day=dct['day'],
                                month=dct['month'],
                                year=dct['year'],
@@ -242,14 +259,18 @@ class DateHandler(object):
 
     def serialize(self, d):
         dct = {
-            'year': d.year,
-            'month': d.month,
-            'day': d.day,
+            u'year': d.year,
+            u'month': d.month,
+            u'day': d.day,
         }
         return dumps(dct, registry=self._registry)
 
     def deserialize(self, blob):
         dct = loads(blob, registry=self._registry)
+        if six.PY3 and b"day" in dct:
+            # NOTE(sileht): see DateTimeHandler.deserialize()
+            dct = dict((k.decode("ascii"), v) for k, v in dct.items())
+
         return datetime.date(year=dct['year'],
                              month=dct['month'],
                              day=dct['day'])
