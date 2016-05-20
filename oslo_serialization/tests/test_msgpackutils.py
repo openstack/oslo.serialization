@@ -209,3 +209,6 @@ class MsgPackUtilsTest(test_base.BaseTestCase):
         self.assertEqual(255, c.r)
         self.assertEqual(254, c.g)
         self.assertEqual(253, c.b)
+
+    def test_object(self):
+        self.assertRaises(ValueError, msgpackutils.dumps, object())

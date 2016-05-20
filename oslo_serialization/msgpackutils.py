@@ -13,7 +13,7 @@
 #    under the License.
 
 '''
-Msgpack related utilities.
+MessagePack related utilities.
 
 This module provides a few things:
 
@@ -388,8 +388,8 @@ class DateHandler(object):
 def _serializer(registry, obj):
     handler = registry.match(obj)
     if handler is None:
-        raise TypeError("No serialization handler registered"
-                        " for type '%s'" % (type(obj).__name__))
+        raise ValueError("No serialization handler registered"
+                         " for type '%s'" % (type(obj).__name__))
     return msgpack.ExtType(handler.identity, handler.serialize(obj))
 
 

@@ -126,7 +126,7 @@ def to_primitive(value, convert_instances=False, convert_datetime=True,
         return 'mock'
 
     if level > max_depth:
-        return '?'
+        return None
 
     # The try block may not be necessary after the class check above,
     # but just in case ...

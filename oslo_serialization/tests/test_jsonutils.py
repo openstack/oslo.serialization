@@ -288,9 +288,9 @@ class ToPrimitiveTestCase(test_base.BaseTestCase):
 
         l4_obj = LevelsGenerator(4)
 
-        json_l2 = {0: {0: '?'}}
-        json_l3 = {0: {0: {0: '?'}}}
-        json_l4 = {0: {0: {0: {0: '?'}}}}
+        json_l2 = {0: {0: None}}
+        json_l3 = {0: {0: {0: None}}}
+        json_l4 = {0: {0: {0: {0: None}}}}
 
         ret = jsonutils.to_primitive(l4_obj, max_depth=2)
         self.assertEqual(ret, json_l2)
