@@ -2,7 +2,7 @@
 # of appearance. Changing the order has an impact on the overall integration
 # process, which may cause wedges in the gate later.
 hacking<0.11,>=0.10.0
-mock>=1.2 # BSD
+mock>=2.0 # BSD
 netaddr!=0.7.16,>=0.7.12 # BSD
 
 # this is required for the docs build jobs
