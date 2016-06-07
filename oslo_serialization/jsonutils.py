@@ -43,6 +43,7 @@ from oslo_utils import timeutils
 import six
 import six.moves.xmlrpc_client as xmlrpclib
 
+ipaddress = importutils.try_import("ipaddress")
 netaddr = importutils.try_import("netaddr")
 
 _nasty_type_tests = [inspect.ismodule, inspect.isclass, inspect.ismethod,
@@ -107,6 +108,11 @@ def to_primitive(value, convert_instances=False, convert_datetime=True,
         return six.text_type(value)
 
     if netaddr and isinstance(value, netaddr.IPAddress):
+        return six.text_type(value)
+
+    if ipaddress and isinstance(value,
+                                (ipaddress.IPv4Address,
+                                 ipaddress.IPv6Address)):
         return six.text_type(value)
 
     # value of itertools.count doesn't get caught by nasty_type_tests

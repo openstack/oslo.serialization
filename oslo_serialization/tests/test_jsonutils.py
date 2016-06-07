@@ -15,6 +15,7 @@
 
 import collections
 import datetime
+import ipaddress
 import json
 
 import mock
@@ -301,10 +302,20 @@ class ToPrimitiveTestCase(test_base.BaseTestCase):
         ret = jsonutils.to_primitive(l4_obj, max_depth=4)
         self.assertEqual(ret, json_l4)
 
-    def test_ipaddr(self):
+    def test_ipaddr_using_netaddr(self):
         thing = {'ip_addr': netaddr.IPAddress('1.2.3.4')}
         ret = jsonutils.to_primitive(thing)
         self.assertEqual({'ip_addr': '1.2.3.4'}, ret)
+
+    def test_ipaddr_using_ipaddress_v4(self):
+        thing = {'ip_addr': ipaddress.ip_address(u'192.168.0.1')}
+        ret = jsonutils.to_primitive(thing)
+        self.assertEqual({'ip_addr': '192.168.0.1'}, ret)
+
+    def test_ipaddr_using_ipaddress_v6(self):
+        thing = {'ip_addr': ipaddress.ip_address(u'2001:db8::')}
+        ret = jsonutils.to_primitive(thing)
+        self.assertEqual({'ip_addr': '2001:db8::'}, ret)
 
     def test_message_with_param(self):
         msg = self.trans_fixture.lazy('A message with param: %s')
