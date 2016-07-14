@@ -113,6 +113,9 @@ class ToPrimitiveTestCase(test_base.BaseTestCase):
         super(ToPrimitiveTestCase, self).setUp()
         self.trans_fixture = self.useFixture(fixture.Translation())
 
+    def test_bytes(self):
+        self.assertEqual(jsonutils.to_primitive(b'abc'), 'abc')
+
     def test_list(self):
         self.assertEqual(jsonutils.to_primitive([1, 2, 3]), [1, 2, 3])
 
