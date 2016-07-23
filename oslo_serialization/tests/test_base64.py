@@ -20,37 +20,37 @@ from oslotest import base as test_base
 class Base64Tests(test_base.BaseTestCase):
 
     def test_encode_as_bytes(self):
-        self.assertEqual(base64.encode_as_bytes(b'text'),
-                         b'dGV4dA==')
-        self.assertEqual(base64.encode_as_bytes(u'text'),
-                         b'dGV4dA==')
-        self.assertEqual(base64.encode_as_bytes(u'e:\xe9'),
-                         b'ZTrDqQ==')
-        self.assertEqual(base64.encode_as_bytes(u'e:\xe9', encoding='latin1'),
-                         b'ZTrp')
+        self.assertEqual(b'dGV4dA==',
+                         base64.encode_as_bytes(b'text'))
+        self.assertEqual(b'dGV4dA==',
+                         base64.encode_as_bytes(u'text'))
+        self.assertEqual(b'ZTrDqQ==',
+                         base64.encode_as_bytes(u'e:\xe9'))
+        self.assertEqual(b'ZTrp',
+                         base64.encode_as_bytes(u'e:\xe9', encoding='latin1'))
 
     def test_encode_as_text(self):
-        self.assertEqual(base64.encode_as_text(b'text'),
-                         u'dGV4dA==')
-        self.assertEqual(base64.encode_as_text(u'text'),
-                         u'dGV4dA==')
-        self.assertEqual(base64.encode_as_text(u'e:\xe9'),
-                         u'ZTrDqQ==')
-        self.assertEqual(base64.encode_as_text(u'e:\xe9', encoding='latin1'),
-                         u'ZTrp')
+        self.assertEqual(u'dGV4dA==',
+                         base64.encode_as_text(b'text'))
+        self.assertEqual(u'dGV4dA==',
+                         base64.encode_as_text(u'text'))
+        self.assertEqual(u'ZTrDqQ==',
+                         base64.encode_as_text(u'e:\xe9'))
+        self.assertEqual(u'ZTrp',
+                         base64.encode_as_text(u'e:\xe9', encoding='latin1'))
 
     def test_decode_as_bytes(self):
-        self.assertEqual(base64.decode_as_bytes(b'dGV4dA=='),
-                         b'text')
-        self.assertEqual(base64.decode_as_bytes(u'dGV4dA=='),
-                         b'text')
+        self.assertEqual(b'text',
+                         base64.decode_as_bytes(b'dGV4dA=='))
+        self.assertEqual(b'text',
+                         base64.decode_as_bytes(u'dGV4dA=='))
 
     def test_decode_as_text(self):
-        self.assertEqual(base64.decode_as_text(b'dGV4dA=='),
-                         u'text')
-        self.assertEqual(base64.decode_as_text(u'dGV4dA=='),
-                         u'text')
-        self.assertEqual(base64.decode_as_text(u'ZTrDqQ=='),
-                         u'e:\xe9')
-        self.assertEqual(base64.decode_as_text(u'ZTrp', encoding='latin1'),
-                         u'e:\xe9')
+        self.assertEqual(u'text',
+                         base64.decode_as_text(b'dGV4dA=='))
+        self.assertEqual(u'text',
+                         base64.decode_as_text(u'dGV4dA=='))
+        self.assertEqual(u'e:\xe9',
+                         base64.decode_as_text(u'ZTrDqQ=='))
+        self.assertEqual(u'e:\xe9',
+                         base64.decode_as_text(u'ZTrp', encoding='latin1'))

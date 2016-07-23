@@ -66,10 +66,10 @@ def _dumps_loads(obj):
 
 class MsgPackUtilsTest(test_base.BaseTestCase):
     def test_list(self):
-        self.assertEqual(_dumps_loads([1, 2, 3]), [1, 2, 3])
+        self.assertEqual([1, 2, 3], _dumps_loads([1, 2, 3]))
 
     def test_empty_list(self):
-        self.assertEqual(_dumps_loads([]), [])
+        self.assertEqual([], _dumps_loads([]))
 
     def test_tuple(self):
         # Seems like we do lose whether it was a tuple or not...
@@ -77,14 +77,14 @@ class MsgPackUtilsTest(test_base.BaseTestCase):
         # Maybe fixed someday:
         #
         # https://github.com/msgpack/msgpack-python/issues/98
-        self.assertEqual(_dumps_loads((1, 2, 3)), [1, 2, 3])
+        self.assertEqual([1, 2, 3], _dumps_loads((1, 2, 3)))
 
     def test_dict(self):
-        self.assertEqual(_dumps_loads(dict(a=1, b=2, c=3)),
-                         dict(a=1, b=2, c=3))
+        self.assertEqual(dict(a=1, b=2, c=3),
+                         _dumps_loads(dict(a=1, b=2, c=3)))
 
     def test_empty_dict(self):
-        self.assertEqual(_dumps_loads({}), {})
+        self.assertEqual({}, _dumps_loads({}))
 
     def test_complex_dict(self):
         src = {
@@ -99,7 +99,7 @@ class MsgPackUtilsTest(test_base.BaseTestCase):
             'ddd': b'bbb',
             'today': datetime.date.today(),
         }
-        self.assertEqual(_dumps_loads(src), src)
+        self.assertEqual(src, _dumps_loads(src))
 
     def test_itercount(self):
         it = itertools.count(1)
@@ -118,29 +118,29 @@ class MsgPackUtilsTest(test_base.BaseTestCase):
         self.assertEqual(six.next(it), six.next(it2))
 
     def test_set(self):
-        self.assertEqual(_dumps_loads(set([1, 2])), set([1, 2]))
+        self.assertEqual(set([1, 2]), _dumps_loads(set([1, 2])))
 
     def test_empty_set(self):
-        self.assertEqual(_dumps_loads(set([])), set([]))
+        self.assertEqual(set([]), _dumps_loads(set([])))
 
     def test_frozenset(self):
-        self.assertEqual(_dumps_loads(frozenset([1, 2])), frozenset([1, 2]))
+        self.assertEqual(frozenset([1, 2]), _dumps_loads(frozenset([1, 2])))
 
     def test_empty_frozenset(self):
-        self.assertEqual(_dumps_loads(frozenset([])), frozenset([]))
+        self.assertEqual(frozenset([]), _dumps_loads(frozenset([])))
 
     def test_datetime_preserve(self):
         x = datetime.datetime(1920, 2, 3, 4, 5, 6, 7)
-        self.assertEqual(_dumps_loads(x), x)
+        self.assertEqual(x, _dumps_loads(x))
 
     def test_datetime(self):
         x = xmlrpclib.DateTime()
         x.decode("19710203T04:05:06")
-        self.assertEqual(_dumps_loads(x), x)
+        self.assertEqual(x, _dumps_loads(x))
 
     def test_ipaddr(self):
         thing = {'ip_addr': netaddr.IPAddress('1.2.3.4')}
-        self.assertEqual(_dumps_loads(thing), thing)
+        self.assertEqual(thing, _dumps_loads(thing))
 
     def test_today(self):
         today = datetime.date.today()
