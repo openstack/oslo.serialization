@@ -52,12 +52,12 @@ _nasty_type_tests = [inspect.ismodule, inspect.isclass, inspect.ismethod,
                      inspect.iscode, inspect.isbuiltin, inspect.isroutine,
                      inspect.isabstract]
 
-_simple_types = (six.string_types + six.integer_types
+_simple_types = ((six.text_type,) + six.integer_types
                  + (type(None), bool, float))
 
 
 def to_primitive(value, convert_instances=False, convert_datetime=True,
-                 level=0, max_depth=3):
+                 level=0, max_depth=3, encoding='utf-8'):
     """Convert a complex object into primitives.
 
     Handy for JSON serialization. We can optionally handle instances,
@@ -90,6 +90,11 @@ def to_primitive(value, convert_instances=False, convert_datetime=True,
     #    283 <type 'tuple'>
     #     19 <type 'long'>
     if isinstance(value, _simple_types):
+        return value
+
+    if isinstance(value, six.binary_type):
+        if six.PY3:
+            value = value.decode(encoding=encoding)
         return value
 
     # It's not clear why xmlrpclib created their own DateTime type, but
@@ -141,7 +146,8 @@ def to_primitive(value, convert_instances=False, convert_datetime=True,
                                       convert_instances=convert_instances,
                                       convert_datetime=convert_datetime,
                                       level=level,
-                                      max_depth=max_depth)
+                                      max_depth=max_depth,
+                                      encoding=encoding)
         if isinstance(value, dict):
             return {recursive(k): recursive(v)
                     for k, v in six.iteritems(value)}
