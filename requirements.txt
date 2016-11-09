@@ -7,7 +7,7 @@
 # adding a new feature to oslo.serialization means adding a new dependency,
 # that is a likely indicator that the feature belongs somewhere else.
 
-pbr>=1.6 # Apache-2.0
+pbr>=1.8 # Apache-2.0
 six>=1.9.0 # MIT
 msgpack-python>=0.4.0 # Apache-2.0
 oslo.utils>=3.18.0 # Apache-2.0
