@@ -14,7 +14,6 @@
 
 import datetime
 import itertools
-import uuid
 
 import netaddr
 from oslotest import base as test_base
@@ -23,6 +22,7 @@ import six
 import six.moves.xmlrpc_client as xmlrpclib
 
 from oslo_serialization import msgpackutils
+from oslo_utils import uuidutils
 
 
 _TZ_FMT = '%Y-%m-%d %H:%M:%S %Z%z'
@@ -94,7 +94,7 @@ class MsgPackUtilsTest(test_base.BaseTestCase):
             'b': 2.0,
             'c': [],
             'd': set([1, 2, 3]),
-            'zzz': uuid.uuid4(),
+            'zzz': uuidutils.generate_uuid(),
             'yyy': 'yyy',
             'ddd': b'bbb',
             'today': datetime.date.today(),
