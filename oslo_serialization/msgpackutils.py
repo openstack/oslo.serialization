@@ -172,7 +172,7 @@ class HandlerRegistry(object):
     def copy(self, unfreeze=False):
         """Deep copy the given registry (and its handlers)."""
         c = type(self)()
-        for ident, handlers in six.iteritems(self._handlers):
+        for ident, handlers in self._handlers.items():
             cloned_handlers = []
             for h in handlers:
                 if hasattr(h, 'copy'):

@@ -150,7 +150,7 @@ def to_primitive(value, convert_instances=False, convert_datetime=True,
                                       encoding=encoding)
         if isinstance(value, dict):
             return {recursive(k): recursive(v)
-                    for k, v in six.iteritems(value)}
+                    for k, v in value.items()}
         elif hasattr(value, 'iteritems'):
             return recursive(dict(value.iteritems()), level=level + 1)
         # Python 3 does not have iteritems
