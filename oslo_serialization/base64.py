@@ -67,7 +67,10 @@ def decode_as_bytes(encoded):
     """
     if isinstance(encoded, bytes):
         encoded = encoded.decode('ascii')
-    return base64.b64decode(encoded)
+    if six.PY2:
+        return base64.decodestring(encoded)
+    else:
+        return base64.b64decode(encoded)
 
 
 def decode_as_text(encoded, encoding='utf-8'):
