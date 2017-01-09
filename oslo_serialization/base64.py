@@ -22,6 +22,7 @@ Utilities to encode and decode Base64.
 from __future__ import absolute_import
 
 import base64
+import binascii
 
 import six
 
@@ -64,13 +65,16 @@ def decode_as_bytes(encoded):
     :returns: decoded bytes string (bytes)
 
     Use decode_as_text() to get the decoded string as text.
+
+    A TypeError is raised if the input is invalid (or incorrectly padded).
     """
     if isinstance(encoded, bytes):
         encoded = encoded.decode('ascii')
-    if six.PY2:
-        return base64.decodestring(encoded)
-    else:
+    try:
         return base64.b64decode(encoded)
+    except binascii.Error as e:
+        # Transform this exception for consistency.
+        raise TypeError(str(e))
 
 
 def decode_as_text(encoded, encoding='utf-8'):
