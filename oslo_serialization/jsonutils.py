@@ -112,7 +112,7 @@ def to_primitive(value, convert_instances=False, convert_datetime=True,
     if isinstance(value, uuid.UUID):
         return six.text_type(value)
 
-    if netaddr and isinstance(value, netaddr.IPAddress):
+    if netaddr and isinstance(value, (netaddr.IPAddress, netaddr.IPNetwork)):
         return six.text_type(value)
 
     if ipaddress and isinstance(value,
