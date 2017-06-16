@@ -320,6 +320,11 @@ class ToPrimitiveTestCase(test_base.BaseTestCase):
         ret = jsonutils.to_primitive(thing)
         self.assertEqual({'ip_addr': '2001:db8::'}, ret)
 
+    def test_ipnet_using_netaddr(self):
+        thing = {'ip_net': netaddr.IPNetwork('1.2.3.0/24')}
+        ret = jsonutils.to_primitive(thing)
+        self.assertEqual({'ip_net': '1.2.3.0/24'}, ret)
+
     def test_message_with_param(self):
         msg = self.trans_fixture.lazy('A message with param: %s')
         msg = msg % 'test_domain'
