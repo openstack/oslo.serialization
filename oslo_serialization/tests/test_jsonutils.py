@@ -254,7 +254,7 @@ class ToPrimitiveTestCase(test_base.BaseTestCase):
         self.assertEqual(dict(b=1),
                          jsonutils.to_primitive(x, convert_instances=True))
 
-        self.assertEqual(x, jsonutils.to_primitive(x))
+        self.assertRaises(ValueError, jsonutils.to_primitive, x)
 
     def test_typeerror(self):
         x = bytearray  # Class, not instance
