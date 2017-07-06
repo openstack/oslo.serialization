@@ -8,27 +8,12 @@ in transmittable and storable formats, such as JSON and MessagePack.
 .. toctree::
    :maxdepth: 1
 
-   installation
-   contributing
+   install/index
+   user/index
+   contributor/index
+   reference/index
 
-API Documentation
-=================
-
-.. toctree::
-   :maxdepth: 2
-
-   api
-
-Release Notes
-=============
-
-.. toctree::
-   :maxdepth: 1
-
-   history
-
-Indices and tables
-==================
+.. rubric:: Indices and tables
 
 * :ref:`genindex`
 * :ref:`modindex`
