@@ -23,6 +23,6 @@ The oslo.serialization library provides support for representing objects
 in transmittable and storable formats, such as Base64, JSON and MessagePack.
 
 * Free software: Apache license
-* Documentation: http://docs.openstack.org/developer/oslo.serialization
-* Source: http://git.openstack.org/cgit/openstack/oslo.serialization
-* Bugs: http://bugs.launchpad.net/oslo.serialization
+* Documentation: https://docs.openstack.org/oslo.serialization/latest/
+* Source: https://git.openstack.org/cgit/openstack/oslo.serialization
+* Bugs: https://docs.openstack.org/oslo.serialization/latest/
