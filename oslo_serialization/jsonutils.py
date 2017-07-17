@@ -167,7 +167,7 @@ def to_primitive(value, convert_instances=False, convert_datetime=True,
         # __iter__ defined but it isn't callable as list().
         return six.text_type(value)
 
-    raise ValueError("Cannot convert %r to primitive" % (value,))
+    return value
 
 
 JSONEncoder = json.JSONEncoder
