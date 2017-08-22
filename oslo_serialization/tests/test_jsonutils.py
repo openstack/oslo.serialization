@@ -243,7 +243,8 @@ class ToPrimitiveTestCase(test_base.BaseTestCase):
         p = jsonutils.to_primitive(x)
         self.assertEqual({'a': 1, 'b': 2, 'c': 3}, p)
 
-    def test_instance(self):
+    @mock.patch('warnings.warn')
+    def test_instance(self, warn_mock):
         class MysteryClass(object):
             a = 10
 
@@ -255,6 +256,7 @@ class ToPrimitiveTestCase(test_base.BaseTestCase):
                          jsonutils.to_primitive(x, convert_instances=True))
 
         self.assertEqual(x, jsonutils.to_primitive(x))
+        warn_mock.assert_called_once()
 
     def test_typeerror(self):
         x = bytearray  # Class, not instance

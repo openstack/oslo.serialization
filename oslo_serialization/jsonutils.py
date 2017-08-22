@@ -36,6 +36,7 @@ import inspect
 import itertools
 import json
 import uuid
+import warnings
 
 from oslo_utils import encodeutils
 from oslo_utils import importutils
@@ -167,6 +168,9 @@ def to_primitive(value, convert_instances=False, convert_datetime=True,
         # __iter__ defined but it isn't callable as list().
         return six.text_type(value)
 
+    # TODO(gcb) raise ValueError in version 3.0
+    warnings.warn("Cannot convert %r to primitive, will raise ValueError "
+                  "instead of warning in version 3.0" % (value,))
     return value
 
 
