@@ -58,7 +58,8 @@ _simple_types = ((six.text_type,) + six.integer_types
 
 
 def to_primitive(value, convert_instances=False, convert_datetime=True,
-                 level=0, max_depth=3, encoding='utf-8'):
+                 level=0, max_depth=3, encoding='utf-8',
+                 fallback=None):
     """Convert a complex object into primitives.
 
     Handy for JSON serialization. We can optionally handle instances,
@@ -71,12 +72,22 @@ def to_primitive(value, convert_instances=False, convert_datetime=True,
 
     Therefore, ``convert_instances=True`` is lossy ... be aware.
 
+    If the object cannot be converted to primitive, it is returned unchanged
+    if fallback is not set, return fallback(value) otherwise.
+
+    .. versionchanged:: 2.22
+       Added *fallback* parameter.
+
     .. versionchanged:: 1.3
        Support UUID encoding.
 
     .. versionchanged:: 1.6
        Dictionary keys are now also encoded.
     """
+    orig_fallback = fallback
+    if fallback is None:
+        fallback = six.text_type
+
     # handle obvious types first - order of basic types determined by running
     # full tests on nova project, resulting in the following counts:
     # 572754 <type 'NoneType'>
@@ -124,10 +135,10 @@ def to_primitive(value, convert_instances=False, convert_datetime=True,
     # value of itertools.count doesn't get caught by nasty_type_tests
     # and results in infinite loop when list(value) is called.
     if type(value) == itertools.count:
-        return six.text_type(value)
+        return fallback(value)
 
     if any(test(value) for test in _nasty_type_tests):
-        return six.text_type(value)
+        return fallback(value)
 
     # FIXME(vish): Workaround for LP bug 852095. Without this workaround,
     #              tests that raise an exception in a mocked method that
@@ -148,7 +159,8 @@ def to_primitive(value, convert_instances=False, convert_datetime=True,
                                       convert_datetime=convert_datetime,
                                       level=level,
                                       max_depth=max_depth,
-                                      encoding=encoding)
+                                      encoding=encoding,
+                                      fallback=orig_fallback)
         if isinstance(value, dict):
             return {recursive(k): recursive(v)
                     for k, v in value.items()}
@@ -166,7 +178,10 @@ def to_primitive(value, convert_instances=False, convert_datetime=True,
     except TypeError:
         # Class objects are tricky since they may define something like
         # __iter__ defined but it isn't callable as list().
-        return six.text_type(value)
+        return fallback(value)
+
+    if orig_fallback is not None:
+        return orig_fallback(value)
 
     # TODO(gcb) raise ValueError in version 3.0
     warnings.warn("Cannot convert %r to primitive, will raise ValueError "
