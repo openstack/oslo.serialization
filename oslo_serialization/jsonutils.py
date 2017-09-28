@@ -132,6 +132,10 @@ def to_primitive(value, convert_instances=False, convert_datetime=True,
                                  ipaddress.IPv6Address)):
         return six.text_type(value)
 
+    # For exceptions, return the 'repr' of the exception object
+    if isinstance(value, Exception):
+        return repr(value)
+
     # value of itertools.count doesn't get caught by nasty_type_tests
     # and results in infinite loop when list(value) is called.
     if type(value) == itertools.count:
