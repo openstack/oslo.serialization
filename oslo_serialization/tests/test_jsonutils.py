@@ -15,7 +15,9 @@
 
 import collections
 import datetime
+import functools
 import ipaddress
+import itertools
 import json
 
 import mock
@@ -26,6 +28,11 @@ import six
 import six.moves.xmlrpc_client as xmlrpclib
 
 from oslo_serialization import jsonutils
+
+
+class ReprObject(object):
+    def __repr__(self):
+        return 'repr'
 
 
 class JSONUtilsTestMixin(object):
@@ -45,6 +52,11 @@ class JSONUtilsTestMixin(object):
 
     def test_dumps(self):
         self.assertEqual('{"a": "b"}', jsonutils.dumps({'a': 'b'}))
+
+    def test_dumps_default(self):
+        args = [ReprObject()]
+        convert = functools.partial(jsonutils.to_primitive, fallback=repr)
+        self.assertEqual('["repr"]', jsonutils.dumps(args, default=convert))
 
     def test_dump_as_bytes(self):
         self.assertEqual(b'{"a": "b"}', jsonutils.dump_as_bytes({'a': 'b'}))
@@ -336,3 +348,54 @@ class ToPrimitiveTestCase(test_base.BaseTestCase):
         msg = msg % {'param': 'hello'}
         ret = jsonutils.to_primitive(msg)
         self.assertEqual(msg, ret)
+
+    def test_fallback(self):
+        obj = ReprObject()
+
+        ret = jsonutils.to_primitive(obj)
+        self.assertIs(obj, ret)
+
+        ret = jsonutils.to_primitive(obj, fallback=repr)
+        self.assertEqual('repr', ret)
+
+    def test_fallback_list(self):
+        obj = ReprObject()
+        obj_list = [obj]
+
+        ret = jsonutils.to_primitive(obj_list)
+        self.assertEqual([obj], ret)
+
+        ret = jsonutils.to_primitive(obj_list, fallback=repr)
+        self.assertEqual(['repr'], ret)
+
+    def test_fallback_itertools_count(self):
+        obj = itertools.count(1)
+
+        ret = jsonutils.to_primitive(obj)
+        self.assertEqual(six.text_type(obj), ret)
+
+        ret = jsonutils.to_primitive(obj, fallback=lambda _: 'itertools_count')
+        self.assertEqual('itertools_count', ret)
+
+    def test_fallback_nasty(self):
+        obj = int
+        ret = jsonutils.to_primitive(obj)
+        self.assertEqual(six.text_type(obj), ret)
+
+        def formatter(typeobj):
+            return 'type:%s' % typeobj.__name__
+        ret = jsonutils.to_primitive(obj, fallback=formatter)
+        self.assertEqual("type:int", ret)
+
+    def test_fallback_typeerror(self):
+        class NotIterable(object):
+            # __iter__ is not callable, cause a TypeError in to_primitive()
+            __iter__ = None
+
+        obj = NotIterable()
+
+        ret = jsonutils.to_primitive(obj)
+        self.assertEqual(six.text_type(obj), ret)
+
+        ret = jsonutils.to_primitive(obj, fallback=lambda _: 'fallback')
+        self.assertEqual('fallback', ret)
