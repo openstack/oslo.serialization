@@ -2,8 +2,8 @@
 Team and repository tags
 ========================
 
-.. image:: http://governance.openstack.org/badges/oslo.serialization.svg
-    :target: http://governance.openstack.org/reference/tags/index.html
+.. image:: https://governance.openstack.org/tc/badges/oslo.serialization.svg
+    :target: https://governance.openstack.org/tc/ference/tags/index.html
 
 .. Change things from this point on
 
