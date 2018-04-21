@@ -12,11 +12,11 @@ Team and repository tags
 ====================
 
 .. image:: https://img.shields.io/pypi/v/oslo.serialization.svg
-    :target: https://pypi.python.org/pypi/oslo.serialization/
+    :target: https://pypi.org/project/oslo.serialization/
     :alt: Latest Version
 
 .. image:: https://img.shields.io/pypi/dm/oslo.serialization.svg
-    :target: https://pypi.python.org/pypi/oslo.serialization/
+    :target: https://pypi.org/project/oslo.serialization/
     :alt: Downloads
 
 The oslo.serialization library provides support for representing objects
