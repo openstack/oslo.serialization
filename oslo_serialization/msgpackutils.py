@@ -446,7 +446,7 @@ def load(fp, registry=None):
     # here is that the unpack() function (oddly) doesn't seem to take a
     # 'ext_hook' parameter..
     ext_hook = functools.partial(_unserializer, registry)
-    return msgpack.Unpacker(fp, ext_hook=ext_hook, encoding='utf-8').unpack()
+    return msgpack.Unpacker(fp, ext_hook=ext_hook, raw=False).unpack()
 
 
 def dump(obj, fp, registry=None):
@@ -484,4 +484,4 @@ def loads(s, registry=None):
     if registry is None:
         registry = default_registry
     ext_hook = functools.partial(_unserializer, registry)
-    return msgpack.unpackb(s, ext_hook=ext_hook, encoding='utf-8')
+    return msgpack.unpackb(s, ext_hook=ext_hook, raw=False)
