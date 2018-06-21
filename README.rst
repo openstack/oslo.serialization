@@ -26,3 +26,4 @@ in transmittable and storable formats, such as Base64, JSON and MessagePack.
 * Documentation: https://docs.openstack.org/oslo.serialization/latest/
 * Source: https://git.openstack.org/cgit/openstack/oslo.serialization
 * Bugs: https://docs.openstack.org/oslo.serialization/latest/
+* Release notes: https://docs.openstack.org/releasenotes/oslo.serialization/
