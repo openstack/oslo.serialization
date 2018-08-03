@@ -116,8 +116,9 @@ class JSONUtilsTestMixin(object):
                 self.assertIsInstance(val, six.text_type)
 
     def test_dumps_exception_value(self):
-        self.assertEqual('{"a": "ValueError(\'hello\',)"}',
-                         jsonutils.dumps({"a": ValueError("hello")}))
+        self.assertIn(jsonutils.dumps({"a": ValueError("hello")}),
+                      ['{"a": "ValueError(\'hello\',)"}',
+                       '{"a": "ValueError(\'hello\')"}'])
 
 
 class JSONUtilsTestJson(JSONUtilsTestMixin, test_base.BaseTestCase):
@@ -407,5 +408,6 @@ class ToPrimitiveTestCase(test_base.BaseTestCase):
         self.assertEqual('fallback', ret)
 
     def test_exception(self):
-        self.assertEqual("ValueError('an exception',)",
-                         jsonutils.to_primitive(ValueError("an exception")))
+        self.assertIn(jsonutils.to_primitive(ValueError("an exception")),
+                      ["ValueError('an exception',)",
+                       "ValueError('an exception')"])
