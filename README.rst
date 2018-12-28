@@ -7,9 +7,9 @@ Team and repository tags
 
 .. Change things from this point on
 
-====================
+===================
  oslo.serialization
-====================
+===================
 
 .. image:: https://img.shields.io/pypi/v/oslo.serialization.svg
     :target: https://pypi.org/project/oslo.serialization/

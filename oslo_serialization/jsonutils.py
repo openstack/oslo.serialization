@@ -53,8 +53,8 @@ _nasty_type_tests = [inspect.ismodule, inspect.isclass, inspect.ismethod,
                      inspect.iscode, inspect.isbuiltin, inspect.isroutine,
                      inspect.isabstract]
 
-_simple_types = ((six.text_type,) + six.integer_types
-                 + (type(None), bool, float))
+_simple_types = ((six.text_type,) + six.integer_types +
+                 (type(None), bool, float))
 
 
 def to_primitive(value, convert_instances=False, convert_datetime=True,
