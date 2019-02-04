@@ -25,5 +25,5 @@ in transmittable and storable formats, such as Base64, JSON and MessagePack.
 * Free software: Apache license
 * Documentation: https://docs.openstack.org/oslo.serialization/latest/
 * Source: https://git.openstack.org/cgit/openstack/oslo.serialization
-* Bugs: https://docs.openstack.org/oslo.serialization/latest/
+* Bugs: https://bugs.launchpad.net/oslo.serialization
 * Release notes: https://docs.openstack.org/releasenotes/oslo.serialization/
