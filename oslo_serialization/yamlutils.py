@@ -67,7 +67,7 @@ def dumps(obj, is_safe=True):
             yaml_dumper = yaml.CSafeDumper
         else:
             yaml_dumper = yaml.SafeDumper
-    return yaml.dump(obj, Dumper=yaml_dumper)
+    return yaml.dump(obj, default_flow_style=False, Dumper=yaml_dumper)
 
 
 def dump(obj, fp, is_safe=True):

@@ -55,10 +55,12 @@ class BehaviorTestCase(base.BaseTestCase):
         ]
         dumped = yaml.dumps(payload)
         expected = textwrap.dedent('''\
-            - {foo: bar}
-            - {list: null}
-            - [one, two]
-            - {check: yaml, in: test}
+            - foo: bar
+            - list: null
+            - - one
+              - two
+            - check: yaml
+              in: test
         ''')
         self.assertEqual(dumped, expected)
 
