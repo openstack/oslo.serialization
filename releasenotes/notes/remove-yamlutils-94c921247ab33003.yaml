@@ -1,0 +1,3 @@
+---
+other:
+  - Remove the yamlutils, the pyyaml is now safe by default.
