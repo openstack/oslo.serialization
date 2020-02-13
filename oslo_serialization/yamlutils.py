@@ -18,7 +18,14 @@ of yaml manager in all the openstack projects.
 Use this module inside openstack projects to handle yaml securely and properly.
 """
 
+from debtcollector import removals
 import yaml
+
+
+removals.removed_module(
+    'oslo_serialization.yamlutils', version='3.0.0',
+    removal_version='4.0.0',
+    message='The oslo_serialization.yamlutils will be removed')
 
 
 def load(stream, is_safe=True):
