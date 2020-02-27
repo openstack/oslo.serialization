@@ -16,16 +16,16 @@
 import collections
 import datetime
 import functools
+import io
 import ipaddress
 import itertools
 import json
+from xmlrpc import client as xmlrpclib
 
 import mock
 import netaddr
 from oslo_i18n import fixture
 from oslotest import base as test_base
-import six
-import six.moves.xmlrpc_client as xmlrpclib
 
 from oslo_serialization import jsonutils
 
@@ -69,7 +69,7 @@ class JSONUtilsTestMixin(object):
         expected = '{"a": "b"}'
         json_dict = {'a': 'b'}
 
-        fp = six.StringIO()
+        fp = io.StringIO()
         jsonutils.dump(json_dict, fp)
 
         self.assertEqual(expected, fp.getvalue())
@@ -78,7 +78,7 @@ class JSONUtilsTestMixin(object):
         expected = '[1, 2]'
         json_dict = collections.namedtuple("foo", "bar baz")(1, 2)
 
-        fp = six.StringIO()
+        fp = io.StringIO()
         jsonutils.dump(json_dict, fp)
 
         self.assertEqual(expected, fp.getvalue())
@@ -87,15 +87,15 @@ class JSONUtilsTestMixin(object):
         self.assertEqual({'a': 'b'}, jsonutils.loads('{"a": "b"}'))
 
     def test_loads_unicode(self):
-        self.assertIsInstance(jsonutils.loads(b'"foo"'), six.text_type)
-        self.assertIsInstance(jsonutils.loads(u'"foo"'), six.text_type)
+        self.assertIsInstance(jsonutils.loads(b'"foo"'), str)
+        self.assertIsInstance(jsonutils.loads(u'"foo"'), str)
 
         # 'test' in Ukrainian
         i18n_str_unicode = u'"\u0442\u0435\u0441\u0442"'
-        self.assertIsInstance(jsonutils.loads(i18n_str_unicode), six.text_type)
+        self.assertIsInstance(jsonutils.loads(i18n_str_unicode), str)
 
         i18n_str = i18n_str_unicode.encode('utf-8')
-        self.assertIsInstance(jsonutils.loads(i18n_str), six.text_type)
+        self.assertIsInstance(jsonutils.loads(i18n_str), str)
 
     def test_loads_with_kwargs(self):
         jsontext = u'{"foo": 3}'
@@ -108,12 +108,12 @@ class JSONUtilsTestMixin(object):
         expected = {u'a': u'\u0442\u044d\u0441\u0442'}
 
         for encoding in ('utf-8', 'cp1251'):
-            fp = six.BytesIO(jsontext.encode(encoding))
+            fp = io.BytesIO(jsontext.encode(encoding))
             result = jsonutils.load(fp, encoding=encoding)
             self.assertEqual(expected, result)
             for key, val in result.items():
-                self.assertIsInstance(key, six.text_type)
-                self.assertIsInstance(val, six.text_type)
+                self.assertIsInstance(key, str)
+                self.assertIsInstance(val, str)
 
     def test_dumps_exception_value(self):
         self.assertIn(jsonutils.dumps({"a": ValueError("hello")}),
@@ -277,10 +277,7 @@ class ToPrimitiveTestCase(test_base.BaseTestCase):
 
     def test_typeerror(self):
         x = bytearray  # Class, not instance
-        if six.PY3:
-            self.assertEqual(u"<class 'bytearray'>", jsonutils.to_primitive(x))
-        else:
-            self.assertEqual(u"<type 'bytearray'>", jsonutils.to_primitive(x))
+        self.assertEqual(u"<class 'bytearray'>", jsonutils.to_primitive(x))
 
     def test_nasties(self):
         def foo():
@@ -290,12 +287,9 @@ class ToPrimitiveTestCase(test_base.BaseTestCase):
         self.assertEqual(3, len(ret))
         self.assertTrue(ret[0].startswith(u"<module 'datetime' from ") or
                         ret[0].startswith(u"<module 'datetime' (built-in)"))
-        if six.PY3:
-            self.assertTrue(ret[1].startswith(
-                '<function ToPrimitiveTestCase.test_nasties.<locals>.foo at 0x'
-            ))
-        else:
-            self.assertTrue(ret[1].startswith('<function foo at 0x'))
+        self.assertTrue(ret[1].startswith(
+            '<function ToPrimitiveTestCase.test_nasties.<locals>.foo at 0x'
+        ))
         self.assertEqual('<built-in function dir>', ret[2])
 
     def test_depth(self):
@@ -379,7 +373,7 @@ class ToPrimitiveTestCase(test_base.BaseTestCase):
         obj = itertools.count(1)
 
         ret = jsonutils.to_primitive(obj)
-        self.assertEqual(six.text_type(obj), ret)
+        self.assertEqual(str(obj), ret)
 
         ret = jsonutils.to_primitive(obj, fallback=lambda _: 'itertools_count')
         self.assertEqual('itertools_count', ret)
@@ -387,7 +381,7 @@ class ToPrimitiveTestCase(test_base.BaseTestCase):
     def test_fallback_nasty(self):
         obj = int
         ret = jsonutils.to_primitive(obj)
-        self.assertEqual(six.text_type(obj), ret)
+        self.assertEqual(str(obj), ret)
 
         def formatter(typeobj):
             return 'type:%s' % typeobj.__name__
@@ -402,7 +396,7 @@ class ToPrimitiveTestCase(test_base.BaseTestCase):
         obj = NotIterable()
 
         ret = jsonutils.to_primitive(obj)
-        self.assertEqual(six.text_type(obj), ret)
+        self.assertEqual(str(obj), ret)
 
         ret = jsonutils.to_primitive(obj, fallback=lambda _: 'fallback')
         self.assertEqual('fallback', ret)

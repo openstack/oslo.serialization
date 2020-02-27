@@ -37,12 +37,11 @@ import itertools
 import json
 import uuid
 import warnings
+from xmlrpc import client as xmlrpclib
 
 from oslo_utils import encodeutils
 from oslo_utils import importutils
 from oslo_utils import timeutils
-import six
-import six.moves.xmlrpc_client as xmlrpclib
 
 ipaddress = importutils.try_import("ipaddress")
 netaddr = importutils.try_import("netaddr")
@@ -53,8 +52,7 @@ _nasty_type_tests = [inspect.ismodule, inspect.isclass, inspect.ismethod,
                      inspect.iscode, inspect.isbuiltin, inspect.isroutine,
                      inspect.isabstract]
 
-_simple_types = ((six.text_type,) + six.integer_types +
-                 (type(None), bool, float))
+_simple_types = (str, int, type(None), bool, float)
 
 
 def to_primitive(value, convert_instances=False, convert_datetime=True,
@@ -86,7 +84,7 @@ def to_primitive(value, convert_instances=False, convert_datetime=True,
     """
     orig_fallback = fallback
     if fallback is None:
-        fallback = six.text_type
+        fallback = str
 
     # handle obvious types first - order of basic types determined by running
     # full tests on nova project, resulting in the following counts:
@@ -104,10 +102,8 @@ def to_primitive(value, convert_instances=False, convert_datetime=True,
     if isinstance(value, _simple_types):
         return value
 
-    if isinstance(value, six.binary_type):
-        if six.PY3:
-            value = value.decode(encoding=encoding)
-        return value
+    if isinstance(value, bytes):
+        return value.decode(encoding=encoding)
 
     # It's not clear why xmlrpclib created their own DateTime type, but
     # for our purposes, make it a datetime type which is explicitly
@@ -122,15 +118,15 @@ def to_primitive(value, convert_instances=False, convert_datetime=True,
             return value
 
     if isinstance(value, uuid.UUID):
-        return six.text_type(value)
+        return str(value)
 
     if netaddr and isinstance(value, (netaddr.IPAddress, netaddr.IPNetwork)):
-        return six.text_type(value)
+        return str(value)
 
     if ipaddress and isinstance(value,
                                 (ipaddress.IPv4Address,
                                  ipaddress.IPv6Address)):
-        return six.text_type(value)
+        return str(value)
 
     # For exceptions, return the 'repr' of the exception object
     if isinstance(value, Exception):
@@ -219,7 +215,7 @@ def dump_as_bytes(obj, default=to_primitive, encoding='utf-8', **kwargs):
     .. versionadded:: 1.10
     """
     serialized = dumps(obj, default=default, **kwargs)
-    if isinstance(serialized, six.text_type):
+    if isinstance(serialized, str):
         # On Python 3, json.dumps() returns Unicode
         serialized = serialized.encode(encoding)
     return serialized

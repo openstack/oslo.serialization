@@ -32,12 +32,11 @@ import datetime
 import functools
 import itertools
 import uuid
+from xmlrpc import client as xmlrpclib
 
 import msgpack
 from oslo_utils import importutils
 from pytz import timezone
-import six
-import six.moves.xmlrpc_client as xmlrpclib
 
 netaddr = importutils.try_import("netaddr")
 
@@ -126,7 +125,7 @@ class HandlerRegistry(object):
 
     def __iter__(self):
         """Iterates over **all** registered handlers."""
-        for handlers in six.itervalues(self._handlers):
+        for handlers in self._handlers.values():
             for h in handlers:
                 yield h
 
@@ -196,7 +195,7 @@ class HandlerRegistry(object):
 
     def match(self, obj):
         """Match the registries handlers to the given object (or none)."""
-        for possible_handlers in six.itervalues(self._handlers):
+        for possible_handlers in self._handlers.values():
             for h in possible_handlers:
                 if isinstance(obj, h.handles):
                     return h
@@ -209,11 +208,11 @@ class UUIDHandler(object):
 
     @staticmethod
     def serialize(obj):
-        return six.text_type(obj.hex).encode('ascii')
+        return str(obj.hex).encode('ascii')
 
     @staticmethod
     def deserialize(data):
-        return uuid.UUID(hex=six.text_type(data, encoding='ascii'))
+        return uuid.UUID(hex=str(data, encoding='ascii'))
 
 
 class DateTimeHandler(object):
@@ -238,15 +237,13 @@ class DateTimeHandler(object):
         }
         if dt.tzinfo:
             tz = dt.tzinfo.tzname(None)
-            if six.PY2:
-                tz = tz.decode("ascii")
             dct[u'tz'] = tz
         return dumps(dct, registry=self._registry)
 
     def deserialize(self, blob):
         dct = loads(blob, registry=self._registry)
 
-        if six.PY3 and b"day" in dct:
+        if b"day" in dct:
             # NOTE(sileht): oslo.serialization <= 2.4.1 was
             # storing thing as unicode for py3 while is was
             # bytes for py2
@@ -280,7 +277,7 @@ class CountHandler(object):
     def serialize(obj):
         # FIXME(harlowja): figure out a better way to avoid hacking into
         # the string representation of count to get at the right numbers...
-        obj = six.text_type(obj)
+        obj = str(obj)
         start = obj.find("(") + 1
         end = obj.rfind(")")
         pieces = obj[start:end].split(",")
@@ -376,7 +373,7 @@ class DateHandler(object):
 
     def deserialize(self, blob):
         dct = loads(blob, registry=self._registry)
-        if six.PY3 and b"day" in dct:
+        if b"day" in dct:
             # NOTE(sileht): see DateTimeHandler.deserialize()
             dct = dict((k.decode("ascii"), v) for k, v in dct.items())
 

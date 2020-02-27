@@ -24,8 +24,6 @@ from __future__ import absolute_import
 import base64
 import binascii
 
-import six
-
 
 def encode_as_bytes(s, encoding='utf-8'):
     """Encode a string using Base64.
@@ -38,7 +36,7 @@ def encode_as_bytes(s, encoding='utf-8'):
 
     Use encode_as_text() to get the Base64 encoded string as text.
     """
-    if isinstance(s, six.text_type):
+    if isinstance(s, str):
         s = s.encode(encoding)
     return base64.b64encode(s)
 

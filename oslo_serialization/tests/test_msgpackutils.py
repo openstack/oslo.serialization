@@ -14,12 +14,11 @@
 
 import datetime
 import itertools
+from xmlrpc import client as xmlrpclib
 
 import netaddr
 from oslotest import base as test_base
 from pytz import timezone
-import six
-import six.moves.xmlrpc_client as xmlrpclib
 
 from oslo_serialization import msgpackutils
 from oslo_utils import uuidutils
@@ -44,8 +43,7 @@ class ColorHandler(object):
     @staticmethod
     def serialize(obj):
         blob = '%s, %s, %s' % (obj.r, obj.g, obj.b)
-        if six.PY3:
-            blob = blob.encode("ascii")
+        blob = blob.encode('ascii')
         return blob
 
     @staticmethod
@@ -103,19 +101,19 @@ class MsgPackUtilsTest(test_base.BaseTestCase):
 
     def test_itercount(self):
         it = itertools.count(1)
-        six.next(it)
-        six.next(it)
+        next(it)
+        next(it)
         it2 = _dumps_loads(it)
-        self.assertEqual(six.next(it), six.next(it2))
+        self.assertEqual(next(it), next(it2))
 
         it = itertools.count(0)
         it2 = _dumps_loads(it)
-        self.assertEqual(six.next(it), six.next(it2))
+        self.assertEqual(next(it), next(it2))
 
     def test_itercount_step(self):
         it = itertools.count(1, 3)
         it2 = _dumps_loads(it)
-        self.assertEqual(six.next(it), six.next(it2))
+        self.assertEqual(next(it), next(it2))
 
     def test_set(self):
         self.assertEqual(set([1, 2]), _dumps_loads(set([1, 2])))

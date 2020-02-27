@@ -18,11 +18,9 @@ Unified and simplified API for oslo.serialization's serializers.
 
 
 import abc
-import six
 
 
-@six.add_metaclass(abc.ABCMeta)
-class BaseSerializer(object):
+class BaseSerializer(object, metaclass=abc.ABCMeta):
     """Generic (de-)serialization definition abstract base class."""
 
     @abc.abstractmethod
