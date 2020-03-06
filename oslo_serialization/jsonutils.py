@@ -214,11 +214,7 @@ def dump_as_bytes(obj, default=to_primitive, encoding='utf-8', **kwargs):
 
     .. versionadded:: 1.10
     """
-    serialized = dumps(obj, default=default, **kwargs)
-    if isinstance(serialized, str):
-        # On Python 3, json.dumps() returns Unicode
-        serialized = serialized.encode(encoding)
-    return serialized
+    return dumps(obj, default=default, **kwargs).encode(encoding)
 
 
 def dump(obj, fp, *args, **kwargs):
