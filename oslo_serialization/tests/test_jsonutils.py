@@ -20,9 +20,9 @@ import io
 import ipaddress
 import itertools
 import json
+from unittest import mock
 from xmlrpc import client as xmlrpclib
 
-import mock
 import netaddr
 from oslo_i18n import fixture
 from oslotest import base as test_base
