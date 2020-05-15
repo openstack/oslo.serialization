@@ -11,7 +11,6 @@ ipaddress===1.0.17
 iso8601==0.1.11
 keystoneauth1==3.4.0
 linecache2==1.0.0
-mccabe==0.2.1
 mox3==0.20.0
 msgpack==0.5.2
 netaddr==0.7.18
