@@ -27,9 +27,9 @@ extensions = [
 ]
 
 # openstackdocstheme options
-repository_name = 'openstack/oslo.serialization'
-bug_project = 'oslo.serialization'
-bug_tag = ''
+openstackdocs_repo_name = 'openstack/oslo.serialization'
+openstackdocs_bug_project = 'oslo.serialization'
+openstackdocs_bug_tag = ''
 
 # autodoc generation is a bit aggressive and a nuisance when doing heavy
 # text edit cycles.
@@ -64,7 +64,6 @@ pygments_style = 'sphinx'
 # html_static_path = ['static']
 html_theme = 'openstackdocs'
 
-html_last_updated_fmt = '%Y-%m-%d %H:%M'
 
 # Output file base name for HTML help builder.
 htmlhelp_basename = '%sdoc' % project
