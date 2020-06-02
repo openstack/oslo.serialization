@@ -19,8 +19,6 @@ Utilities to encode and decode Base64.
 .. versionadded:: 1.10
 """
 
-from __future__ import absolute_import
-
 import base64
 import binascii
 
