@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    `Bug #1908607 <https://bugs.launchpad.net/cinder/+bug/1908607>`_: Fix
+    json to_primitive when using IO OBjects.

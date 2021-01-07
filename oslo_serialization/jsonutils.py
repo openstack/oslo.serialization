@@ -33,6 +33,7 @@ import codecs
 import datetime
 import functools
 import inspect
+import io
 import itertools
 import json
 import uuid
@@ -161,7 +162,7 @@ def to_primitive(value, convert_instances=False, convert_datetime=True,
         # Python 3 does not have iteritems
         elif hasattr(value, 'items'):
             return recursive(dict(value.items()), level=level + 1)
-        elif hasattr(value, '__iter__'):
+        elif hasattr(value, '__iter__') and not isinstance(value, io.IOBase):
             return list(map(recursive, value))
         elif convert_instances and hasattr(value, '__dict__'):
             # Likely an instance of something. Watch for cycles.
