@@ -16,6 +16,7 @@
 import collections
 import datetime
 import functools
+import io
 import ipaddress
 import itertools
 import json
@@ -403,6 +404,16 @@ class ToPrimitiveTestCase(test_base.BaseTestCase):
 
         ret = jsonutils.to_primitive(obj)
         self.assertEqual(six.text_type(obj), ret)
+
+        ret = jsonutils.to_primitive(obj, fallback=lambda _: 'fallback')
+        self.assertEqual('fallback', ret)
+
+    def test_fallback_typeerror_IO_object(self):
+        # IO Objects are not callable, cause a TypeError in to_primitive()
+        obj = io.IOBase
+
+        ret = jsonutils.to_primitive(obj)
+        self.assertEqual(str(obj), ret)
 
         ret = jsonutils.to_primitive(obj, fallback=lambda _: 'fallback')
         self.assertEqual('fallback', ret)
