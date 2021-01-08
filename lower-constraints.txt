@@ -5,10 +5,10 @@ coverage==4.0
 debtcollector==1.2.0
 extras==1.0.0
 fixtures==3.0.0
-flake8==2.5.5
+flake8==2.6.0
 gitdb==0.6.4
 GitPython==1.0.1
-hacking==0.12.0
+hacking==1.1.0
 ipaddress===1.0.17
 iso8601==0.1.11
 keystoneauth1==3.4.0
