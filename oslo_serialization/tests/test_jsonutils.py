@@ -14,6 +14,7 @@
 #    under the License.
 
 import collections
+import collections.abc
 import datetime
 import functools
 import io
@@ -241,9 +242,9 @@ class ToPrimitiveTestCase(test_base.BaseTestCase):
         self.assertEqual({'iteritems': 'iteritems'}, p)
 
     def test_mapping(self):
-        # Make sure collections.Mapping is converted to a dict
+        # Make sure collections.abc.Mapping is converted to a dict
         # and not a list.
-        class MappingClass(collections.Mapping):
+        class MappingClass(collections.abc.Mapping):
             def __init__(self):
                 self.data = dict(a=1, b=2, c=3)
 
