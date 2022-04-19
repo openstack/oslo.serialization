@@ -227,17 +227,17 @@ class DateTimeHandler(object):
 
     def serialize(self, dt):
         dct = {
-            u'day': dt.day,
-            u'month': dt.month,
-            u'year': dt.year,
-            u'hour': dt.hour,
-            u'minute': dt.minute,
-            u'second': dt.second,
-            u'microsecond': dt.microsecond,
+            'day': dt.day,
+            'month': dt.month,
+            'year': dt.year,
+            'hour': dt.hour,
+            'minute': dt.minute,
+            'second': dt.second,
+            'microsecond': dt.microsecond,
         }
         if dt.tzinfo:
             tz = dt.tzinfo.tzname(None)
-            dct[u'tz'] = tz
+            dct['tz'] = tz
         return dumps(dct, registry=self._registry)
 
     def deserialize(self, blob):
@@ -365,9 +365,9 @@ class DateHandler(object):
 
     def serialize(self, d):
         dct = {
-            u'year': d.year,
-            u'month': d.month,
-            u'day': d.day,
+            'year': d.year,
+            'month': d.month,
+            'day': d.day,
         }
         return dumps(dct, registry=self._registry)
 

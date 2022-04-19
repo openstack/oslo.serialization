@@ -60,8 +60,8 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'oslo.serialization Release Notes'
-copyright = u'2016, oslo.serialization Developers'
+project = 'oslo.serialization Release Notes'
+copyright = '2016, oslo.serialization Developers'
 
 # Release notes do not need a version in the title, they span
 # multiple versions.
@@ -208,8 +208,8 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
     ('index', 'oslo.serializationReleaseNotes.tex',
-     u'oslo.serialization Release Notes Documentation',
-     u'oslo.serialization Developers', 'manual'),
+     'oslo.serialization Release Notes Documentation',
+     'oslo.serialization Developers', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -239,8 +239,8 @@ latex_documents = [
 # (source start file, name, description, authors, manual section).
 man_pages = [
     ('index', 'oslo.serializationReleaseNotes',
-     u'oslo.serialization Release Notes Documentation',
-     [u'oslo.serialization Developers'], 1)
+     'oslo.serialization Release Notes Documentation',
+     ['oslo.serialization Developers'], 1)
 ]
 
 # If true, show URL addresses after external links.
@@ -254,8 +254,8 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
     ('index', 'oslo.serializationReleaseNotes',
-     u'oslo.serialization Release Notes Documentation',
-     u'oslo.serialization Developers', 'oslo.serializationReleaseNotes',
+     'oslo.serialization Release Notes Documentation',
+     'oslo.serialization Developers', 'oslo.serializationReleaseNotes',
      'One line description of project.',
      'Miscellaneous'),
 ]

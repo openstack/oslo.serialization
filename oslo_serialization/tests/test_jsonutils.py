@@ -89,24 +89,24 @@ class JSONUtilsTestMixin(object):
 
     def test_loads_unicode(self):
         self.assertIsInstance(jsonutils.loads(b'"foo"'), str)
-        self.assertIsInstance(jsonutils.loads(u'"foo"'), str)
+        self.assertIsInstance(jsonutils.loads('"foo"'), str)
 
         # 'test' in Ukrainian
-        i18n_str_unicode = u'"\u0442\u0435\u0441\u0442"'
+        i18n_str_unicode = '"\u0442\u0435\u0441\u0442"'
         self.assertIsInstance(jsonutils.loads(i18n_str_unicode), str)
 
         i18n_str = i18n_str_unicode.encode('utf-8')
         self.assertIsInstance(jsonutils.loads(i18n_str), str)
 
     def test_loads_with_kwargs(self):
-        jsontext = u'{"foo": 3}'
+        jsontext = '{"foo": 3}'
         result = jsonutils.loads(jsontext, parse_int=lambda x: 5)
         self.assertEqual(5, result['foo'])
 
     def test_load(self):
 
-        jsontext = u'{"a": "\u0442\u044d\u0441\u0442"}'
-        expected = {u'a': u'\u0442\u044d\u0441\u0442'}
+        jsontext = '{"a": "\u0442\u044d\u0441\u0442"}'
+        expected = {'a': '\u0442\u044d\u0441\u0442'}
 
         for encoding in ('utf-8', 'cp1251'):
             fp = io.BytesIO(jsontext.encode(encoding))
@@ -325,12 +325,12 @@ class ToPrimitiveTestCase(test_base.BaseTestCase):
         self.assertEqual({'ip_addr': '1.2.3.4'}, ret)
 
     def test_ipaddr_using_ipaddress_v4(self):
-        thing = {'ip_addr': ipaddress.ip_address(u'192.168.0.1')}
+        thing = {'ip_addr': ipaddress.ip_address('192.168.0.1')}
         ret = jsonutils.to_primitive(thing)
         self.assertEqual({'ip_addr': '192.168.0.1'}, ret)
 
     def test_ipaddr_using_ipaddress_v6(self):
-        thing = {'ip_addr': ipaddress.ip_address(u'2001:db8::')}
+        thing = {'ip_addr': ipaddress.ip_address('2001:db8::')}
         ret = jsonutils.to_primitive(thing)
         self.assertEqual({'ip_addr': '2001:db8::'}, ret)
 
