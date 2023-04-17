@@ -33,10 +33,10 @@ import functools
 import itertools
 import uuid
 from xmlrpc import client as xmlrpclib
+import zoneinfo
 
 import msgpack
 from oslo_utils import importutils
-from pytz import timezone
 
 netaddr = importutils.try_import("netaddr")
 
@@ -236,7 +236,7 @@ class DateTimeHandler(object):
             'microsecond': dt.microsecond,
         }
         if dt.tzinfo:
-            tz = dt.tzinfo.tzname(None)
+            tz = str(dt.tzinfo)
             dct['tz'] = tz
         return dumps(dct, registry=self._registry)
 
@@ -263,9 +263,9 @@ class DateTimeHandler(object):
                                minute=dct['minute'],
                                second=dct['second'],
                                microsecond=dct['microsecond'])
-        if 'tz' in dct:
-            tzinfo = timezone(dct['tz'])
-            dt = tzinfo.localize(dt)
+        if 'tz' in dct and dct['tz']:
+            tzinfo = zoneinfo.ZoneInfo(dct['tz'])
+            dt = dt.replace(tzinfo=tzinfo)
         return dt
 
 

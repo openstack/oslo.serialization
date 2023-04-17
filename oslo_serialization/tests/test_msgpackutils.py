@@ -15,10 +15,10 @@
 import datetime
 import itertools
 from xmlrpc import client as xmlrpclib
+import zoneinfo
 
 import netaddr
 from oslotest import base as test_base
-from pytz import timezone
 
 from oslo_serialization import msgpackutils
 from oslo_utils import uuidutils
@@ -145,20 +145,22 @@ class MsgPackUtilsTest(test_base.BaseTestCase):
         self.assertEqual(today, _dumps_loads(today))
 
     def test_datetime_tz_clone(self):
-        eastern = timezone('US/Eastern')
+        eastern = zoneinfo.ZoneInfo('US/Eastern')
         now = datetime.datetime.now()
-        e_dt = eastern.localize(now)
+        e_dt = now.replace(tzinfo=eastern)
         e_dt2 = _dumps_loads(e_dt)
         self.assertEqual(e_dt, e_dt2)
         self.assertEqual(e_dt.strftime(_TZ_FMT), e_dt2.strftime(_TZ_FMT))
 
     def test_datetime_tz_different(self):
-        eastern = timezone('US/Eastern')
-        pacific = timezone('US/Pacific')
+        eastern = zoneinfo.ZoneInfo('US/Eastern')
+        pacific = zoneinfo.ZoneInfo('US/Pacific')
         now = datetime.datetime.now()
 
-        e_dt = eastern.localize(now)
-        p_dt = pacific.localize(now)
+        now = now.replace(tzinfo=eastern)
+        e_dt = now
+        now = now.replace(tzinfo=pacific)
+        p_dt = now
 
         self.assertNotEqual(e_dt, p_dt)
         self.assertNotEqual(e_dt.strftime(_TZ_FMT), p_dt.strftime(_TZ_FMT))
