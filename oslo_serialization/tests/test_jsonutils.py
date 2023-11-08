@@ -261,8 +261,7 @@ class ToPrimitiveTestCase(test_base.BaseTestCase):
         p = jsonutils.to_primitive(x)
         self.assertEqual({'a': 1, 'b': 2, 'c': 3}, p)
 
-    @mock.patch('warnings.warn')
-    def test_instance(self, warn_mock):
+    def test_instance(self):
         class MysteryClass(object):
             a = 10
 
@@ -273,8 +272,7 @@ class ToPrimitiveTestCase(test_base.BaseTestCase):
         self.assertEqual(dict(b=1),
                          jsonutils.to_primitive(x, convert_instances=True))
 
-        self.assertEqual(x, jsonutils.to_primitive(x))
-        warn_mock.assert_called_once()
+        self.assertRaises(ValueError, jsonutils.to_primitive, x)
 
     def test_typeerror(self):
         x = bytearray  # Class, not instance
@@ -354,8 +352,7 @@ class ToPrimitiveTestCase(test_base.BaseTestCase):
     def test_fallback(self):
         obj = ReprObject()
 
-        ret = jsonutils.to_primitive(obj)
-        self.assertIs(obj, ret)
+        self.assertRaises(ValueError, jsonutils.to_primitive, obj)
 
         ret = jsonutils.to_primitive(obj, fallback=repr)
         self.assertEqual('repr', ret)
@@ -364,8 +361,7 @@ class ToPrimitiveTestCase(test_base.BaseTestCase):
         obj = ReprObject()
         obj_list = [obj]
 
-        ret = jsonutils.to_primitive(obj_list)
-        self.assertEqual([obj], ret)
+        self.assertRaises(ValueError, jsonutils.to_primitive, obj_list)
 
         ret = jsonutils.to_primitive(obj_list, fallback=repr)
         self.assertEqual(['repr'], ret)

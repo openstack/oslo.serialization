@@ -37,7 +37,6 @@ import io
 import itertools
 import json
 import uuid
-import warnings
 from xmlrpc import client as xmlrpclib
 
 from oslo_utils import encodeutils
@@ -173,13 +172,10 @@ def to_primitive(value, convert_instances=False, convert_datetime=True,
         # __iter__ defined but it isn't callable as list().
         return fallback(value)
 
-    if orig_fallback is not None:
-        return orig_fallback(value)
+    if orig_fallback is None:
+        raise ValueError("Cannot convert %r to primitive" % (value,))
 
-    # TODO(gcb) raise ValueError in version 3.0
-    warnings.warn("Cannot convert %r to primitive, will raise ValueError "
-                  "instead of warning in version 3.0" % (value,))
-    return value
+    return orig_fallback(value)
 
 
 JSONEncoder = json.JSONEncoder
