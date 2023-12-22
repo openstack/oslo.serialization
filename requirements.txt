@@ -1,7 +1,3 @@
-# The order of packages is significant, because pip processes them in the order
-# of appearance. Changing the order has an impact on the overall integration
-# process, which may cause wedges in the gate later.
-
 # NOTE(harlowja): Because oslo.serialization is used by the client libraries,
 # we do not want to add a lot of dependencies to it. If you find that
 # adding a new feature to oslo.serialization means adding a new dependency,
