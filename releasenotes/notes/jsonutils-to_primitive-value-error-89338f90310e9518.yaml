@@ -1,0 +1,5 @@
+---
+upgrade:
+  - |
+    The ``oslo_utils.jsonutils.to_primitive`` function now raises ValueError
+    when the input value can't be converted.
