@@ -159,6 +159,15 @@ class ToPrimitiveTestCase(test_base.BaseTestCase):
         x = datetime.datetime(1920, 2, 3, 4, 5, 6, 7)
         self.assertEqual(x, jsonutils.to_primitive(x, convert_datetime=False))
 
+    def test_date(self):
+        x = datetime.date(1920, 2, 3)
+        self.assertEqual('1920-02-03',
+                         jsonutils.to_primitive(x))
+
+    def test_date_preserve(self):
+        x = datetime.date(1920, 2, 3)
+        self.assertEqual(x, jsonutils.to_primitive(x, convert_datetime=False))
+
     def test_DateTime(self):
         x = xmlrpclib.DateTime()
         x.decode("19710203T04:05:06")
