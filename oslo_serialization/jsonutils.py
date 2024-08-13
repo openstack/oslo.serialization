@@ -44,6 +44,8 @@ from oslo_utils import encodeutils
 from oslo_utils import importutils
 from oslo_utils import timeutils
 
+_ISO8601_DATE_FORMAT = '%Y-%m-%d'
+
 ipaddress = importutils.try_import("ipaddress")
 netaddr = importutils.try_import("netaddr")
 
@@ -115,6 +117,12 @@ def to_primitive(value, convert_instances=False, convert_datetime=True,
     if isinstance(value, datetime.datetime):
         if convert_datetime:
             return value.strftime(timeutils.PERFECT_TIME_FORMAT)
+        else:
+            return value
+
+    if isinstance(value, datetime.date):
+        if convert_datetime:
+            return value.strftime(_ISO8601_DATE_FORMAT)
         else:
             return value
 
