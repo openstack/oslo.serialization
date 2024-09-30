@@ -33,15 +33,9 @@ import functools
 import itertools
 import uuid
 from xmlrpc import client as xmlrpclib
+import zoneinfo
 
 import msgpack
-
-try:
-    import zoneinfo
-except ImportError:
-    # zoneinfo is available in Python >= 3.9
-    from pytz import timezone
-    zoneinfo = None
 
 from oslo_utils import importutils
 
@@ -243,11 +237,7 @@ class DateTimeHandler(object):
             'microsecond': dt.microsecond,
         }
         if dt.tzinfo:
-            if zoneinfo:
-                tz = str(dt.tzinfo)
-            else:
-                tz = dt.tzinfo.tzname(None)
-            dct['tz'] = tz
+            dct['tz'] = str(dt.tzinfo)
         return dumps(dct, registry=self._registry)
 
     def deserialize(self, blob):
@@ -274,12 +264,7 @@ class DateTimeHandler(object):
                                second=dct['second'],
                                microsecond=dct['microsecond'])
         if 'tz' in dct and dct['tz']:
-            if zoneinfo:
-                tzinfo = zoneinfo.ZoneInfo(dct['tz'])
-                dt = dt.replace(tzinfo=tzinfo)
-            else:
-                tzinfo = timezone(dct['tz'])
-                dt = tzinfo.localize(dt)
+            dt = dt.replace(tzinfo=zoneinfo.ZoneInfo(dct['tz']))
         return dt
 
 
