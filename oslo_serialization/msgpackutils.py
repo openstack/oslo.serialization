@@ -42,7 +42,7 @@ from oslo_utils import importutils
 netaddr = importutils.try_import("netaddr")
 
 
-class Interval(object):
+class Interval:
     """Small and/or simple immutable integer/float interval class.
 
     Interval checking is **inclusive** of the min/max boundaries.
@@ -68,7 +68,7 @@ class Interval(object):
         return value >= self.min_value and value <= self.max_value
 
     def __repr__(self):
-        return 'Interval(%s, %s)' % (self._min_value, self._max_value)
+        return 'Interval({}, {})'.format(self._min_value, self._max_value)
 
 
 # Expose these so that users don't have to import msgpack to gain these.
@@ -77,7 +77,7 @@ PackException = msgpack.PackException
 UnpackException = msgpack.UnpackException
 
 
-class HandlerRegistry(object):
+class HandlerRegistry:
     """Registry of *type* specific msgpack handlers extensions.
 
     See: https://github.com/msgpack/msgpack/blob/master/spec.md#formats-ext
@@ -127,8 +127,7 @@ class HandlerRegistry(object):
     def __iter__(self):
         """Iterates over **all** registered handlers."""
         for handlers in self._handlers.values():
-            for h in handlers:
-                yield h
+            yield from handlers
 
     def register(self, handler, reserved=False, override=False):
         """Register a extension handler to handle its associated type."""
@@ -203,7 +202,7 @@ class HandlerRegistry(object):
         return None
 
 
-class UUIDHandler(object):
+class UUIDHandler:
     identity = 0
     handles = (uuid.UUID,)
 
@@ -216,7 +215,7 @@ class UUIDHandler(object):
         return uuid.UUID(hex=str(data, encoding='ascii'))
 
 
-class DateTimeHandler(object):
+class DateTimeHandler:
     identity = 1
     handles = (datetime.datetime,)
 
@@ -252,7 +251,7 @@ class DateTimeHandler(object):
             # But for python3, we have some backward compability
             # to take care in case of the payload have been produced
             # by python2 and now read by python3
-            dct = dict((k.decode("ascii"), v) for k, v in dct.items())
+            dct = {k.decode("ascii"): v for k, v in dct.items()}
             if 'tz' in dct:
                 dct['tz'] = dct['tz'].decode("ascii")
 
@@ -268,7 +267,7 @@ class DateTimeHandler(object):
         return dt
 
 
-class CountHandler(object):
+class CountHandler:
     identity = 2
     handles = (itertools.count,)
 
@@ -296,7 +295,7 @@ class CountHandler(object):
 
 
 if netaddr is not None:
-    class NetAddrIPHandler(object):
+    class NetAddrIPHandler:
         identity = 3
         handles = (netaddr.IPAddress,)
 
@@ -311,7 +310,7 @@ else:
     NetAddrIPHandler = None
 
 
-class SetHandler(object):
+class SetHandler:
     identity = 4
     handles = (set,)
 
@@ -333,7 +332,7 @@ class FrozenSetHandler(SetHandler):
     handles = (frozenset,)
 
 
-class XMLRPCDateTimeHandler(object):
+class XMLRPCDateTimeHandler:
     handles = (xmlrpclib.DateTime,)
     identity = 6
 
@@ -352,7 +351,7 @@ class XMLRPCDateTimeHandler(object):
         return xmlrpclib.DateTime(dt.timetuple())
 
 
-class DateHandler(object):
+class DateHandler:
     identity = 7
     handles = (datetime.date,)
 
@@ -374,7 +373,7 @@ class DateHandler(object):
         dct = loads(blob, registry=self._registry)
         if b"day" in dct:
             # NOTE(sileht): see DateTimeHandler.deserialize()
-            dct = dict((k.decode("ascii"), v) for k, v in dct.items())
+            dct = {k.decode("ascii"): v for k, v in dct.items()}
 
         return datetime.date(year=dct['year'],
                              month=dct['month'],

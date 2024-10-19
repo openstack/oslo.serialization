@@ -31,17 +31,17 @@ from oslotest import base as test_base
 from oslo_serialization import jsonutils
 
 
-class ReprObject(object):
+class ReprObject:
     def __repr__(self):
         return 'repr'
 
 
-class JSONUtilsTestMixin(object):
+class JSONUtilsTestMixin:
 
     json_impl = None
 
     def setUp(self):
-        super(JSONUtilsTestMixin, self).setUp()
+        super().setUp()
         self.json_patcher = mock.patch.multiple(
             jsonutils, json=self.json_impl,
         )
@@ -49,7 +49,7 @@ class JSONUtilsTestMixin(object):
 
     def tearDown(self):
         self.json_patcher.stop()
-        super(JSONUtilsTestMixin, self).tearDown()
+        super().tearDown()
 
     def test_dumps(self):
         self.assertEqual('{"a": "b"}', jsonutils.dumps({'a': 'b'}))
@@ -128,7 +128,7 @@ class JSONUtilsTestJson(JSONUtilsTestMixin, test_base.BaseTestCase):
 
 class ToPrimitiveTestCase(test_base.BaseTestCase):
     def setUp(self):
-        super(ToPrimitiveTestCase, self).setUp()
+        super().setUp()
         self.trans_fixture = self.useFixture(fixture.Translation())
 
     def test_bytes(self):
@@ -175,7 +175,7 @@ class ToPrimitiveTestCase(test_base.BaseTestCase):
                          jsonutils.to_primitive(x))
 
     def test_iter(self):
-        class IterClass(object):
+        class IterClass:
             def __init__(self):
                 self.data = [1, 2, 3, 4, 5]
                 self.index = 0
@@ -194,7 +194,7 @@ class ToPrimitiveTestCase(test_base.BaseTestCase):
         self.assertEqual([1, 2, 3, 4, 5], jsonutils.to_primitive(x))
 
     def test_iteritems(self):
-        class IterItemsClass(object):
+        class IterItemsClass:
             def __init__(self):
                 self.data = dict(a=1, b=2, c=3).items()
                 self.index = 0
@@ -207,7 +207,7 @@ class ToPrimitiveTestCase(test_base.BaseTestCase):
         self.assertEqual({'a': 1, 'b': 2, 'c': 3}, p)
 
     def test_iteritems_with_cycle(self):
-        class IterItemsClass(object):
+        class IterItemsClass:
             def __init__(self):
                 self.data = dict(a=1, b=2, c=3)
                 self.index = 0
@@ -226,7 +226,7 @@ class ToPrimitiveTestCase(test_base.BaseTestCase):
 
     def test_items(self):
         # Use items() when iteritems() is not available.
-        class ItemsClass(object):
+        class ItemsClass:
             def __init__(self):
                 self.data = dict(a=1, b=2, c=3)
 
@@ -238,7 +238,7 @@ class ToPrimitiveTestCase(test_base.BaseTestCase):
         self.assertEqual({'a': 1, 'b': 2, 'c': 3}, p)
 
     def test_precedence_items_iteritems(self):
-        class ItemsIterItemsClass(object):
+        class ItemsIterItemsClass:
             def items(self):
                 return {'items': 'items'}
 
@@ -271,7 +271,7 @@ class ToPrimitiveTestCase(test_base.BaseTestCase):
         self.assertEqual({'a': 1, 'b': 2, 'c': 3}, p)
 
     def test_instance(self):
-        class MysteryClass(object):
+        class MysteryClass:
             a = 10
 
             def __init__(self):
@@ -285,7 +285,7 @@ class ToPrimitiveTestCase(test_base.BaseTestCase):
 
     def test_typeerror(self):
         x = bytearray  # Class, not instance
-        self.assertEqual(u"<class 'bytearray'>", jsonutils.to_primitive(x))
+        self.assertEqual("<class 'bytearray'>", jsonutils.to_primitive(x))
 
     def test_nasties(self):
         def foo():
@@ -293,15 +293,15 @@ class ToPrimitiveTestCase(test_base.BaseTestCase):
         x = [datetime, foo, dir]
         ret = jsonutils.to_primitive(x)
         self.assertEqual(3, len(ret))
-        self.assertTrue(ret[0].startswith(u"<module 'datetime' from ") or
-                        ret[0].startswith(u"<module 'datetime' (built-in)"))
+        self.assertTrue(ret[0].startswith("<module 'datetime' from ") or
+                        ret[0].startswith("<module 'datetime' (built-in)"))
         self.assertTrue(ret[1].startswith(
             '<function ToPrimitiveTestCase.test_nasties.<locals>.foo at 0x'
         ))
         self.assertEqual('<built-in function dir>', ret[2])
 
     def test_depth(self):
-        class LevelsGenerator(object):
+        class LevelsGenerator:
             def __init__(self, levels):
                 self._levels = levels
 
@@ -395,7 +395,7 @@ class ToPrimitiveTestCase(test_base.BaseTestCase):
         self.assertEqual("type:int", ret)
 
     def test_fallback_typeerror(self):
-        class NotIterable(object):
+        class NotIterable:
             # __iter__ is not callable, cause a TypeError in to_primitive()
             __iter__ = None
 

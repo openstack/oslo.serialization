@@ -33,14 +33,14 @@ from oslo_utils import uuidutils
 _TZ_FMT = '%Y-%m-%d %H:%M:%S %Z%z'
 
 
-class Color(object):
+class Color:
     def __init__(self, r, g, b):
         self.r = r
         self.g = g
         self.b = b
 
 
-class ColorHandler(object):
+class ColorHandler:
     handles = (Color,)
     identity = (
         msgpackutils.HandlerRegistry.non_reserved_extension_range.min_value + 1
@@ -48,7 +48,7 @@ class ColorHandler(object):
 
     @staticmethod
     def serialize(obj):
-        blob = '%s, %s, %s' % (obj.r, obj.g, obj.b)
+        blob = '{}, {}, {}'.format(obj.r, obj.g, obj.b)
         blob = blob.encode('ascii')
         return blob
 
@@ -58,7 +58,7 @@ class ColorHandler(object):
         return Color(chunks[0], chunks[1], chunks[2])
 
 
-class MySpecialSetHandler(object):
+class MySpecialSetHandler:
     handles = (set,)
     identity = msgpackutils.SetHandler.identity
 
@@ -97,7 +97,7 @@ class MsgPackUtilsTest(test_base.BaseTestCase):
             'a': 1,
             'b': 2.0,
             'c': [],
-            'd': set([1, 2, 3]),
+            'd': {1, 2, 3},
             'zzz': uuidutils.generate_uuid(),
             'yyy': 'yyy',
             'ddd': b'bbb',
@@ -122,10 +122,10 @@ class MsgPackUtilsTest(test_base.BaseTestCase):
         self.assertEqual(next(it), next(it2))
 
     def test_set(self):
-        self.assertEqual(set([1, 2]), _dumps_loads(set([1, 2])))
+        self.assertEqual({1, 2}, _dumps_loads({1, 2}))
 
     def test_empty_set(self):
-        self.assertEqual(set([]), _dumps_loads(set([])))
+        self.assertEqual(set(), _dumps_loads(set()))
 
     def test_frozenset(self):
         self.assertEqual(frozenset([1, 2]), _dumps_loads(frozenset([1, 2])))
