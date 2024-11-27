@@ -193,62 +193,36 @@ class ToPrimitiveTestCase(test_base.BaseTestCase):
         x = IterClass()
         self.assertEqual([1, 2, 3, 4, 5], jsonutils.to_primitive(x))
 
-    def test_iteritems(self):
-        class IterItemsClass:
+    def test_items(self):
+        class ItemsClass:
             def __init__(self):
                 self.data = dict(a=1, b=2, c=3).items()
                 self.index = 0
 
-            def iteritems(self):
+            def items(self):
                 return self.data
 
-        x = IterItemsClass()
+        x = ItemsClass()
         p = jsonutils.to_primitive(x)
         self.assertEqual({'a': 1, 'b': 2, 'c': 3}, p)
 
-    def test_iteritems_with_cycle(self):
-        class IterItemsClass:
+    def test_items_with_cycle(self):
+        class ItemsClass:
             def __init__(self):
                 self.data = dict(a=1, b=2, c=3)
                 self.index = 0
 
-            def iteritems(self):
+            def items(self):
                 return self.data.items()
 
-        x = IterItemsClass()
-        x2 = IterItemsClass()
+        x = ItemsClass()
+        x2 = ItemsClass()
         x.data['other'] = x2
         x2.data['other'] = x
 
         # If the cycle isn't caught, to_primitive() will eventually result in
         # an exception due to excessive recursion depth.
         jsonutils.to_primitive(x)
-
-    def test_items(self):
-        # Use items() when iteritems() is not available.
-        class ItemsClass:
-            def __init__(self):
-                self.data = dict(a=1, b=2, c=3)
-
-            def items(self):
-                return self.data.items()
-
-        x = ItemsClass()
-        p = jsonutils.to_primitive(x)
-        self.assertEqual({'a': 1, 'b': 2, 'c': 3}, p)
-
-    def test_precedence_items_iteritems(self):
-        class ItemsIterItemsClass:
-            def items(self):
-                return {'items': 'items'}
-
-            def iteritems(self):
-                return {'iteritems': 'iteritems'}
-
-        x = ItemsIterItemsClass()
-        p = jsonutils.to_primitive(x)
-        # Prefer iteritems over items
-        self.assertEqual({'iteritems': 'iteritems'}, p)
 
     def test_mapping(self):
         # Make sure collections.abc.Mapping is converted to a dict
@@ -305,7 +279,7 @@ class ToPrimitiveTestCase(test_base.BaseTestCase):
             def __init__(self, levels):
                 self._levels = levels
 
-            def iteritems(self):
+            def items(self):
                 if self._levels == 0:
                     return iter([])
                 else:

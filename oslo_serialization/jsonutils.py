@@ -164,9 +164,6 @@ def to_primitive(value, convert_instances=False, convert_datetime=True,
         if isinstance(value, dict):
             return {recursive(k): recursive(v)
                     for k, v in value.items()}
-        elif hasattr(value, 'iteritems'):
-            return recursive(dict(value.iteritems()), level=level + 1)
-        # Python 3 does not have iteritems
         elif hasattr(value, 'items'):
             return recursive(dict(value.items()), level=level + 1)
         elif hasattr(value, '__iter__') and not isinstance(value, io.IOBase):
