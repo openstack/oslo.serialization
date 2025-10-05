@@ -68,7 +68,7 @@ class Interval:
         return value >= self.min_value and value <= self.max_value
 
     def __repr__(self):
-        return 'Interval({}, {})'.format(self._min_value, self._max_value)
+        return f'Interval({self._min_value}, {self._max_value})'
 
 
 # Expose these so that users don't have to import msgpack to gain these.

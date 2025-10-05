@@ -178,7 +178,7 @@ def to_primitive(value, convert_instances=False, convert_datetime=True,
         return fallback(value)
 
     if orig_fallback is None:
-        raise ValueError("Cannot convert {!r} to primitive".format(value))
+        raise ValueError(f"Cannot convert {value!r} to primitive")
 
     return orig_fallback(value)
 

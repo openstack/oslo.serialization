@@ -42,7 +42,7 @@ class ColorHandler:
 
     @staticmethod
     def serialize(obj):
-        blob = '{}, {}, {}'.format(obj.r, obj.g, obj.b)
+        blob = f'{obj.r}, {obj.g}, {obj.b}'
         blob = blob.encode('ascii')
         return blob
 
