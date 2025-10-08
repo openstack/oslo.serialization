@@ -33,3 +33,7 @@ Repository = "https://opendev.org/openstack/oslo.serialization"
 
 [tool.setuptools]
 packages = ["oslo_serialization"]
+
+[tool.bandit]
+exclude_dirs = ["tests"]
+skips = ["B411"]
