@@ -1,15 +1,10 @@
-========================
-Team and repository tags
-========================
+==================
+oslo.serialization
+==================
 
 .. image:: https://governance.openstack.org/tc/badges/oslo.serialization.svg
-    :target: https://governance.openstack.org/tc/ference/tags/index.html
 
 .. Change things from this point on
-
-===================
- oslo.serialization
-===================
 
 .. image:: https://img.shields.io/pypi/v/oslo.serialization.svg
     :target: https://pypi.org/project/oslo.serialization/
