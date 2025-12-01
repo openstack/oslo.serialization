@@ -27,7 +27,6 @@ This module provides a few things:
 .. versionadded:: 1.3
 '''
 
-
 import datetime
 import functools
 import itertools
@@ -50,9 +49,10 @@ class Interval:
 
     def __init__(self, min_value, max_value):
         if min_value > max_value:
-            raise ValueError("Minimum value %s must be less than"
-                             " or equal to maximum value %s" % (min_value,
-                                                                max_value))
+            raise ValueError(
+                f"Minimum value {min_value} must be less than"
+                f" or equal to maximum value {max_value}"
+            )
         self._min_value = min_value
         self._max_value = max_value
 
@@ -139,13 +139,15 @@ class HandlerRegistry:
             ok_interval = self.non_reserved_extension_range
         ident = handler.identity
         if ident < ok_interval.min_value:
-            raise ValueError("Handler '%s' identity must be greater"
-                             " or equal to %s" % (handler,
-                                                  ok_interval.min_value))
+            raise ValueError(
+                f"Handler '{handler}' identity must be greater"
+                f" or equal to {ok_interval.min_value}"
+            )
         if ident > ok_interval.max_value:
-            raise ValueError("Handler '%s' identity must be less than"
-                             " or equal to %s" % (handler,
-                                                  ok_interval.max_value))
+            raise ValueError(
+                f"Handler '{handler}' identity must be less than"
+                f" or equal to {ok_interval.max_value}"
+            )
         if ident in self._handlers and override:
             existing_handlers = self._handlers[ident]
             # Insert at the front so that overrides get selected before
@@ -153,9 +155,10 @@ class HandlerRegistry:
             existing_handlers.insert(0, handler)
             self._num_handlers += 1
         elif ident in self._handlers and not override:
-            raise ValueError("Already registered handler(s) with"
-                             " identity %s: %s" % (ident,
-                                                   self._handlers[ident]))
+            raise ValueError(
+                "Already registered handler(s) with"
+                f" identity {ident}: {self._handlers[ident]}"
+            )
         else:
             self._handlers[ident] = [handler]
             self._num_handlers += 1
@@ -255,13 +258,15 @@ class DateTimeHandler:
             if 'tz' in dct:
                 dct['tz'] = dct['tz'].decode("ascii")
 
-        dt = datetime.datetime(day=dct['day'],
-                               month=dct['month'],
-                               year=dct['year'],
-                               hour=dct['hour'],
-                               minute=dct['minute'],
-                               second=dct['second'],
-                               microsecond=dct['microsecond'])
+        dt = datetime.datetime(
+            day=dct['day'],
+            month=dct['month'],
+            year=dct['year'],
+            hour=dct['hour'],
+            minute=dct['minute'],
+            second=dct['second'],
+            microsecond=dct['microsecond'],
+        )
         if 'tz' in dct and dct['tz']:
             dt = dt.replace(tzinfo=zoneinfo.ZoneInfo(dct['tz']))
         return dt
@@ -295,6 +300,7 @@ class CountHandler:
 
 
 if netaddr is not None:
+
     class NetAddrIPHandler:
         identity = 3
         handles = (netaddr.IPAddress,)
@@ -375,16 +381,18 @@ class DateHandler:
             # NOTE(sileht): see DateTimeHandler.deserialize()
             dct = {k.decode("ascii"): v for k, v in dct.items()}
 
-        return datetime.date(year=dct['year'],
-                             month=dct['month'],
-                             day=dct['day'])
+        return datetime.date(
+            year=dct['year'], month=dct['month'], day=dct['day']
+        )
 
 
 def _serializer(registry, obj):
     handler = registry.match(obj)
     if handler is None:
-        raise ValueError("No serialization handler registered"
-                         " for type '%s'" % (type(obj).__name__))
+        raise ValueError(
+            "No serialization handler registered"
+            f" for type '{type(obj).__name__}'"
+        )
     return msgpack.ExtType(handler.identity, handler.serialize(obj))
 
 
@@ -452,9 +460,12 @@ def dump(obj, fp, registry=None):
     """
     if registry is None:
         registry = default_registry
-    return msgpack.pack(obj, fp,
-                        default=functools.partial(_serializer, registry),
-                        use_bin_type=True)
+    return msgpack.pack(
+        obj,
+        fp,
+        default=functools.partial(_serializer, registry),
+        use_bin_type=True,
+    )
 
 
 def dumps(obj, registry=None):
@@ -465,9 +476,11 @@ def dumps(obj, registry=None):
     """
     if registry is None:
         registry = default_registry
-    return msgpack.packb(obj,
-                         default=functools.partial(_serializer, registry),
-                         use_bin_type=True)
+    return msgpack.packb(
+        obj,
+        default=functools.partial(_serializer, registry),
+        use_bin_type=True,
+    )
 
 
 def loads(s, registry=None):

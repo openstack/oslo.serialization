@@ -37,13 +37,13 @@ class ReprObject:
 
 
 class JSONUtilsTestMixin:
-
     json_impl = None
 
     def setUp(self):
         super().setUp()
         self.json_patcher = mock.patch.multiple(
-            jsonutils, json=self.json_impl,
+            jsonutils,
+            json=self.json_impl,
         )
         self.json_impl_mock = self.json_patcher.start()
 
@@ -104,7 +104,6 @@ class JSONUtilsTestMixin:
         self.assertEqual(5, result['foo'])
 
     def test_load(self):
-
         jsontext = '{"a": "\u0442\u044d\u0441\u0442"}'
         expected = {'a': '\u0442\u044d\u0441\u0442'}
 
@@ -117,9 +116,13 @@ class JSONUtilsTestMixin:
                 self.assertIsInstance(val, str)
 
     def test_dumps_exception_value(self):
-        self.assertIn(jsonutils.dumps({"a": ValueError("hello")}),
-                      ['{"a": "ValueError(\'hello\',)"}',
-                       '{"a": "ValueError(\'hello\')"}'])
+        self.assertIn(
+            jsonutils.dumps({"a": ValueError("hello")}),
+            [
+                '{"a": "ValueError(\'hello\',)"}',
+                '{"a": "ValueError(\'hello\')"}',
+            ],
+        )
 
 
 class JSONUtilsTestJson(JSONUtilsTestMixin, test_base.BaseTestCase):
@@ -144,16 +147,18 @@ class ToPrimitiveTestCase(test_base.BaseTestCase):
         self.assertEqual([1, 2, 3], jsonutils.to_primitive((1, 2, 3)))
 
     def test_dict(self):
-        self.assertEqual(dict(a=1, b=2, c=3),
-                         jsonutils.to_primitive(dict(a=1, b=2, c=3)))
+        self.assertEqual(
+            dict(a=1, b=2, c=3), jsonutils.to_primitive(dict(a=1, b=2, c=3))
+        )
 
     def test_empty_dict(self):
         self.assertEqual({}, jsonutils.to_primitive({}))
 
     def test_datetime(self):
         x = datetime.datetime(1920, 2, 3, 4, 5, 6, 7)
-        self.assertEqual('1920-02-03T04:05:06.000007',
-                         jsonutils.to_primitive(x))
+        self.assertEqual(
+            '1920-02-03T04:05:06.000007', jsonutils.to_primitive(x)
+        )
 
     def test_datetime_preserve(self):
         x = datetime.datetime(1920, 2, 3, 4, 5, 6, 7)
@@ -161,8 +166,7 @@ class ToPrimitiveTestCase(test_base.BaseTestCase):
 
     def test_date(self):
         x = datetime.date(1920, 2, 3)
-        self.assertEqual('1920-02-03',
-                         jsonutils.to_primitive(x))
+        self.assertEqual('1920-02-03', jsonutils.to_primitive(x))
 
     def test_date_preserve(self):
         x = datetime.date(1920, 2, 3)
@@ -171,8 +175,9 @@ class ToPrimitiveTestCase(test_base.BaseTestCase):
     def test_DateTime(self):
         x = xmlrpclib.DateTime()
         x.decode("19710203T04:05:06")
-        self.assertEqual('1971-02-03T04:05:06.000000',
-                         jsonutils.to_primitive(x))
+        self.assertEqual(
+            '1971-02-03T04:05:06.000000', jsonutils.to_primitive(x)
+        )
 
     def test_iter(self):
         class IterClass:
@@ -188,6 +193,7 @@ class ToPrimitiveTestCase(test_base.BaseTestCase):
                     raise StopIteration
                 self.index = self.index + 1
                 return self.data[self.index - 1]
+
             __next__ = next
 
         x = IterClass()
@@ -252,8 +258,9 @@ class ToPrimitiveTestCase(test_base.BaseTestCase):
                 self.b = 1
 
         x = MysteryClass()
-        self.assertEqual(dict(b=1),
-                         jsonutils.to_primitive(x, convert_instances=True))
+        self.assertEqual(
+            dict(b=1), jsonutils.to_primitive(x, convert_instances=True)
+        )
 
         self.assertRaises(ValueError, jsonutils.to_primitive, x)
 
@@ -264,14 +271,19 @@ class ToPrimitiveTestCase(test_base.BaseTestCase):
     def test_nasties(self):
         def foo():
             pass
+
         x = [datetime, foo, dir]
         ret = jsonutils.to_primitive(x)
         self.assertEqual(3, len(ret))
-        self.assertTrue(ret[0].startswith("<module 'datetime' from ") or
-                        ret[0].startswith("<module 'datetime' (built-in)"))
-        self.assertTrue(ret[1].startswith(
-            '<function ToPrimitiveTestCase.test_nasties.<locals>.foo at 0x'
-        ))
+        self.assertTrue(
+            ret[0].startswith("<module 'datetime' from ")
+            or ret[0].startswith("<module 'datetime' (built-in)")
+        )
+        self.assertTrue(
+            ret[1].startswith(
+                '<function ToPrimitiveTestCase.test_nasties.<locals>.foo at 0x'
+            )
+        )
         self.assertEqual('<built-in function dir>', ret[2])
 
     def test_depth(self):
@@ -364,7 +376,8 @@ class ToPrimitiveTestCase(test_base.BaseTestCase):
         self.assertEqual(str(obj), ret)
 
         def formatter(typeobj):
-            return 'type:%s' % typeobj.__name__
+            return f'type:{typeobj.__name__}'
+
         ret = jsonutils.to_primitive(obj, fallback=formatter)
         self.assertEqual("type:int", ret)
 
@@ -392,6 +405,7 @@ class ToPrimitiveTestCase(test_base.BaseTestCase):
         self.assertEqual('fallback', ret)
 
     def test_exception(self):
-        self.assertIn(jsonutils.to_primitive(ValueError("an exception")),
-                      ["ValueError('an exception',)",
-                       "ValueError('an exception')"])
+        self.assertIn(
+            jsonutils.to_primitive(ValueError("an exception")),
+            ["ValueError('an exception',)", "ValueError('an exception')"],
+        )

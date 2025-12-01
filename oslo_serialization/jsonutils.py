@@ -28,7 +28,6 @@ This module provides a few things:
    wrappers if ``anyjson`` is available.
 '''
 
-
 import codecs
 import datetime
 import functools
@@ -48,18 +47,33 @@ _ISO8601_DATE_FORMAT = '%Y-%m-%d'
 ipaddress = importutils.try_import("ipaddress")
 netaddr = importutils.try_import("netaddr")
 
-_nasty_type_tests = [inspect.ismodule, inspect.isclass, inspect.ismethod,
-                     inspect.isfunction, inspect.isgeneratorfunction,
-                     inspect.isgenerator, inspect.istraceback, inspect.isframe,
-                     inspect.iscode, inspect.isbuiltin, inspect.isroutine,
-                     inspect.isabstract]
+_nasty_type_tests = [
+    inspect.ismodule,
+    inspect.isclass,
+    inspect.ismethod,
+    inspect.isfunction,
+    inspect.isgeneratorfunction,
+    inspect.isgenerator,
+    inspect.istraceback,
+    inspect.isframe,
+    inspect.iscode,
+    inspect.isbuiltin,
+    inspect.isroutine,
+    inspect.isabstract,
+]
 
 _simple_types = (str, int, type(None), bool, float)
 
 
-def to_primitive(value, convert_instances=False, convert_datetime=True,
-                 level=0, max_depth=3, encoding='utf-8',
-                 fallback=None):
+def to_primitive(
+    value,
+    convert_instances=False,
+    convert_datetime=True,
+    level=0,
+    max_depth=3,
+    encoding='utf-8',
+    fallback=None,
+):
     """Convert a complex object into primitives.
 
     Handy for JSON serialization. We can optionally handle instances,
@@ -131,9 +145,9 @@ def to_primitive(value, convert_instances=False, convert_datetime=True,
     if netaddr and isinstance(value, (netaddr.IPAddress, netaddr.IPNetwork)):
         return str(value)
 
-    if ipaddress and isinstance(value,
-                                (ipaddress.IPv4Address,
-                                 ipaddress.IPv6Address)):
+    if ipaddress and isinstance(
+        value, (ipaddress.IPv4Address, ipaddress.IPv6Address)
+    ):
         return str(value)
 
     # For exceptions, return the 'repr' of the exception object
@@ -154,16 +168,17 @@ def to_primitive(value, convert_instances=False, convert_datetime=True,
     # The try block may not be necessary after the class check above,
     # but just in case ...
     try:
-        recursive = functools.partial(to_primitive,
-                                      convert_instances=convert_instances,
-                                      convert_datetime=convert_datetime,
-                                      level=level,
-                                      max_depth=max_depth,
-                                      encoding=encoding,
-                                      fallback=orig_fallback)
+        recursive = functools.partial(
+            to_primitive,
+            convert_instances=convert_instances,
+            convert_datetime=convert_datetime,
+            level=level,
+            max_depth=max_depth,
+            encoding=encoding,
+            fallback=orig_fallback,
+        )
         if isinstance(value, dict):
-            return {recursive(k): recursive(v)
-                    for k, v in value.items()}
+            return {recursive(k): recursive(v) for k, v in value.items()}
         elif hasattr(value, 'items'):
             return recursive(dict(value.items()), level=level + 1)
         elif hasattr(value, '__iter__') and not isinstance(value, io.IOBase):
@@ -267,6 +282,7 @@ try:
 except ImportError:
     pass
 else:
-    anyjson._modules.append((__name__, 'dumps', TypeError,
-                                       'loads', ValueError, 'load'))
+    anyjson._modules.append(
+        (__name__, 'dumps', TypeError, 'loads', ValueError, 'load')
+    )
     anyjson.force_implementation(__name__)

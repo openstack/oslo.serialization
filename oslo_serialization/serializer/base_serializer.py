@@ -16,7 +16,6 @@
 Unified and simplified API for oslo.serialization's serializers.
 """
 
-
 import abc
 
 

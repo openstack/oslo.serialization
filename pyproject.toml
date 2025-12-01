@@ -34,6 +34,19 @@ Repository = "https://opendev.org/openstack/oslo.serialization"
 [tool.setuptools]
 packages = ["oslo_serialization"]
 
-[tool.bandit]
-exclude_dirs = ["tests"]
-skips = ["B411"]
+[tool.ruff]
+line-length = 79
+
+[tool.ruff.format]
+quote-style = "preserve"
+docstring-code-format = true
+
+[tool.ruff.lint]
+select = ["E4", "E5", "E7", "E9", "F", "S", "UP"]
+ignore = [
+    # we only use asserts for type narrowing
+    "S101",
+]
+
+[tool.ruff.lint.per-file-ignores]
+"oslo_serialization/tests/*" = ["S"]

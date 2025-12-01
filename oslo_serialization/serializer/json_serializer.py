@@ -28,8 +28,9 @@ class JSONSerializer(BaseSerializer):
         return jsonutils.dump(obj, fp)
 
     def dump_as_bytes(self, obj):
-        return jsonutils.dump_as_bytes(obj, default=self._default,
-                                       encoding=self._encoding)
+        return jsonutils.dump_as_bytes(
+            obj, default=self._default, encoding=self._encoding
+        )
 
     def load(self, fp):
         return jsonutils.load(fp, encoding=self._encoding)
