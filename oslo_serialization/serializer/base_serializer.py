@@ -17,13 +17,16 @@ Unified and simplified API for oslo.serialization's serializers.
 """
 
 import abc
+from typing import Any
+
+from oslo_serialization._types import ReadableStream, SupportsWrite
 
 
 class BaseSerializer(metaclass=abc.ABCMeta):
     """Generic (de-)serialization definition abstract base class."""
 
     @abc.abstractmethod
-    def dump(self, obj, fp):
+    def dump(self, obj: Any, fp: SupportsWrite) -> None:
         """Serialize ``obj`` as a stream to ``fp``.
 
         :param obj: python object to be serialized
@@ -31,7 +34,7 @@ class BaseSerializer(metaclass=abc.ABCMeta):
         """
 
     @abc.abstractmethod
-    def dump_as_bytes(self, obj):
+    def dump_as_bytes(self, obj: Any) -> bytes:
         """Serialize ``obj`` to a byte string.
 
         :param obj: python object to be serialized
@@ -39,7 +42,7 @@ class BaseSerializer(metaclass=abc.ABCMeta):
         """
 
     @abc.abstractmethod
-    def load(self, fp):
+    def load(self, fp: ReadableStream) -> Any:
         """Deserialize ``fp`` to a python object.
 
         :param fp: ``.read()``-supporting file-like object
@@ -47,7 +50,7 @@ class BaseSerializer(metaclass=abc.ABCMeta):
         """
 
     @abc.abstractmethod
-    def load_from_bytes(self, s):
+    def load_from_bytes(self, s: bytes) -> Any:
         """Deserialize ``s`` to a python object.
 
         :param s: byte string to be deserialized

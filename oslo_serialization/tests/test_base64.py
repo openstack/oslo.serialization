@@ -14,7 +14,7 @@
 #    under the License.
 
 from oslo_serialization import base64
-from oslotest import base as test_base
+from oslotest import base as test_base  # type: ignore
 
 
 class Base64Tests(test_base.BaseTestCase):

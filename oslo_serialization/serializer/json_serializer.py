@@ -12,28 +12,35 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
+from collections.abc import Callable
+from typing import Any
 
 from oslo_serialization import jsonutils
 from oslo_serialization.serializer.base_serializer import BaseSerializer
+from oslo_serialization._types import ReadableStream, SupportsWrite
 
 
 class JSONSerializer(BaseSerializer):
     """JSON serializer based on the jsonutils module."""
 
-    def __init__(self, default=jsonutils.to_primitive, encoding='utf-8'):
+    def __init__(
+        self,
+        default: Callable[[Any], Any] = jsonutils.to_primitive,
+        encoding: str = 'utf-8',
+    ) -> None:
         self._default = default
         self._encoding = encoding
 
-    def dump(self, obj, fp):
+    def dump(self, obj: Any, fp: SupportsWrite) -> None:
         return jsonutils.dump(obj, fp)
 
-    def dump_as_bytes(self, obj):
+    def dump_as_bytes(self, obj: Any) -> bytes:
         return jsonutils.dump_as_bytes(
             obj, default=self._default, encoding=self._encoding
         )
 
-    def load(self, fp):
+    def load(self, fp: ReadableStream) -> Any:
         return jsonutils.load(fp, encoding=self._encoding)
 
-    def load_from_bytes(self, s):
+    def load_from_bytes(self, s: bytes) -> Any:
         return jsonutils.loads(s, encoding=self._encoding)

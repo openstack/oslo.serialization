@@ -12,25 +12,27 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
+from typing import Any
 
 from oslo_serialization import msgpackutils
 from oslo_serialization.serializer.base_serializer import BaseSerializer
+from oslo_serialization._types import ReadableStream, SupportsWrite
 
 
 class MessagePackSerializer(BaseSerializer):
     """MessagePack serializer based on the msgpackutils module."""
 
-    def __init__(self, registry=None):
+    def __init__(self, registry: Any = None) -> None:
         self._registry = registry
 
-    def dump(self, obj, fp):
+    def dump(self, obj: Any, fp: SupportsWrite) -> None:
         return msgpackutils.dump(obj, fp, registry=self._registry)
 
-    def dump_as_bytes(self, obj):
+    def dump_as_bytes(self, obj: Any) -> bytes:
         return msgpackutils.dumps(obj, registry=self._registry)
 
-    def load(self, fp):
+    def load(self, fp: ReadableStream) -> Any:
         return msgpackutils.load(fp, registry=self._registry)
 
-    def load_from_bytes(self, s):
+    def load_from_bytes(self, s: bytes) -> Any:
         return msgpackutils.loads(s, registry=self._registry)
