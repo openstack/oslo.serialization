@@ -1,0 +1,9 @@
+---
+upgrade:
+  - |
+    The ``oslo_serialization.jsonutils`` package will no longer hook into the
+    ``anyjson`` package to override the ``.loads`` and ``.dumps`` wrappers.
+    The ``anyjson`` package is unmaintained and has not seen a release in over
+    `13 years`__.
+
+    .. __: https://pypi.org/project/anyjson/#history

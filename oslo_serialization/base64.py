@@ -23,7 +23,7 @@ import base64
 import binascii
 
 
-def encode_as_bytes(s, encoding='utf-8'):
+def encode_as_bytes(s: str | bytes, encoding: str = 'utf-8') -> bytes:
     """Encode a string using Base64.
 
     If *s* is a text string, first encode it to *encoding* (UTF-8 by default).
@@ -39,7 +39,7 @@ def encode_as_bytes(s, encoding='utf-8'):
     return base64.b64encode(s)
 
 
-def encode_as_text(s, encoding='utf-8'):
+def encode_as_text(s: str | bytes, encoding: str = 'utf-8') -> str:
     """Encode a string using Base64.
 
     If *s* is a text string, first encode it to *encoding* (UTF-8 by default).
@@ -54,7 +54,7 @@ def encode_as_text(s, encoding='utf-8'):
     return encoded.decode('ascii')
 
 
-def decode_as_bytes(encoded):
+def decode_as_bytes(encoded: str | bytes) -> bytes:
     """Decode a Base64 encoded string.
 
     :param encoded: bytes or text Base64 encoded string to be decoded
@@ -73,7 +73,7 @@ def decode_as_bytes(encoded):
         raise TypeError(str(e))
 
 
-def decode_as_text(encoded, encoding='utf-8'):
+def decode_as_text(encoded: str | bytes, encoding: str = 'utf-8') -> str:
     """Decode a Base64 encoded string.
 
     Decode the Base64 string and then decode the result from *encoding*

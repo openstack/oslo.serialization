@@ -21,12 +21,13 @@ import io
 import ipaddress
 import itertools
 import json
+from typing import Any
 from unittest import mock
 from xmlrpc import client as xmlrpclib
 
 import netaddr
 from oslo_i18n import fixture
-from oslotest import base as test_base
+from oslotest import base as test_base  # type: ignore
 
 from oslo_serialization import jsonutils
 
@@ -36,8 +37,8 @@ class ReprObject:
         return 'repr'
 
 
-class JSONUtilsTestMixin:
-    json_impl = None
+class JSONUtilsTestJson(test_base.BaseTestCase):
+    json_impl = json
 
     def setUp(self):
         super().setUp()
@@ -63,7 +64,8 @@ class JSONUtilsTestMixin:
         self.assertEqual(b'{"a": "b"}', jsonutils.dump_as_bytes({'a': 'b'}))
 
     def test_dumps_namedtuple(self):
-        n = collections.namedtuple("foo", "bar baz")(1, 2)
+        foo = collections.namedtuple("foo", "bar baz")
+        n = foo(1, 2)
         self.assertEqual('[1, 2]', jsonutils.dumps(n))
 
     def test_dump(self):
@@ -77,7 +79,8 @@ class JSONUtilsTestMixin:
 
     def test_dump_namedtuple(self):
         expected = '[1, 2]'
-        json_dict = collections.namedtuple("foo", "bar baz")(1, 2)
+        foo = collections.namedtuple("foo", "bar baz")
+        json_dict = foo(1, 2)
 
         fp = io.StringIO()
         jsonutils.dump(json_dict, fp)
@@ -123,10 +126,6 @@ class JSONUtilsTestMixin:
                 '{"a": "ValueError(\'hello\')"}',
             ],
         )
-
-
-class JSONUtilsTestJson(JSONUtilsTestMixin, test_base.BaseTestCase):
-    json_impl = json
 
 
 class ToPrimitiveTestCase(test_base.BaseTestCase):
@@ -215,7 +214,7 @@ class ToPrimitiveTestCase(test_base.BaseTestCase):
     def test_items_with_cycle(self):
         class ItemsClass:
             def __init__(self):
-                self.data = dict(a=1, b=2, c=3)
+                self.data: dict[str, Any] = dict(a=1, b=2, c=3)
                 self.index = 0
 
             def items(self):

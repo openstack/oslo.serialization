@@ -18,7 +18,7 @@ from xmlrpc import client as xmlrpclib
 import zoneinfo
 
 import netaddr
-from oslotest import base as test_base
+from oslotest import base as test_base  # type: ignore
 
 from oslo_serialization import msgpackutils
 from oslo_utils import uuidutils
@@ -42,9 +42,7 @@ class ColorHandler:
 
     @staticmethod
     def serialize(obj):
-        blob = f'{obj.r}, {obj.g}, {obj.b}'
-        blob = blob.encode('ascii')
-        return blob
+        return f'{obj.r}, {obj.g}, {obj.b}'.encode('ascii')
 
     @staticmethod
     def deserialize(data):
@@ -182,7 +180,7 @@ class MsgPackUtilsTest(test_base.BaseTestCase):
             override=True,
         )
         registry = registry.copy(unfreeze=True)
-        registry.register(MySpecialSetHandler(), reserved=True, override=True)
+        registry.register(MySpecialSetHandler(), reserved=True, override=True)  # type: ignore
         h = registry.match(set())
         self.assertIsInstance(h, MySpecialSetHandler)
 

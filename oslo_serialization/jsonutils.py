@@ -21,20 +21,20 @@ JSON related utilities.
 This module provides a few things:
 
 #. A handy function for getting an object down to something that can be
-   JSON serialized.  See :func:`.to_primitive`.
+   JSON serialized. See :func:`.to_primitive`.
 #. Wrappers around :func:`.loads` and :func:`.dumps`. The :func:`.dumps`
    wrapper will automatically use :func:`.to_primitive` for you if needed.
-#. This sets up ``anyjson`` to use the :func:`.loads` and :func:`.dumps`
-   wrappers if ``anyjson`` is available.
 '''
 
 import codecs
+from collections.abc import Callable
 import datetime
 import functools
 import inspect
 import io
 import itertools
 import json
+from typing import Any, TypeAlias
 import uuid
 from xmlrpc import client as xmlrpclib
 
@@ -42,12 +42,14 @@ from oslo_utils import encodeutils
 from oslo_utils import importutils
 from oslo_utils import timeutils
 
+from oslo_serialization._types import ReadableStream, SupportsWrite
+
 _ISO8601_DATE_FORMAT = '%Y-%m-%d'
 
 ipaddress = importutils.try_import("ipaddress")
 netaddr = importutils.try_import("netaddr")
 
-_nasty_type_tests = [
+_nasty_type_tests: list[Callable[..., bool]] = [
     inspect.ismodule,
     inspect.isclass,
     inspect.ismethod,
@@ -64,16 +66,19 @@ _nasty_type_tests = [
 
 _simple_types = (str, int, type(None), bool, float)
 
+_SimpleTypes: TypeAlias = str | int | None | bool | float
 
+
+# We need recursive types to be able to type this
 def to_primitive(
-    value,
-    convert_instances=False,
-    convert_datetime=True,
-    level=0,
-    max_depth=3,
-    encoding='utf-8',
-    fallback=None,
-):
+    value: Any,
+    convert_instances: bool = False,
+    convert_datetime: bool = True,
+    level: int = 0,
+    max_depth: int = 3,
+    encoding: str = 'utf-8',
+    fallback: Callable[[Any], _SimpleTypes] | None = None,
+) -> Any:
     """Convert a complex object into primitives.
 
     Handy for JSON serialization. We can optionally handle instances,
@@ -125,7 +130,7 @@ def to_primitive(
     # for our purposes, make it a datetime type which is explicitly
     # handled
     if isinstance(value, xmlrpclib.DateTime):
-        value = datetime.datetime(*tuple(value.timetuple())[:6])
+        value = datetime.datetime(*tuple(value.timetuple())[:6])  # type: ignore
 
     if isinstance(value, datetime.datetime):
         if convert_datetime:
@@ -202,31 +207,39 @@ JSONEncoder = json.JSONEncoder
 JSONDecoder = json.JSONDecoder
 
 
-def dumps(obj, default=to_primitive, **kwargs):
+def dumps(
+    obj: Any,
+    default: Callable[[Any], Any] = to_primitive,
+    **kwargs: Any,
+) -> str:
     """Serialize ``obj`` to a JSON formatted ``str``.
 
     :param obj: object to be serialized
     :param default: function that returns a serializable version of an object,
-                    :func:`to_primitive` is used by default.
-    :param kwargs: extra named parameters, please see documentation \
-    of `json.dumps <https://docs.python.org/2/library/json.html#basic-usage>`_
+        :func:`to_primitive` is used by default.
+    :param kwargs: extra named parameters, please see documentation of
+        `json.dumps <https://docs.python.org/3/library/json.html#basic-usage>`_
     :returns: json formatted string
 
-    Use dump_as_bytes() to ensure that the result type is ``bytes`` on Python 2
-    and Python 3.
+    Use dump_as_bytes() to ensure that the result type is ``bytes``.
     """
     return json.dumps(obj, default=default, **kwargs)
 
 
-def dump_as_bytes(obj, default=to_primitive, encoding='utf-8', **kwargs):
+def dump_as_bytes(
+    obj: Any,
+    default: Callable[[Any], Any] = to_primitive,
+    encoding: str = 'utf-8',
+    **kwargs: Any,
+) -> bytes:
     """Serialize ``obj`` to a JSON formatted ``bytes``.
 
     :param obj: object to be serialized
     :param default: function that returns a serializable version of an object,
-                    :func:`to_primitive` is used by default.
+        :func:`to_primitive` is used by default.
     :param encoding: encoding used to encode the serialized JSON output
-    :param kwargs: extra named parameters, please see documentation \
-    of `json.dumps <https://docs.python.org/2/library/json.html#basic-usage>`_
+    :param kwargs: extra named parameters, please see documentation of
+        `json.dumps <https://docs.python.org/3/library/json.html#basic-usage>`_
     :returns: json formatted string
 
     .. versionadded:: 1.10
@@ -234,17 +247,17 @@ def dump_as_bytes(obj, default=to_primitive, encoding='utf-8', **kwargs):
     return dumps(obj, default=default, **kwargs).encode(encoding)
 
 
-def dump(obj, fp, *args, **kwargs):
+def dump(obj: Any, fp: SupportsWrite, *args: Any, **kwargs: Any) -> None:
     """Serialize ``obj`` as a JSON formatted stream to ``fp``
 
     :param obj: object to be serialized
     :param fp: a ``.write()``-supporting file-like object
     :param default: function that returns a serializable version of an object,
-                    :func:`to_primitive` is used by default.
-    :param args: extra arguments, please see documentation \
-    of `json.dump <https://docs.python.org/2/library/json.html#basic-usage>`_
-    :param kwargs: extra named parameters, please see documentation \
-    of `json.dump <https://docs.python.org/2/library/json.html#basic-usage>`_
+        :func:`to_primitive` is used by default.
+    :param args: extra arguments, please see documentation of
+        `json.dump <https://docs.python.org/3/library/json.html#basic-usage>`_
+    :param kwargs: extra named parameters, please see documentation of
+        `json.dump <https://docs.python.org/3/library/json.html#basic-usage>`_
 
     .. versionchanged:: 1.3
        The *default* parameter now uses :func:`to_primitive` by default.
@@ -253,36 +266,25 @@ def dump(obj, fp, *args, **kwargs):
     return json.dump(obj, fp, default=default, *args, **kwargs)
 
 
-def loads(s, encoding='utf-8', **kwargs):
+def loads(s: str | bytes, encoding: str = 'utf-8', **kwargs: Any) -> Any:
     """Deserialize ``s`` (a ``str`` or ``unicode`` instance containing a JSON
 
     :param s: string to deserialize
     :param encoding: encoding used to interpret the string
-    :param kwargs: extra named parameters, please see documentation \
-    of `json.loads <https://docs.python.org/2/library/json.html#basic-usage>`_
+    :param kwargs: extra named parameters, please see documentation of
+        `json.loads <https://docs.python.org/3/library/json.html#basic-usage>`_
     :returns: python object
     """
     return json.loads(encodeutils.safe_decode(s, encoding), **kwargs)
 
 
-def load(fp, encoding='utf-8', **kwargs):
+def load(fp: ReadableStream, encoding: str = 'utf-8', **kwargs: Any) -> Any:
     """Deserialize ``fp`` to a Python object.
 
     :param fp: a ``.read()`` -supporting file-like object
     :param encoding: encoding used to interpret the string
-    :param kwargs: extra named parameters, please see documentation \
-    of `json.loads <https://docs.python.org/2/library/json.html#basic-usage>`_
+    :param kwargs: extra named parameters, please see documentation of
+        `json.loads <https://docs.python.org/3/library/json.html#basic-usage>`_
     :returns: python object
     """
     return json.load(codecs.getreader(encoding)(fp), **kwargs)
-
-
-try:
-    import anyjson
-except ImportError:
-    pass
-else:
-    anyjson._modules.append(
-        (__name__, 'dumps', TypeError, 'loads', ValueError, 'load')
-    )
-    anyjson.force_implementation(__name__)
