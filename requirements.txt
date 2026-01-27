@@ -9,4 +9,3 @@
 
 msgpack>=0.5.2 # Apache-2.0
 oslo.utils>=3.33.0 # Apache-2.0
-tzdata>=2022.4 # MIT
