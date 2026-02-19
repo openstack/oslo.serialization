@@ -147,7 +147,9 @@ def to_primitive(
     if isinstance(value, uuid.UUID):
         return str(value)
 
-    if netaddr and isinstance(value, (netaddr.IPAddress, netaddr.IPNetwork)):
+    if netaddr and isinstance(
+        value, (netaddr.IPAddress, netaddr.IPNetwork, netaddr.IPRange)
+    ):
         return str(value)
 
     if ipaddress and isinstance(
