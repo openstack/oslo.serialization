@@ -9,13 +9,13 @@ readme = "README.rst"
 authors = [
     {name = "OpenStack", email = "openstack-discuss@lists.openstack.org"},
 ]
+license = "Apache-2.0"
 requires-python = ">=3.10"
 dynamic = ["version", "dependencies"]
 classifiers = [
     "Environment :: OpenStack",
     "Intended Audience :: Information Technology",
     "Intended Audience :: System Administrators",
-    "License :: OSI Approved :: Apache Software License",
     "Operating System :: POSIX :: Linux",
     "Programming Language :: Python",
     "Programming Language :: Python :: 3",
@@ -32,8 +32,8 @@ classifiers = [
 Homepage = "https://docs.openstack.org/oslo.serialization"
 Repository = "https://opendev.org/openstack/oslo.serialization"
 
-[tool.setuptools]
-packages = ["oslo_serialization"]
+[tool.setuptools.packages.find]
+include = ["oslo_serialization"]
 
 [tool.mypy]
 python_version = "3.10"
