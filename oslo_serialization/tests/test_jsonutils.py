@@ -27,7 +27,7 @@ from xmlrpc import client as xmlrpclib
 
 import netaddr
 from oslo_i18n import fixture
-from oslotest import base as test_base  # type: ignore
+from oslotest import base as test_base
 
 from oslo_serialization import jsonutils
 

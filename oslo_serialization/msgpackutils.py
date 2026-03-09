@@ -36,7 +36,7 @@ import uuid
 from xmlrpc import client as xmlrpclib
 import zoneinfo
 
-import msgpack  # type: ignore
+import msgpack
 
 from oslo_serialization._types import ReadableStream, SupportsWrite
 
