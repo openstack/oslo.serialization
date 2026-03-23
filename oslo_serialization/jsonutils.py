@@ -29,6 +29,7 @@ This module provides a few things:
 import codecs
 from collections.abc import Callable
 import datetime
+import decimal
 import functools
 import inspect
 import io
@@ -155,6 +156,9 @@ def to_primitive(
     if ipaddress and isinstance(
         value, (ipaddress.IPv4Address, ipaddress.IPv6Address)
     ):
+        return str(value)
+
+    if isinstance(value, decimal.Decimal):
         return str(value)
 
     # For exceptions, return the 'repr' of the exception object
