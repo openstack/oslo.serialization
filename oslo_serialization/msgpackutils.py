@@ -31,7 +31,7 @@ from collections.abc import Iterator
 import datetime
 import functools
 import itertools
-from typing import Any, Protocol, TypeVar, TYPE_CHECKING
+from typing import Any, Protocol, Self, TypeVar, TYPE_CHECKING
 import uuid
 from xmlrpc import client as xmlrpclib
 import zoneinfo
@@ -46,8 +46,6 @@ except ImportError:
     netaddr = None  # type: ignore
 
 if TYPE_CHECKING:
-    from typing_extensions import Self
-
     # this is not subscriptable until Python 3.11
     ItertoolsCountT = itertools.count[Any]
 else:
