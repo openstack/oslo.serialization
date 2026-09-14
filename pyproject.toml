@@ -33,7 +33,7 @@ Homepage = "https://docs.openstack.org/oslo.serialization"
 Repository = "https://opendev.org/openstack/oslo.serialization"
 
 [tool.setuptools.packages.find]
-include = ["oslo_serialization"]
+include = ["oslo_serialization*"]
 
 [tool.mypy]
 python_version = "3.11"
